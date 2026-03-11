@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Contacto - Eva Gallardo</title>
+
+    <link rel="icon" href="assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+    
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="index.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-house"></i>
+                                <span class="menu__overlay">Home</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="sobremi.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-user"></i>
+                                <span class="menu__overlay">Sobre mi</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="curriculum.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-graduation-cap"></i>
+                                <span class="menu__overlay">Curriculum</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="portafolio.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-briefcase"></i>
+                                <span class="menu__overlay">Portafolio</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="contacto.html" class="menu__link menu__link--active">
+                                <i class="menu__icon fa-solid fa-envelope"></i>
+                                <span class="menu__overlay">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__contacto">
+
+                <!-- Header -->
+                <header class="contacto__header">
+                    <h1 class="contacto__title">Contacto</h1>
+                </header>
+
+                <!-- Grid de contacto -->
+                <div class="contacto__container">
+
+                    <!-- Columna izquierda - Info -->
+                    <section class="contacto__info">
+
+                        <div class="contacto__data">
+                            <i class="contacto__icon fa-solid fa-location-dot"></i>
+                            <h2 class="contacto__subtitle">Granada // Badajoz</h2>
+                        </div>
+
+                        <div class="contacto__data">
+                            <i class="contacto__icon fa-solid fa-phone"></i>
+                            <h2 class="contacto__subtitle">652 99 21 95</h2>
+                        </div>
+
+                        <div class="contacto__data">
+                            <i class="contacto__icon fa-solid fa-envelope"></i>
+                            <h2 class="contacto__subtitle">evagalardor@icloud.com</h2>
+                        </div>
+
+                        <div class="contacto__data">
+                            <i class="contacto__icon fa-solid fa-circle-check"></i>
+                            <h2 class="contacto__subtitle">Desarrolladora Multiplataforma</h2>
+                        </div>
+
+                    </section>
+
+                    <!-- Columna derecha - Mapas y botones -->
+                    <section class="contacto__form-box">
+
+                        <!-- Mapas -->
+                        <div class="contacto__maps-container">
+                            
+                            <div class="contacto__map-item">
+                                <h4 class="map__title">📍 Granada</h4>
+                                <div class="contacto__map">
+                                    <iframe 
+                                        class="contacto__iframe" 
+                                        frameborder="0" 
+                                        scrolling="no" 
+                                        marginheight="0" 
+                                        marginwidth="0" 
+                                        loading="lazy" 
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50860.99162045555!2d-3.6324714200647104!3d37.18093911779663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fce62d32c27d%3A0x9258f79dd3600d72!2sGranada!5e0!3m2!1ses!2ses!4v1773261705075!5m2!1ses!2ses">
+                                    </iframe>
+                                </div>
+                            </div>
+
+                            <div class="contacto__map-item">
+                                <h4 class="map__title">📍 Navalvillar de Pela, Badajoz</h4>
+                                <div class="contacto__map">
+                                    <iframe 
+                                        class="contacto__iframe" 
+                                        frameborder="0" 
+                                        scrolling="no" 
+                                        marginheight="0" 
+                                        marginwidth="0" 
+                                        loading="lazy" 
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12386.178853805175!2d-5.4778406398301485!3d39.09406709691996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd14e6a4aa72cc11%3A0xaa5d944726b4ad17!2s06760%20Navalvillar%20de%20Pela%2C%20Badajoz!5e0!3m2!1ses!2ses!4v1773261614772!5m2!1ses!2ses">
+                                    </iframe>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Título -->
+                        <header class="contacto__form-header">
+                            <h3 class="form-header__title">¿Cómo puedo <span class="title__color">ayudarte?</span></h3>
+                        </header>
+
+                        <!-- Botones -->
+                        <div class="contact-quick">
+
+                            <a href="mailto:evagalardor@icloud.com" class="contact-btn">
+                                <i class="fa-solid fa-envelope"></i>
+                                Enviar email
+                            </a>
+
+                            <a href="https://wa.me/34652992195" target="_blank" class="contact-btn">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="contact-btn">
+                                <i class="fa-brands fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+
+                            <a href="https://github.com/evagr11" target="_blank" class="contact-btn">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+                            </a>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

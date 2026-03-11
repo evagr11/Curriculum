@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Portfolio - Eva Gallardo</title>
+
+    <link rel="icon" href="assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+    
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="index.html" class="menu__link menu__link--active">
+                                <i class="menu__icon fa-solid fa-house"></i>
+                                <span class="menu__overlay">Home</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="sobremi.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-user"></i>
+                                <span class="menu__overlay">Sobre mi</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="curriculum.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-graduation-cap"></i>
+                                <span class="menu__overlay">Curriculum</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="portafolio.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-briefcase"></i>
+                                <span class="menu__overlay">Portafolio</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="contacto.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-envelope"></i>
+                                <span class="menu__overlay">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__home">
+
+                <!-- Header -->
+                <header class="home__header">
+                    <h1 class="home__title">Hola, soy <span class="title__color">Eva Gallardo</span></h1>
+                    <p class="home__subtitle">Desarrolladora Multiplataforma | Creative Coder</p>
+                </header>
+
+                <!-- Descripción -->
+                <div class="home__description">
+                    <p class="description__text">
+                        Si se puede programar, lo programo 💻. Desde apps móviles hasta juegos en Unity. 
+                        Diseño en Figma + Código = ✨ Siempre aprendiendo algo nuevo.
+                    </p>
+                </div>
+
+                <!-- Proyectos -->
+                <div class="home__projects-preview">
+                    <h2 class="projects__title">Proyectos Destacados</h2>
+                    
+                    <div class="projects__grid">
+                        <article class="project__card">
+                            <div class="project__icon">
+                                <i class="fa-solid fa-ticket"></i>
+                            </div>
+                            <h3 class="project__name">App de Tickets</h3>
+                            <p class="project__tech">Android Studio • Java • Figma</p>
+                            <a href="https://github.com/evagr11/AppTickets" target="_blank" class="project__link">
+                                Ver código <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </article>
+
+                        <article class="project__card">
+                            <div class="project__icon">
+                                <i class="fa-solid fa-gamepad"></i>
+                            </div>
+                            <h3 class="project__name">Juego Táctico Unity</h3>
+                            <p class="project__tech">Unity • C# • Sistema de turnos</p>
+                            <a href="https://evagr.itch.io/real-time-tactics" target="_blank" class="project__link">
+                                Jugar en Itch.io <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </article>
+
+                        <article class="project__card">
+                            <div class="project__icon">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="project__name">iMirly (TFC)</h3>
+                            <p class="project__tech">Flutter • Node.js • Firebase • Figma</p>
+                            <a href="https://github.com/iMirly" target="_blank" class="project__link">
+                                Ver proyecto <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </article>
+
+                        <article class="project__card project__card--highlight">
+                            <div class="project__icon">
+                                <i class="fa-solid fa-shop"></i>
+                            </div>
+                            <h3 class="project__name">Marketplace Kotlin</h3>
+                            <p class="project__tech">Jetpack Compose • Kotlin</p>
+                            <span class="project__status">En desarrollo</span>
+                            <a href="https://github.com/evagr11/AppMarkeplace" target="_blank" class="project__link">
+                                Ver código <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="home__tech-stack">
+                    <h2 class="tech__title">Stack Tecnológico</h2>
+                    <div class="tech__icons">
+                        <i class="fa-brands fa-java" title="Java"></i>
+                        <i class="fa-brands fa-android" title="Android/Kotlin"></i>
+                        <i class="fa-brands fa-unity" title="Unity/C#"></i>
+                        <i class="fa-solid fa-database" title="Bases de Datos"></i>
+                        <i class="fa-brands fa-figma" title="Figma"></i>
+                        <i class="fa-brands fa-git-alt" title="Git"></i>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

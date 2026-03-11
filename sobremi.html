@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Sobre Mí - Eva Gallardo</title>
+
+    <link rel="icon" href="assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+    
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="index.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-house"></i>
+                                <span class="menu__overlay">Home</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="sobremi.html" class="menu__link menu__link--active">
+                                <i class="menu__icon fa-solid fa-user"></i>
+                                <span class="menu__overlay">Sobre mi</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="curriculum.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-graduation-cap"></i>
+                                <span class="menu__overlay">Curriculum</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="portafolio.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-briefcase"></i>
+                                <span class="menu__overlay">Portafolio</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="contacto.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-envelope"></i>
+                                <span class="menu__overlay">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__about">
+
+                <!-- Header -->
+                <header class="about__header">
+                    <h1 class="about__title">Sobre <span class="title__color">Mí</span></h1>
+                    <p class="about__subtitle">Conoce un poco más sobre mi trayectoria</p>
+                </header>
+
+                <!-- Introducción -->
+                <div class="about__intro">
+                    <p class="intro__text">
+                        Desarrolladora de Aplicaciones Multiplataforma en formación, actualmente cursando DAM (Desarrollo de Aplicaciones Multiplataforma), con sólidas bases en programación, bases de datos y metodologías ágiles.
+                    </p>
+                    <p class="intro__text">
+                        Experiencia en proyectos académicos grupales, demostrando liderazgo, capacidad de organización, trabajo en equipo y adaptación a las directrices. Actualmente participo en <strong>iMirly</strong>, un proyecto de desarrollo de aplicaciones centrado en la prestación y el acceso a servicios.
+                    </p>
+                </div>
+
+                <!-- Grid de información -->
+                <div class="about__grid">
+                    <!-- Educación -->
+                    <div class="about__card">
+                        <div class="card__header">
+                            <div class="card__icon">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="card__title">Educación</h3>
+                        </div>
+                        <div class="card__content">
+                            <ul class="card__list">
+                                <li><strong>Técnico Superior DAM</strong> - 2024/Actualidad</li>
+                                <li>Desarrollo de Aplicaciones Multiplataforma</li>
+                                <li><strong>Bachillerato Ciencias y Tecnología</strong> - 2022-2024</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Habilidades -->
+                    <div class="about__card">
+                        <div class="card__header">
+                            <div class="card__icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="card__title">Habilidades</h3>
+                        </div>
+                        <div class="card__content">
+                            <ul class="card__list">
+                                <li>Lenguajes de programación</li>
+                                <li>Bases de datos</li>
+                                <li>Liderazgo y trabajo en equipo</li>
+                                <li>Arquitectura de aplicaciones</li>
+                                <li>UX/UI Design</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Idiomas -->
+                    <div class="about__card">
+                        <div class="card__header">
+                            <div class="card__icon">
+                                <i class="fa-solid fa-language"></i>
+                            </div>
+                            <h3 class="card__title">Idiomas</h3>
+                        </div>
+                        <div class="card__content">
+                            <ul class="card__list">
+                                <li><strong>Español</strong> - Nativo</li>
+                                <li><strong>Inglés</strong> - A2 (Básico/Elemental)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Intereses -->
+                    <div class="about__card">
+                        <div class="card__header">
+                            <div class="card__icon">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <h3 class="card__title">Pasión por</h3>
+                        </div>
+                        <div class="card__content">
+                            <ul class="card__list">
+                                <li>Programar cualquier cosa (¡hasta semáforos! 🚦)</li>
+                                <li>Diseño UI/UX en Figma</li>
+                                <li>Aportar perspectivas diferentes al equipo</li>
+                                <li>Convertir ideas en código funcional</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Código estilo Java -->
+                <div class="about__code">
+                    <div class="code__header">
+                        <span class="code__dot code__dot--red"></span>
+                        <span class="code__dot code__dot--yellow"></span>
+                        <span class="code__dot code__dot--green"></span>
+                        <span style="margin-left: 0.5rem;">EvaGallardo.java</span>
+                    </div>
+                    <pre class="code__content"><span class="code__keyword">public class</span> <span class="code__variable">EvaGallardo</span> {
+    <span class="code__keyword">String</span> <span class="code__variable">rol</span> = <span class="code__string">"Desarrolladora Multiplataforma"</span>;
+    <span class="code__keyword">String</span> <span class="code__variable">estado</span> = <span class="code__string">"En formación continua"</span>;
+    <span class="code__keyword">String</span> <span class="code__variable">ubicacion</span> = <span class="code__string">"Granada // Badajoz"</span>;
+    
+    <span class="code__keyword">String</span>[] <span class="code__variable">pasiones</span> = {
+        <span class="code__string">"Programar cualquier cosa"</span>,
+        <span class="code__string">"Diseño UI/UX en Figma"</span>,
+        <span class="code__string">"Trabajo en equipo"</span>
+    };
+    
+    <span class="code__keyword">public void</span> <span class="code__function">trabajoEnEquipo</span>() {
+        <span class="code__comment">// Escucho activamente y aporto visiones alternativas</span>
+        <span class="code__comment">// que enriquecen el proyecto final</span>
+    }
+}</pre>
+                </div>
+
+                <!-- Timeline de experiencia -->
+                <div class="about__timeline">
+                    <h3 class="timeline__title">Experiencia Laboral</h3>
+                    
+                    <div class="timeline__item">
+                        <div class="timeline__date">2023-2024</div>
+                        <div class="timeline__content">
+                            <h4>Asistente de Gestión de Entradas y Efectivo</h4>
+                            <p>Panorama - Festivales. Gestión de venta de entradas mediante sistemas TPV, manejo de efectivo, conciliación diaria de caja y atención directa al cliente en festivales de gran volumen.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__date">2022-2023</div>
+                        <div class="timeline__content">
+                            <h4>Asistente de Operaciones de Invernadero</h4>
+                            <p>Tareas operativas rotativas demostrando adaptabilidad, trabajo en equipo y coordinación con maquinaria y procedimientos de seguridad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cita -->
+                <div class="about__quote">
+                    <p class="quote__text">
+                        "Me da igual si es frontend, backend, móvil o web. Si implica resolver problemas con código, <strong>count me in</strong>."
+                    </p>
+                    <span class="quote__author">— Mi filosofía</span>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

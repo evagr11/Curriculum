@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Portafolio - Eva Gallardo</title>
+
+    <link rel="icon" href="assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+    
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="index.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-house"></i>
+                                <span class="menu__overlay">Home</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="sobremi.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-user"></i>
+                                <span class="menu__overlay">Sobre mi</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="curriculum.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-graduation-cap"></i>
+                                <span class="menu__overlay">Curriculum</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="portafolio.html" class="menu__link menu__link--active">
+                                <i class="menu__icon fa-solid fa-briefcase"></i>
+                                <span class="menu__overlay">Portafolio</span>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="contacto.html" class="menu__link">
+                                <i class="menu__icon fa-solid fa-envelope"></i>
+                                <span class="menu__overlay">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__portafolio">
+
+                <!-- Header -->
+                <header class="portafolio__header">
+                    <h1 class="portafolio__title">Mi <span class="title__color">Portafolio</span></h1>
+                    <p class="portafolio__subtitle">Proyectos y trabajos realizados</p>
+                </header>
+
+                <!-- Filtros -->
+                <ul class="portafolio__filters">
+                    <li class="portafolio__option portafolio__option--active">
+                        <a href="#" class="portafolio__link" data-filter="all">Todos</a>
+                    </li>
+                    <li class="portafolio__option">
+                        <a href="#" class="portafolio__link" data-filter="android">Android</a>
+                    </li>
+                    <li class="portafolio__option">
+                        <a href="#" class="portafolio__link" data-filter="unity">Unity</a>
+                    </li>
+                    <li class="portafolio__option">
+                        <a href="#" class="portafolio__link" data-filter="web">Web</a>
+                    </li>
+                </ul>
+
+                <!-- Galería de proyectos -->
+                <div class="gallery__grid">
+                    
+                    <!-- Proyecto 1 -->
+                    <article class="gallery__item" data-category="android">
+                        <div class="gallery__image">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+                        <div class="gallery__content">
+                            <h3 class="gallery__title">App de Tickets</h3>
+                            <p class="gallery__category">Android</p>
+                            <p class="gallery__description">Aplicación móvil para gestión de tickets desarrollada en Android Studio con Java.</p>
+                            <div class="gallery__links">
+                                <a href="https://github.com/evagr11/AppTickets" target="_blank" class="gallery__link">
+                                    <i class="fa-brands fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 2 -->
+                    <article class="gallery__item" data-category="unity">
+                        <div class="gallery__image">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <div class="gallery__content">
+                            <h3 class="gallery__title">Juego Táctico Unity</h3>
+                            <p class="gallery__category">Unity</p>
+                            <p class="gallery__description">Juego de táctica en tiempo real con sistema de turnos desarrollado en Unity con C#.</p>
+                            <div class="gallery__links">
+                                <a href="https://evagr.itch.io/real-time-tactics" target="_blank" class="gallery__link">
+                                    <i class="fa-brands fa-itch-io"></i> Jugar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 3 -->
+                    <article class="gallery__item" data-category="android">
+                        <div class="gallery__image">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div class="gallery__content">
+                            <h3 class="gallery__title">iMirly (TFC)</h3>
+                            <p class="gallery__category">Android</p>
+                            <p class="gallery__description">Aplicación multiplataforma de mercado de servicios profesionales. Proyecto final de ciclo.</p>
+                            <div class="gallery__links">
+                                <a href="https://github.com/iMirly" target="_blank" class="gallery__link">
+                                    <i class="fa-brands fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 4 -->
+                    <article class="gallery__item" data-category="android">
+                        <div class="gallery__image">
+                            <i class="fa-solid fa-shop"></i>
+                        </div>
+                        <div class="gallery__content">
+                            <h3 class="gallery__title">Marketplace Kotlin</h3>
+                            <p class="gallery__category">Android</p>
+                            <p class="gallery__description">Aplicación de marketplace desarrollada con Kotlin y Jetpack Compose.</p>
+                            <div class="gallery__links">
+                                <a href="https://github.com/evagr11/AppMarkeplace" target="_blank" class="gallery__link">
+                                    <i class="fa-brands fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 5 -->
+                    <article class="gallery__item" data-category="web">
+                        <div class="gallery__image">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="gallery__content">
+                            <h3 class="gallery__title">Portfolio Personal</h3>
+                            <p class="gallery__category">Web</p>
+                            <p class="gallery__description">Sitio web personal desarrollado con HTML, CSS y JavaScript.</p>
+                            <div class="gallery__links">
+                                <a href="https://github.com/evagr11" target="_blank" class="gallery__link">
+                                    <i class="fa-brands fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 6 -->
+                    <article class="gallery__item" data-category="unity">
+                        <div class="gallery__image">
+                            <i class="fa-solid fa-ghost"></i>
+                        </div>
+                        <div class="gallery__content">
+                            <h3 class="gallery__title">Prototipos Unity</h3>
+                            <p class="gallery__category">Unity</p>
+                            <p class="gallery__description">Colección de prototipos y experimentos en Unity.</p>
+                            <div class="gallery__links">
+                                <a href="https://evagr.itch.io/" target="_blank" class="gallery__link">
+                                    <i class="fa-brands fa-itch-io"></i> Ver
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript para filtros -->
+    <script>
+        const filterLinks = document.querySelectorAll(".portafolio__link");
+        const items = document.querySelectorAll(".gallery__item");
+
+        filterLinks.forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+
+                // quitar active
+                document.querySelectorAll(".portafolio__option")
+                    .forEach(li => li.classList.remove("portafolio__option--active"));
+
+                link.parentElement.classList.add("portafolio__option--active");
+
+                const filter = link.dataset.filter;
+
+                items.forEach(item => {
+                    const category = item.dataset.category;
+
+                    if (filter === "all" || category === filter) {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

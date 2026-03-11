@@ -1,0 +1,308 @@
+/* ============================================
+   RESPONSIVE - MEDIA QUERIES
+   ============================================ */
+
+/* ============================================
+   TABLET GRANDE (1200px)
+   ============================================ */
+@media (max-width: 1200px) {
+    .layout__aside {
+        width: 280px;
+        min-width: 280px;
+    }
+    
+    .layout__content {
+        margin-left: 280px;
+    }
+}
+
+/* ============================================
+   TABLET (992px)
+   ============================================ */
+@media (max-width: 992px) {
+    /* Sidebar colapsado */
+    .layout__aside {
+        width: 80px;
+        min-width: 80px;
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .user-info__container-imagen {
+        width: 50px;
+        height: 50px;
+        border-width: 3px;
+    }
+    
+    .user-info__name,
+    .user-info__job,
+    .user-info__footer {
+        display: none;
+    }
+    
+    .menu__link {
+        padding: 1rem 0.5rem;
+    }
+    
+    .menu__overlay {
+        left: calc(100% + 10px);
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .links__social {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .social__link {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+    
+    .user-info__btn {
+        padding: 0.7rem;
+        font-size: 0.8rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        letter-spacing: 2px;
+    }
+    
+    .layout__content {
+        margin-left: 80px;
+        padding: 1.5rem;
+    }
+    
+    .content__page {
+        padding: 2rem;
+    }
+    
+    /* Curriculum */
+    .curriculum__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Contacto */
+    .contacto__container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contacto__maps-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Sobre mí */
+    .about__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   MÓVIL (768px)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Sidebar como navegación inferior */
+    .layout__aside {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        padding: 0.5rem;
+        z-index: 1000;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .aside__user-info {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+    
+    .user-info__general,
+    .user-info__buttons,
+    .user-info__footer,
+    .user-info__links {
+        display: none;
+    }
+    
+    .layout__menu {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .menu__list {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0;
+    }
+    
+    .menu__link {
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+    
+    .menu__link:hover,
+    .menu__link--active {
+        transform: none;
+    }
+    
+    .menu__overlay {
+        display: none;
+    }
+    
+    .layout__content {
+        margin-left: 0;
+        margin-bottom: 70px;
+        padding: 1rem;
+    }
+    
+    .content__page {
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+    
+    /* Home */
+    .home__title {
+        font-size: 2rem;
+    }
+    
+    .projects__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech__icons {
+        gap: 1.2rem;
+    }
+    
+    .tech__icons i {
+        font-size: 2rem;
+    }
+    
+    /* Curriculum */
+    .curriculum__title {
+        font-size: 2rem;
+    }
+    
+    /* Contacto */
+    .contacto__title {
+        font-size: 2rem;
+    }
+    
+    .contact-quick {
+        flex-direction: column;
+    }
+    
+    .contact-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Sobre mí */
+    .about__title {
+        font-size: 2rem;
+    }
+    
+    .about__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline__item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    /* Portafolio */
+    .portafolio__title {
+        font-size: 2rem;
+    }
+    
+    .gallery__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   MÓVIL PEQUEÑO (480px)
+   ============================================ */
+@media (max-width: 480px) {
+    /* Home */
+    .home__title {
+        font-size: 1.6rem;
+    }
+    
+    .home__subtitle {
+        font-size: 1rem;
+    }
+    
+    .description__text {
+        font-size: 0.95rem;
+    }
+    
+    .project__card {
+        padding: 1.5rem;
+    }
+    
+    /* Curriculum */
+    .curriculum__title {
+        font-size: 1.6rem;
+    }
+    
+    .section__title {
+        font-size: 1.1rem;
+    }
+    
+    .timeline__title {
+        font-size: 1rem;
+    }
+    
+    /* Contacto */
+    .contacto__title {
+        font-size: 1.6rem;
+    }
+    
+    .contacto__data {
+        padding: 1rem;
+    }
+    
+    .contacto__icon {
+        font-size: 1.5rem;
+    }
+    
+    .contacto__subtitle {
+        font-size: 0.95rem;
+    }
+    
+    /* Sobre mí */
+    .about__title {
+        font-size: 1.6rem;
+    }
+    
+    .about__subtitle {
+        font-size: 1rem;
+    }
+    
+    .intro__text {
+        font-size: 0.95rem;
+    }
+    
+    .code__content {
+        font-size: 0.8rem;
+    }
+    
+    /* Portafolio */
+    .portafolio__title {
+        font-size: 1.6rem;
+    }
+    
+    .portafolio__filters {
+        gap: 0.5rem;
+    }
+    
+    .portafolio__link {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
