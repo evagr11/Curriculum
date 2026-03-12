@@ -72,7 +72,7 @@
 }
 
 /* ============================================
-   MENÚ DE NAVEGACIÓN
+   MENÚ DE NAVEGACIÓN CON EFECTO HOVER DE TEXTO
    ============================================ */
 .layout__menu {
     width: 100%;
@@ -99,8 +99,33 @@
     border-radius: 10px;
     transition: var(--transition);
     position: relative;
+    overflow: hidden;
+    height: 45px;
 }
 
+/* Icono normal */
+.menu__icon {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Texto que aparece en hover (inicialmente oculto) */
+.menu__link::after {
+    content: attr(data-menu);
+    position: absolute;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    color: white;
+}
+
+/* Efecto hover: ocultar icono, mostrar texto */
 .menu__link:hover,
 .menu__link--active {
     color: white;
@@ -108,42 +133,22 @@
     transform: translateX(5px);
 }
 
-.menu__icon {
-    font-size: 1.2rem;
-}
-
-/* Tooltip del menú */
-.menu__overlay {
-    position: absolute;
-    left: calc(100% + 10px);
-    top: 50%;
-    transform: translateY(-50%);
-    background: #333;
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    white-space: nowrap;
+.menu__link:hover .menu__icon,
+.menu__link--active .menu__icon {
     opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: scale(0) rotate(-180deg);
 }
 
-.menu__overlay::before {
-    content: '';
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 5px solid transparent;
-    border-right-color: #333;
-}
-
-.menu__link:hover .menu__overlay {
+.menu__link:hover::after,
+.menu__link--active::after {
     opacity: 1;
-    visibility: visible;
+    transform: scale(1) translateY(0);
+    position: static;
+}
+
+/* Eliminar el tooltip anterior ya que ahora el texto aparece en el propio botón */
+.menu__overlay {
+    display: none;
 }
 
 /* ============================================
