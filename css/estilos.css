@@ -419,7 +419,6 @@
 
 .timeline__item {
     display: flex;
-    gap: 1.5rem;
     margin-bottom: 1.5rem;
     padding: 1.5rem;
     background: #fafafa;
@@ -543,7 +542,9 @@
 }
 
 .timeline__item {
-    position: relative;
+    position: relative;    
+    flex-direction: column;
+    align-items: flex-start;
     padding-left: 1.5rem;
     margin-bottom: 1.5rem;
     border-left: 3px solid var(--color-primary);

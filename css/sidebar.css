@@ -4,7 +4,7 @@
 .layout__aside {
     width: var(--sidebar-width);
     min-width: var(--sidebar-width);
-    height: auto;
+    height: 100vh;
     background: var(--color-primary);
     display: flex;
     flex-direction: column;
@@ -15,7 +15,9 @@
     top: 0;
     z-index: 100;
     box-shadow: 4px 0 20px rgba(0,0,0,0.1);
-    overflow-y: visible;
+    overflow-y: auto;
+    scrollbar-color: rgba(255, 255, 255, 0.500) var(--color-primary); /* Color del scrollbar y fondo */
+    scrollbar-width: thin; 
 }
 
 .aside__user-info {
