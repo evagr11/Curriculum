@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>iMirly Android - Eva Gallardo</title>
+
+    <link rel="icon" href="../../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+    
+    <!-- CSS externos - Rutas corregidas ../../ -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../../css/proyecto.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú - Rutas corregidas para volver a raíz -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../../assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h1 class="proyecto__title">iMirly <span class="title__color">Android</span></h1>
+                    <p class="proyecto__subtitle">Aplicación multiplataforma de mercado de servicios profesionales</p>
+                    
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">TFC</span>
+                        <span class="proyecto__tag">Kotlin</span>
+                        <span class="proyecto__tag">Jetpack Compose</span>
+                        <span class="proyecto__tag">Spring Boot</span>
+                    </div>
+                </header>
+
+                <!-- Imagen principal / Mockup -->
+                <div class="proyecto__hero">
+                    <img src="../../assets/img/imirly-android.jpg" alt="iMirly Android App" class="proyecto__hero-image">
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        iMirly es una aplicación multiplataforma que conecta usuarios con profesionales locales. 
+                        Desarrollada como Trabajo de Fin de Ciclo (TFC), participé en el análisis de requisitos, 
+                        diseño UX/UI con Figma, desarrollo frontend/backend y modelado de bases de datos.
+                    </p>
+                    <p class="proyecto__text">
+                        La aplicación permite a los usuarios registrarse, navegar por categorías de servicios, 
+                        publicar sus propios servicios como profesionales, y gestionar citas y comunicaciones 
+                        mediante una arquitectura MVVM robusta.
+                    </p>
+                </div>
+
+                <!-- Grid de características -->
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="feature__title">Autenticación</h3>
+                        <p class="feature__text">Sistema completo de registro y login con validación de usuarios</p>
+                    </div>
+                    
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="feature__title">Categorías</h3>
+                        <p class="feature__text">Navegación intuitiva por categorías de servicios profesionales</p>
+                    </div>
+                    
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-upload"></i>
+                        </div>
+                        <h3 class="feature__title">Publicación</h3>
+                        <p class="feature__text">Publicación y gestión de servicios para profesionales</p>
+                    </div>
+                    
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h3 class="feature__title">Arquitectura MVVM</h3>
+                        <p class="feature__text">Patrón de diseño moderno y mantenible</p>
+                    </div>
+                </div>
+
+                <!-- Tech Stack detallado -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+                    
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Frontend</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-android"></i> Kotlin</li>
+                                <li><i class="fa-solid fa-paint-brush"></i> Jetpack Compose</li>
+                                <li><i class="fa-solid fa-mobile"></i> Android Studio</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Backend</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-java"></i> Java 21</li>
+                                <li><i class="fa-solid fa-leaf"></i> Spring Boot 3</li>
+                                <li><i class="fa-solid fa-database"></i> PostgreSQL</li>
+                                <li><i class="fa-solid fa-plug"></i> Hibernate/JPA</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">API & Diseño</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-exchange-alt"></i> REST API</li>
+                                <li><i class="fa-solid fa-network-wired"></i> Retrofit</li>
+                                <li><i class="fa-solid fa-check-double"></i> OkHttp</li>
+                                <li><i class="fa-brands fa-figma"></i> Figma</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería / Screenshots -->
+                <div class="proyecto__gallery">
+                    <h2 class="proyecto__section-title">Galería</h2>
+                    <div class="gallery__grid-proyecto">
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Login Screen</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Home</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Categorías</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Perfil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Presentación Canva -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Presentación del proyecto</h2>
+                    <div class="proyecto__canva-container">
+                        <iframe 
+                            src="https://www.canva.com/design/DAHD0fGBBH4/view?embed" 
+                            class="proyecto__iframe"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <a href="https://www.canva.com/design/DAHD0fGBBH4/view" target="_blank" class="proyecto__canva-link">
+                        <i class="fa-solid fa-expand"></i> Ver en pantalla completa
+                    </a>
+                </section>
+
+                <!-- Figma -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Prototipo interactivo</h2>
+                    <div class="proyecto__figma-container">
+                        <iframe
+                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/Td3Fo8Y82flflUeqzFaHJy/Trabajador--Copy-?node-id=1-3&p=f&t=4lW0K1ASVFzYrKhi-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3"
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="600"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+                    
+                    <div class="links__container">
+                        <a href="https://github.com/iMirly" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+                        
+                        <a href="#" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-figma"></i>
+                            Prototipo Figma
+                        </a>
+                        
+                        <a href="../../assets/pdf/documentacion-imirly.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Documentación PDF
+                        </a>
+                </div>
+                
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Anterior</span>
+                            <span class="nav__name">Volver al portafolio</span>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="nav__btn nav__btn--next">
+                        <div class="nav__info">
+                            <span class="nav__label">Siguiente</span>
+                            <span class="nav__name">Marketplace Kotlin</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
