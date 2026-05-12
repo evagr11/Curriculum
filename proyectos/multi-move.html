@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Multi-Move - Eva Gallardo</title>
+
+    <link rel="icon" href="../../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../../css/proyecto.css">
+
+    <style>
+        /* Estilos adicionales específicos para Multi-Move */
+        .status__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #166534;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .status__badge i {
+            font-size: 0.8rem;
+        }
+
+        .movements__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .movement__card {
+            background: var(--color-bg-card);
+            border-radius: 15px;
+            padding: 1.8rem;
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .movement__card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 165, 181, 0.1);
+            border-color: var(--color-primary);
+        }
+
+        .movement__icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .movement__title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .movement__text {
+            font-size: 0.9rem;
+            color: var(--color-gray);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .movement__stats {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--color-gray-light);
+        }
+
+        .movement__stats strong {
+            color: var(--color-black);
+        }
+
+        .mechanics__list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .mechanic__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .mechanic__item:hover {
+            border-color: var(--color-primary);
+            transform: translateX(5px);
+        }
+
+        .mechanic__icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .mechanic__content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.3rem;
+        }
+
+        .mechanic__content p {
+            font-size: 0.85rem;
+            color: var(--color-gray);
+            line-height: 1.5;
+        }
+
+        .controls__section {
+            margin-bottom: 3rem;
+        }
+
+        .controls__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .controls__column {
+            background: var(--color-bg-card);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .controls__title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        .controls__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .controls__list li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .controls__key {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+            padding: 0.3rem 0.6rem;
+            background: #f3f4f6;
+            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+
+        .gallery__grid-proyecto {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery__item-proyecto {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 2px dashed var(--color-border);
+            color: var(--color-gray-light);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery__item-proyecto:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            transform: scale(1.02);
+        }
+
+        .gallery__item-proyecto i {
+            font-size: 2rem;
+        }
+
+        .gallery__item-proyecto span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 992px) {
+            .movements__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .controls__grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery__grid-proyecto {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .movements__grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery__grid-proyecto {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../../assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <h1 class="proyecto__title">Multi-<span class="title__color">Move</span></h1>
+                    <p class="proyecto__subtitle">Sandbox de plataformas 2D con 6 modos de movimiento intercambiables</p>
+
+                    <div class="status__badge">
+                        <i class="fa-solid fa-check-circle"></i>
+                        Proyecto finalizado
+                    </div>
+
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Unity</span>
+                        <span class="proyecto__tag">C#</span>
+                        <span class="proyecto__tag">2D</span>
+                        <span class="proyecto__tag">DAM</span>
+                    </div>
+                </header>
+
+                <!-- Hero con screenshot + botón de juego -->
+                <div class="proyecto__hero">
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                        <!-- Screenshot del juego (placeholder) -->
+                        <div style="width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; gap: 1rem;">
+                            <i class="fa-solid fa-cube" style="font-size: 5rem; opacity: 0.8;"></i>
+                            <span style="font-size: 1.5rem; font-weight: 600;">Multi-Move</span>
+                            <span style="font-size: 0.9rem; opacity: 0.7;">Plataformas 2D - 6 modos de movimiento</span>
+                        </div>
+
+                        <!-- Overlay con botón -->
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; justify-content: center;">
+                            <a href="https://evagr.itch.io/basic-platforms" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                                <i class="fa-brands fa-itch-io" style="font-size: 1.3rem;"></i>
+                                Jugar ahora en Itch.io
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>Multi-Move</strong> es un sandbox de plataformas 2D desarrollado en <strong>Unity con C#</strong>
+                        durante la asignatura de <em>Programación</em> del primer año de DAM. El proyecto demuestra un
+                        <strong>sistema de movimiento avanzado</strong> con múltiples configuraciones intercambiables en tiempo real,
+                        cada una con físicas, gravedad y comportamiento únicos.
+                    </p>
+                    <p class="proyecto__text">
+                        El jugador controla un cubo que puede moverse, saltar y cambiar entre <strong>6 modos de movimiento distintos</strong>
+                        presionando la tecla <kbd>M</kbd>. Cada modo está implementado como un <strong>ScriptableObject</strong>,
+                        permitiendo una arquitectura modular y fácilmente extensible. El sistema incluye partículas visuales,
+                        cambios de color dinámicos según el estado (suelo, subida, pico, caída) y una cámara con seguimiento suave.
+                    </p>
+                </div>
+
+                <!-- Modos de movimiento -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Modos de movimiento</h2>
+                    <p class="proyecto__text" style="margin-bottom: 1.5rem;">
+                        Cada modo es un <strong>ScriptableObject</strong> con parámetros independientes. Presiona <kbd>M</kbd> para cambiar entre ellos.
+                    </p>
+                    <div class="movements__grid">
+                        <!-- Basic -->
+                        <div class="movement__card">
+                            <div class="movement__icon" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">
+                                <i class="fa-solid fa-person-walking"></i>
+                            </div>
+                            <h3 class="movement__title">Basic</h3>
+                            <p class="movement__text">Movimiento estándar de plataformas. Equilibrado para la mayoría de situaciones.</p>
+                            <div class="movement__stats">
+                                <div>🚀 Velocidad: <strong>70</strong></div>
+                                <div>⬆️ Salto: <strong>10</strong></div>
+                                <div>🌑 Gravedad: <strong>2→3→4</strong></div>
+                                <div>🔄 Saltos aéreos: <strong>1</strong></div>
+                            </div>
+                        </div>
+                        <!-- Underwater -->
+                        <div class="movement__card">
+                            <div class="movement__icon" style="background: linear-gradient(135deg, #2196F3, #0D47A1);">
+                                <i class="fa-solid fa-water"></i>
+                            </div>
+                            <h3 class="movement__title">Underwater</h3>
+                            <p class="movement__text">Movimiento subacuático con gravedad reducida y saltos ilimitados.</p>
+                            <div class="movement__stats">
+                                <div>🚀 Velocidad: <strong>50</strong></div>
+                                <div>⬆️ Salto: <strong>7</strong></div>
+                                <div>🌑 Gravedad: <strong>0.5→0.3→0.5</strong></div>
+                                <div>🔄 Saltos aéreos: <strong>∞</strong></div>
+                            </div>
+                        </div>
+                        <!-- Glider -->
+                        <div class="movement__card">
+                            <div class="movement__icon" style="background: linear-gradient(135deg, #9C27B0, #4A148C);">
+                                <i class="fa-solid fa-parachute-box"></i>
+                            </div>
+                            <h3 class="movement__title">Glider</h3>
+                            <p class="movement__text">Planeo con caída lenta y mayor control en el aire. Ideal para distancias largas.</p>
+                            <div class="movement__stats">
+                                <div>🚀 Velocidad: <strong>50</strong></div>
+                                <div>⬆️ Salto: <strong>8</strong></div>
+                                <div>🌑 Gravedad: <strong>1→1.5→2</strong></div>
+                                <div>🔄 Saltos aéreos: <strong>2</strong></div>
+                            </div>
+                        </div>
+                        <!-- Hectic -->
+                        <div class="movement__card">
+                            <div class="movement__icon" style="background: linear-gradient(135deg, #FF5722, #BF360C);">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="movement__title">Hectic</h3>
+                            <p class="movement__text">Velocidad extrema con aceleración brutal. Para jugadores que buscan caos.</p>
+                            <div class="movement__stats">
+                                <div>🚀 Velocidad: <strong>120</strong></div>
+                                <div>⬆️ Salto: <strong>12</strong></div>
+                                <div>🌑 Gravedad: <strong>5→6→8</strong></div>
+                                <div>🔄 Saltos aéreos: <strong>3</strong></div>
+                            </div>
+                        </div>
+                        <!-- Rocket -->
+                        <div class="movement__card">
+                            <div class="movement__icon" style="background: linear-gradient(135deg, #F44336, #B71C1C);">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <h3 class="movement__title">Rocket</h3>
+                            <p class="movement__text">Salto potente con caída rápida. Como un cohete que sube y estrella.</p>
+                            <div class="movement__stats">
+                                <div>🚀 Velocidad: <strong>60</strong></div>
+                                <div>⬆️ Salto: <strong>15</strong></div>
+                                <div>🌑 Gravedad: <strong>3→6→10</strong></div>
+                                <div>🔄 Saltos aéreos: <strong>1</strong></div>
+                            </div>
+                        </div>
+                        <!-- Slippy Flappy -->
+                        <div class="movement__card">
+                            <div class="movement__icon" style="background: linear-gradient(135deg, #00BCD4, #006064);">
+                                <i class="fa-solid fa-icicles"></i>
+                            </div>
+                            <h3 class="movement__title">Slippy Flappy</h3>
+                            <p class="movement__text">Superficie resbaladiza con fricción mínima. Saltos múltiples tipo Flappy Bird.</p>
+                            <div class="movement__stats">
+                                <div>🚀 Velocidad: <strong>50</strong></div>
+                                <div>⬆️ Salto: <strong>7</strong></div>
+                                <div>🌑 Gravedad: <strong>0.5→0.8→2</strong></div>
+                                <div>🔄 Saltos aéreos: <strong>5</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mecánicas principales -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Mecánicas principales</h2>
+                    <div class="mechanics__list">
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-file-code"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>ScriptableObjects</h4>
+                                <p>Cada modo de movimiento es un asset ScriptableObject con parámetros configurables desde el editor de Unity.</p>
+                            </div>
+                        </div>
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-keyboard"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Cambio en tiempo real</h4>
+                                <p>Presiona <kbd>M</kbd> para alternar entre los 6 modos sin interrumpir el gameplay.</p>
+                            </div>
+                        </div>
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Colores dinámicos</h4>
+                                <p>El sprite cambia de color según el estado: suelo (verde), subida (azul), pico (amarillo), caída (rojo).</p>
+                            </div>
+                        </div>
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-wind"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Sistema de partículas</h4>
+                                <p>Partículas de salto, colisión, movimiento y "no salto" para feedback visual inmediato.</p>
+                            </div>
+                        </div>
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-weight-hanging"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Gravedad por fases</h4>
+                                <p>Tres valores de gravedad distintos: subida (ligera), pico (mínima) y caída (pesada) para un salto más natural.</p>
+                            </div>
+                        </div>
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-video"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Cámara suave</h4>
+                                <p>Seguimiento con <code>SmoothDamp</code> que se adapta a la velocidad del jugador.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles -->
+                <div class="controls__section">
+                    <h2 class="proyecto__section-title">Controles</h2>
+                    <div class="controls__grid">
+                        <div class="controls__column">
+                            <h3 class="controls__title">
+                                <i class="fa-solid fa-arrows-up-down-left-right"></i> Movimiento
+                            </h3>
+                            <ul class="controls__list">
+                                <li><span class="controls__key">A / ←</span> Mover izquierda</li>
+                                <li><span class="controls__key">D / →</span> Mover derecha</li>
+                                <li><span class="controls__key">W / ↑</span> Saltar (mantener para altura)</li>
+                            </ul>
+                        </div>
+                        <div class="controls__column">
+                            <h3 class="controls__title">
+                                <i class="fa-solid fa-sliders"></i> Acciones
+                            </h3>
+                            <ul class="controls__list">
+                                <li><span class="controls__key">M</span> Cambiar modo de movimiento</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack detallado -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Motor & Lógica</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-unity"></i> Unity 2D</li>
+                                <li><i class="fa-solid fa-code"></i> C# (Scripts)</li>
+                                <li><i class="fa-solid fa-cube"></i> Rigidbody2D</li>
+                                <li><i class="fa-solid fa-arrows-up-down-left-right"></i> Physics2D</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Gameplay Systems</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-file-code"></i> ScriptableObjects</li>
+                                <li><i class="fa-solid fa-layer-group"></i> State Machine (gravedad)</li>
+                                <li><i class="fa-solid fa-bullseye"></i> Raycast2D (ground check)</li>
+                                <li><i class="fa-solid fa-rotate"></i> Multi-jump system</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Visual & FX</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-wand-magic-sparkles"></i> Particle System</li>
+                                <li><i class="fa-solid fa-palette"></i> Gradient (colores aéreos)</li>
+                                <li><i class="fa-solid fa-image"></i> SpriteRenderer</li>
+                                <li><i class="fa-solid fa-video"></i> SmoothDamp (cámara)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería / Screenshots -->
+                <div class="proyecto__gallery">
+                    <h2 class="proyecto__section-title">Capturas de pantalla</h2>
+                    <div class="gallery__grid-proyecto">
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Gameplay - Modo Basic</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Gameplay - Modo Underwater</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Gameplay - Modo Glider</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Gameplay - Modo Hectic</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Gameplay - Modo Rocket</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Gameplay - Modo Slippy Flappy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+
+                    <div class="links__container">
+                        <a href="https://evagr.itch.io/basic-platforms" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-itch-io"></i>
+                            Jugar en Itch.io
+                        </a>
+
+                        <a href="https://github.com/evagr11/Juego4" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

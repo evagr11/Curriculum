@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>App Tickets - Eva Gallardo</title>
+
+    <link rel="icon" href="../../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../../css/proyecto.css">
+
+    <style>
+        /* Estilos adicionales específicos para App Tickets */
+        .status__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #166534;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .status__badge i {
+            font-size: 0.8rem;
+        }
+
+        .doc__highlight {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .doc__highlight-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .doc__highlight-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .doc__highlight-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-black);
+        }
+
+        .doc__highlight-text {
+            color: var(--color-gray);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .doc__highlight-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .doc__highlight-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .doc__highlight-list li i {
+            color: var(--color-primary);
+            font-size: 0.8rem;
+        }
+
+        .states__grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .state__card {
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border: 2px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .state__card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 165, 181, 0.1);
+        }
+
+        .state__dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin: 0 auto 0.8rem;
+        }
+
+        .state__dot--nuevo { background: #0072B2; }
+        .state__dot--abierto { background: #009E73; }
+        .state__dot--proceso { background: #E69F00; }
+        .state__dot--resuelto { background: #CC79A7; }
+        .state__dot--cerrado { background: #666666; }
+
+        .state__name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.3rem;
+        }
+
+        .state__hex {
+            font-size: 0.75rem;
+            color: var(--color-gray-light);
+            font-family: 'Fira Code', monospace;
+        }
+
+        .gallery__grid-proyecto {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery__item-proyecto {
+            aspect-ratio: 9/16;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 2px dashed var(--color-border);
+            color: var(--color-gray-light);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery__item-proyecto:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            transform: scale(1.02);
+        }
+
+        .gallery__item-proyecto i {
+            font-size: 2rem;
+        }
+
+        .gallery__item-proyecto span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .architecture__diagram {
+            background: var(--color-bg-card);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--color-border);
+            margin-bottom: 3rem;
+        }
+
+        .architecture__diagram img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .architecture__caption {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--color-gray);
+            font-style: italic;
+        }
+
+        @media (max-width: 992px) {
+            .doc__highlight-list {
+                grid-template-columns: 1fr;
+            }
+            .states__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .gallery__grid-proyecto {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .states__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery__grid-proyecto {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../../assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+                    <h1 class="proyecto__title">App <span class="title__color">Tickets</span></h1>
+                    <p class="proyecto__subtitle">Gestión de incidencias con sistema de tickets de soporte</p>
+
+                    <div class="status__badge">
+                        <i class="fa-solid fa-check-circle"></i>
+                        Proyecto finalizado
+                    </div>
+
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Android</span>
+                        <span class="proyecto__tag">Java</span>
+                        <span class="proyecto__tag">XML</span>
+                        <span class="proyecto__tag">DAM</span>
+                    </div>
+                </header>
+
+                <!-- Mockup / Hero -->
+                <div class="proyecto__hero">
+                    <div class="proyecto__mockup">
+                        <i class="fa-solid fa-bug"></i>
+                        <span>TICKETS</span>
+                        <span style="font-size: 0.9rem; font-weight: 400;">Java · XML · Android Studio</span>
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>TICKETS</strong> es una aplicación móvil para la <strong>gestión de incidencias mediante tickets de soporte</strong>. 
+                        Desarrollada durante las asignaturas de <em>Desarrollo de Interfaces</em> y <em>Programación de Dispositivos Multimedia</em> 
+                        del segundo año de DAM, como proyecto práctico para consolidar conceptos de desarrollo Android nativo.
+                    </p>
+                    <p class="proyecto__text">
+                        La app permite <strong>crear, editar y consultar tickets</strong> con título, descripción, pasos para reproducir el problema 
+                        y estado del ticket. Incluye un <strong>listado dinámico con filtros por estado</strong> y un sistema de persistencia 
+                        en archivos locales dentro del almacenamiento interno de la app.
+                    </p>
+                    <p class="proyecto__text">
+                        Un aspecto clave del diseño fue la <strong>accesibilidad visual</strong>: los colores de los estados fueron seleccionados 
+                        específicamente para ser distinguibles por personas con daltonismo, siguiendo pautas de contraste y percepción.
+                    </p>
+                </div>
+
+                <!-- Documentación destacada -->
+                <div class="doc__highlight">
+                    <div class="doc__highlight-header">
+                        <div class="doc__highlight-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="doc__highlight-title">Documentación técnica completa en LaTeX</h3>
+                    </div>
+                    <p class="doc__highlight-text">
+                        El proyecto incluye una documentación exhaustiva generada en <strong>LaTeX</strong>, que abarca desde la descripción general 
+                        hasta la documentación técnica clase por clase. El documento contiene diagrama de clases UML, diseño de interfaces, 
+                        requisitos funcionales y no funcionales, y código comentado de cada componente.
+                    </p>
+                    <ul class="doc__highlight-list">
+                        <li><i class="fa-solid fa-check"></i> Descripción general y alcance</li>
+                        <li><i class="fa-solid fa-check"></i> Diagrama de clases UML</li>
+                        <li><i class="fa-solid fa-check"></i> Diseño de interfaces (Figma + mockups)</li>
+                        <li><i class="fa-solid fa-check"></i> 10 requisitos funcionales documentados</li>
+                        <li><i class="fa-solid fa-check"></i> 10 requisitos no funcionales</li>
+                        <li><i class="fa-solid fa-check"></i> Código fuente comentado (8 clases)</li>
+                    </ul>
+                </div>
+
+                <!-- Estados con colores accesibles -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Sistema de estados (accesible)</h2>
+                    <p class="proyecto__text" style="margin-bottom: 1.5rem;">
+                        Cada ticket puede tener uno de cinco estados, representados con colores cuidadosamente seleccionados 
+                        para garantizar la <strong>distinguibilidad incluso para personas con daltonismo</strong>:
+                    </p>
+                    <div class="states__grid">
+                        <div class="state__card">
+                            <div class="state__dot state__dot--nuevo"></div>
+                            <div class="state__name">Nuevo</div>
+                            <div class="state__hex">#0072B2</div>
+                        </div>
+                        <div class="state__card">
+                            <div class="state__dot state__dot--abierto"></div>
+                            <div class="state__name">Abierto</div>
+                            <div class="state__hex">#009E73</div>
+                        </div>
+                        <div class="state__card">
+                            <div class="state__dot state__dot--proceso"></div>
+                            <div class="state__name">En Proceso</div>
+                            <div class="state__hex">#E69F00</div>
+                        </div>
+                        <div class="state__card">
+                            <div class="state__dot state__dot--resuelto"></div>
+                            <div class="state__name">Resuelto</div>
+                            <div class="state__hex">#CC79A7</div>
+                        </div>
+                        <div class="state__card">
+                            <div class="state__dot state__dot--cerrado"></div>
+                            <div class="state__name">Cerrado</div>
+                            <div class="state__hex">#666666</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid de características -->
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-plus-circle"></i>
+                        </div>
+                        <h3 class="feature__title">Crear Tickets</h3>
+                        <p class="feature__text">Formulario completo con título, descripción, pasos para reproducir y asignación automática de estado "Nuevo" e ID incremental.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <h3 class="feature__title">Editar Existentes</h3>
+                        <p class="feature__text">Al tocar un ticket del listado, se abre el formulario pre-relleno permitiendo modificar cualquier campo y cambiar el estado.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-filter"></i>
+                        </div>
+                        <h3 class="feature__title">Filtrado por Estado</h3>
+                        <p class="feature__text">Chips interactivos en la parte superior permiten filtrar el listado dinámicamente por cualquier combinación de estados.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-eye-low-vision"></i>
+                        </div>
+                        <h3 class="feature__title">Accesibilidad Visual</h3>
+                        <p class="feature__text">Paleta de colores seleccionada según pautas de percepción para daltonismo, asegurando distinguibilidad entre todos los estados.</p>
+                    </div>
+                </div>
+
+                <!-- Tech Stack detallado -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Lenguaje & UI</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-java"></i> Java</li>
+                                <li><i class="fa-brands fa-android"></i> XML Layouts</li>
+                                <li><i class="fa-solid fa-mobile"></i> Android Studio</li>
+                                <li><i class="fa-solid fa-list"></i> ListView + Adapter</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Arquitectura</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-sitemap"></i> Fragments + Activity</li>
+                                <li><i class="fa-solid fa-box"></i> BottomNavigationView</li>
+                                <li><i class="fa-solid fa-file"></i> Persistencia en archivos</li>
+                                <li><i class="fa-solid fa-hashtag"></i> IDs auto-incrementales</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Herramientas</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-figma"></i> Figma (Prototipado)</li>
+                                <li><i class="fa-solid fa-file-pdf"></i> LaTeX (Documentación)</li>
+                                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+                                <li><i class="fa-solid fa-palette"></i> Material Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería / Screenshots -->
+                <div class="proyecto__gallery">
+                    <h2 class="proyecto__section-title">Diseño de pantallas</h2>
+                    <div class="gallery__grid-proyecto">
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Landing / Bienvenida</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Listado de Tickets</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Crear / Editar Ticket</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Filtros por Estado</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Colores Accesibles</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Navegación Bottom Bar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figma -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Prototipo en Figma</h2>
+                    <div class="proyecto__figma-container">
+                        <iframe
+                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/NmwBX1yFDd8fz87Yt1ka3q/TICKETS?node-id=0-1&t=HI8ZvVFxp6JqF2Dr-1"
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="600"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <!-- Documentación PDF Preview -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Documentación técnica</h2>
+                    <div class="proyecto__pdf-container">
+                        <iframe 
+                            src="../../assets/pdf/TICKETS.pdf" 
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="700"
+                            style="border: none; border-radius: 16px;">
+                        </iframe>
+                    </div>
+                    <a href="../../assets/pdf/TICKETS.pdf" download class="proyecto__canva-link" style="margin-top: 1rem; display: inline-flex;">
+                        <i class="fa-solid fa-download"></i> Descargar PDF
+                    </a>
+                </section>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+
+                    <div class="links__container">
+                        <a href="https://github.com/evagr11/AppTickets" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+
+                        <a href="https://www.figma.com/design/NmwBX1yFDd8fz87Yt1ka3q/TICKETS" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-figma"></i>
+                            Ver diseño en Figma
+                        </a>
+
+                        <a href="../../assets/pdf/TICKETS.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Documentación PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

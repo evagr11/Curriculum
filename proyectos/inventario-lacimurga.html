@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Inventario IES Lacimurga - Eva Gallardo</title>
+
+    <link rel="icon" href="../../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../../css/proyecto.css">
+
+    <style>
+        /* Estilos adicionales específicos para Inventario IES Lacimurga */
+        .status__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #166534;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .status__badge i {
+            font-size: 0.8rem;
+        }
+
+        .features__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .feature__item:hover {
+            border-color: var(--color-primary);
+            transform: translateX(5px);
+        }
+
+        .feature__icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .feature__content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.3rem;
+        }
+
+        .feature__content p {
+            font-size: 0.85rem;
+            color: var(--color-gray);
+            line-height: 1.5;
+        }
+
+        .gallery__grid-proyecto {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery__item-proyecto {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 2px dashed var(--color-border);
+            color: var(--color-gray-light);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery__item-proyecto:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            transform: scale(1.02);
+        }
+
+        .gallery__item-proyecto i {
+            font-size: 2rem;
+        }
+
+        .gallery__item-proyecto span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .figma__container {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .figma__iframe {
+            border: none;
+            display: block;
+        }
+
+        @media (max-width: 992px) {
+            .features__grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery__grid-proyecto {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery__grid-proyecto {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<base target="_blank">
+<base target="_blank">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../../assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h1 class="proyecto__title">Inventario <span class="title__color">IES Lacimurga</span></h1>
+                    <p class="proyecto__subtitle">App web de inventario para gestión de material deportivo y educativo</p>
+
+                    <div class="status__badge">
+                        <i class="fa-solid fa-check-circle"></i>
+                        Proyecto finalizado
+                    </div>
+
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Web</span>
+                        <span class="proyecto__tag">JavaScript</span>
+                        <span class="proyecto__tag">CSS3</span>
+                        <span class="proyecto__tag">GitHub Pages</span>
+                        <span class="proyecto__tag">DAM</span>
+                    </div>
+                </header>
+
+                <!-- Hero con screenshot + botón -->
+                <div class="proyecto__hero">
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                        <!-- Screenshot placeholder -->
+                        <div style="width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #3d7ab5 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; gap: 1rem;">
+                            <i class="fa-solid fa-box-open" style="font-size: 5rem; opacity: 0.8;"></i>
+                            <span style="font-size: 1.5rem; font-weight: 600;">Inventario IES Lacimurga</span>
+                            <span style="font-size: 0.9rem; opacity: 0.7;">Gestión de material deportivo y educativo</span>
+                        </div>
+
+                        <!-- Overlay con botón -->
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; justify-content: center;">
+                            <a href="https://ieslacimurga.github.io/Inventario/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                                <i class="fa-solid fa-globe" style="font-size: 1.3rem;"></i>
+                                Ver en GitHub Pages
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>Inventario IES Lacimurga</strong> es una aplicación web de inventario desarrollada de manera 
+                        <strong>desinteresada</strong> para mi antiguo instituto <strong>IES Lacimurga</strong>. Permite gestionar 
+                        el material deportivo y educativo del centro, con búsqueda por categorías, control de stock por tallas 
+                        y exportación a Excel.
+                    </p>
+                    <p class="proyecto__text">
+                        El proyecto está alojado en una <strong>organización de GitHub</strong> creada específicamente para el instituto, 
+                        con GitHub Pages como hosting. Actualmente contiene datos de muestra, a la espera de incorporar el 
+                        inventario real del centro.
+                    </p>
+                </div>
+
+                <!-- Características principales -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Características principales</h2>
+                    <div class="features__grid">
+                        <div class="feature__item">
+                            <div class="feature__icon">
+                                <i class="fa-solid fa-folder-tree"></i>
+                            </div>
+                            <div class="feature__content">
+                                <h4>Categorías dinámicas</h4>
+                                <p>Sidebar con categorías y subcategorías desplegables para filtrar materiales por tipo.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature__item">
+                            <div class="feature__icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="feature__content">
+                                <h4>Búsqueda inteligente</h4>
+                                <p>Normalización de tildes y caracteres especiales para búsquedas precisas en tiempo real.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature__item">
+                            <div class="feature__icon">
+                                <i class="fa-solid fa-table"></i>
+                            </div>
+                            <div class="feature__content">
+                                <h4>Tabla avanzada</h4>
+                                <p>Paginación, ordenación por columnas y filtros combinados para gestión eficiente.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature__item">
+                            <div class="feature__icon">
+                                <i class="fa-solid fa-ruler-combined"></i>
+                            </div>
+                            <div class="feature__content">
+                                <h4>Inventario por tallas</h4>
+                                <p>Detalle de cada material con control de stock individual por talla (XS a XXL).</p>
+                            </div>
+                        </div>
+
+                        <div class="feature__item">
+                            <div class="feature__icon">
+                                <i class="fa-solid fa-file-excel"></i>
+                            </div>
+                            <div class="feature__content">
+                                <h4>Exportación Excel</h4>
+                                <p>Descarga del inventario filtrado en formato .xlsx para gestión externa del centro.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature__item">
+                            <div class="feature__icon">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <div class="feature__content">
+                                <h4>Diseño responsive</h4>
+                                <p>Menú hamburguesa y adaptación completa para tablets y móviles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack detallado -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Frontend</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-html5"></i> HTML5 Semántico</li>
+                                <li><i class="fa-brands fa-css3-alt"></i> CSS3 (Flexbox/Grid)</li>
+                                <li><i class="fa-brands fa-js"></i> JavaScript Vanilla</li>
+                                <li><i class="fa-solid fa-font-awesome"></i> Font Awesome</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Datos & Lógica</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-database"></i> JSON estático (data.js)</li>
+                                <li><i class="fa-solid fa-floppy-disk"></i> LocalStorage</li>
+                                <li><i class="fa-solid fa-table-cells"></i> Paginación JS</li>
+                                <li><i class="fa-solid fa-filter"></i> Filtros dinámicos</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Herramientas</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-github"></i> GitHub Pages</li>
+                                <li><i class="fa-solid fa-building"></i> GitHub Organization</li>
+                                <li><i class="fa-brands fa-figma"></i> Figma (prototipo)</li>
+                                <li><i class="fa-solid fa-file-excel"></i> SheetJS (Excel)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería / Screenshots -->
+                <div class="proyecto__gallery">
+                    <h2 class="proyecto__section-title">Capturas de pantalla</h2>
+                    <div class="gallery__grid-proyecto">
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Vista general de la app</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Tabla con filtros</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Detalle de material</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Versión móvil</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Exportación Excel</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Búsqueda avanzada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figma -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Prototipo en Figma</h2>
+                    <div class="figma__container">
+                        <iframe
+                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/wk6avKTmmMpyyWOytJhW6S/inventario"
+                            class="figma__iframe"
+                            width="100%"
+                            height="600"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+
+                    <div class="links__container">
+                        <a href="https://ieslacimurga.github.io/Inventario/" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-solid fa-globe"></i>
+                            Ver en GitHub Pages
+                        </a>
+
+                        <a href="https://github.com/IESLACIMURGA/Inventario" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver repositorio
+                        </a>
+
+                        <a href="https://www.figma.com/design/wk6avKTmmMpyyWOytJhW6S/inventario" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-figma"></i>
+                            Ver en Figma
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Marketplace Android - Eva Gallardo</title>
+
+    <link rel="icon" href="../../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../../css/proyecto.css">
+
+    <style>
+        /* Estilos adicionales específicos para Marketplace */
+        .status__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            color: #92400e;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .status__badge i {
+            font-size: 0.7rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .roadmap__section {
+            margin-bottom: 3rem;
+        }
+
+        .roadmap__list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .roadmap__item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .roadmap__item:hover {
+            border-color: var(--color-primary);
+            transform: translateX(5px);
+        }
+
+        .roadmap__item--done {
+            border-left: 4px solid #22c55e;
+        }
+
+        .roadmap__item--progress {
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .roadmap__item--pending {
+            border-left: 4px solid var(--color-border);
+            opacity: 0.7;
+        }
+
+        .roadmap__icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .roadmap__item--done .roadmap__icon {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .roadmap__item--progress .roadmap__icon {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+        }
+
+        .roadmap__item--pending .roadmap__icon {
+            background: #f3f4f6;
+            color: #9ca3af;
+        }
+
+        .roadmap__content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.2rem;
+        }
+
+        .roadmap__content p {
+            font-size: 0.85rem;
+            color: var(--color-gray);
+        }
+
+        .roadmap__status {
+            margin-left: auto;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        .roadmap__item--done .roadmap__status {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .roadmap__item--progress .roadmap__status {
+            background: #fdf2f8;
+            color: var(--color-primary);
+        }
+
+        .roadmap__item--pending .roadmap__status {
+            background: #f3f4f6;
+            color: #9ca3af;
+        }
+
+        .gallery__grid-proyecto {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery__item-proyecto {
+            aspect-ratio: 9/16;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 2px dashed var(--color-border);
+            color: var(--color-gray-light);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery__item-proyecto:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            transform: scale(1.02);
+        }
+
+        .gallery__item-proyecto i {
+            font-size: 2rem;
+        }
+
+        .gallery__item-proyecto span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 992px) {
+            .gallery__grid-proyecto {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery__grid-proyecto {
+                grid-template-columns: 1fr;
+            }
+
+            .roadmap__item {
+                flex-wrap: wrap;
+            }
+
+            .roadmap__status {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../../assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-shop"></i>
+                    </div>
+                    <h1 class="proyecto__title">Marketplace <span class="title__color">Android</span></h1>
+                    <p class="proyecto__subtitle">App de comercio electrónico con Jetpack Compose</p>
+
+                    <div class="status__badge">
+                        <i class="fa-solid fa-circle"></i>
+                        En desarrollo activo
+                    </div>
+
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Android</span>
+                        <span class="proyecto__tag">Kotlin</span>
+                        <span class="proyecto__tag">Jetpack Compose</span>
+                        <span class="proyecto__tag">MVVM</span>
+                    </div>
+                </header>
+
+                <!-- Mockup / Hero -->
+                <div class="proyecto__hero">
+                    <div class="proyecto__mockup">
+                        <i class="fa-brands fa-android"></i>
+                        <span>App Marketplace Android</span>
+                        <span style="font-size: 0.9rem; font-weight: 400;">Jetpack Compose · Kotlin</span>
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>Marketplace Android</strong> es una aplicación de comercio electrónico desarrollada en 
+                        <strong>Android Studio</strong> como proyecto personal de aprendizaje. El objetivo principal es 
+                        demostrar dominio de la arquitectura moderna de Android, utilizando <strong>Kotlin</strong> y 
+                        <strong>Jetpack Compose</strong> para construir interfaces declarativas y reactivas.
+                    </p>
+                    <p class="proyecto__text">
+                        Actualmente la app se encuentra en <strong>desarrollo activo</strong>. La estructura base está 
+                        implementada con sistema de navegación, pantalla de login y home. No incluye backend real ni 
+                        sistema de pagos — el foco está en la <strong>arquitectura frontend</strong>, patrones de diseño 
+                        y buenas prácticas de desarrollo Android.
+                    </p>
+                </div>
+
+                <!-- Roadmap / Estado -->
+                <div class="roadmap__section">
+                    <h2 class="proyecto__section-title">Estado de desarrollo</h2>
+                    <div class="roadmap__list">
+
+                        <div class="roadmap__item roadmap__item--done">
+                            <div class="roadmap__icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="roadmap__content">
+                                <h4>Sistema de Login</h4>
+                                <p>Pantalla de autenticación con validación de campos</p>
+                            </div>
+                            <span class="roadmap__status">Completado</span>
+                        </div>
+
+                        <div class="roadmap__item roadmap__item--done">
+                            <div class="roadmap__icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="roadmap__content">
+                                <h4>Home / Feed de Productos</h4>
+                                <p>Vista principal con listado de artículos</p>
+                            </div>
+                            <span class="roadmap__status">Completado</span>
+                        </div>
+
+                        <div class="roadmap__item roadmap__item--done">
+                            <div class="roadmap__icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="roadmap__content">
+                                <h4>Navegación Bottom Bar</h4>
+                                <p>Sistema de navegación entre pantallas principales</p>
+                            </div>
+                            <span class="roadmap__status">Completado</span>
+                        </div>
+
+                        <div class="roadmap__item roadmap__item--progress">
+                            <div class="roadmap__icon">
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+                            </div>
+                            <div class="roadmap__content">
+                                <h4>Detalle de Producto</h4>
+                                <p>Vista individual con imágenes, descripción y acciones</p>
+                            </div>
+                            <span class="roadmap__status">En progreso</span>
+                        </div>
+
+                        <div class="roadmap__item roadmap__item--pending">
+                            <div class="roadmap__icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div class="roadmap__content">
+                                <h4>Carrito de Compras</h4>
+                                <p>Gestión de items seleccionados con persistencia local</p>
+                            </div>
+                            <span class="roadmap__status">Pendiente</span>
+                        </div>
+
+                        <div class="roadmap__item roadmap__item--pending">
+                            <div class="roadmap__icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div class="roadmap__content">
+                                <h4>Perfil de Usuario</h4>
+                                <p>Gestión de datos personales y historial</p>
+                            </div>
+                            <span class="roadmap__status">Pendiente</span>
+                        </div>
+
+                        <div class="roadmap__item roadmap__item--pending">
+                            <div class="roadmap__icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div class="roadmap__content">
+                                <h4>Búsqueda y Filtros</h4>
+                                <p>Sistema de búsqueda por categorías y precio</p>
+                            </div>
+                            <span class="roadmap__status">Pendiente</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Grid de características -->
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="feature__title">Arquitectura MVVM</h3>
+                        <p class="feature__text">Separación de responsabilidades con ViewModel, UI State y Compose UI layer.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-paintbrush"></i>
+                        </div>
+                        <h3 class="feature__title">Jetpack Compose</h3>
+                        <p class="feature__text">UI 100% declarativa con componentes reutilizables, theming y animaciones.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <h3 class="feature__title">Navegación Type-Safe</h3>
+                        <p class="feature__text">Navigation Compose con rutas tipadas y transiciones entre pantallas.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-shapes"></i>
+                        </div>
+                        <h3 class="feature__title">Material Design 3</h3>
+                        <p class="feature__text">Componentes Material3 con paleta personalizada, tipografía y shape system.</p>
+                    </div>
+                </div>
+
+                <!-- Tech Stack detallado -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Lenguaje & UI</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-android"></i> Kotlin</li>
+                                <li><i class="fa-solid fa-paint-brush"></i> Jetpack Compose</li>
+                                <li><i class="fa-solid fa-shapes"></i> Material Design 3</li>
+                                <li><i class="fa-solid fa-font"></i> Material Icons</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Arquitectura</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-layer-group"></i> MVVM Pattern</li>
+                                <li><i class="fa-solid fa-box"></i> ViewModel</li>
+                                <li><i class="fa-solid fa-database"></i> StateFlow / Compose State</li>
+                                <li><i class="fa-solid fa-route"></i> Navigation Compose</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Herramientas</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-mobile"></i> Android Studio</li>
+                                <li><i class="fa-brands fa-figma"></i> Figma (Prototipado)</li>
+                                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+                                <li><i class="fa-brands fa-gradle"></i> Gradle Kotlin DSL</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería / Screenshots -->
+                <div class="proyecto__gallery">
+                    <h2 class="proyecto__section-title">Screenshots</h2>
+                    <div class="gallery__grid-proyecto">
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Login Screen</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Home / Feed</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Detalle Producto</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Carrito</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Perfil</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Navegación</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figma -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Prototipo en Figma</h2>
+                    <div class="proyecto__figma-container">
+                        <iframe
+                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/7uklpWrJOFTZ93qdhkZrzX/Marketplace?t=HI8ZvVFxp6JqF2Dr-1"
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="600"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+
+                    <div class="links__container">
+                        <a href="https://github.com/evagr11/AppMarkeplace" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+
+                        <a href="https://www.figma.com/design/7uklpWrJOFTZ93qdhkZrzX/Marketplace" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-figma"></i>
+                            Ver diseño en Figma
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

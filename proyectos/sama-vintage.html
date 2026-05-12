@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Sama Vintage - Eva Gallardo</title>
+
+    <link rel="icon" href="../../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../../css/proyecto.css">
+
+    <style>
+        /* Estilos adicionales específicos para Sama Vintage */
+        .proyecto__hero-image {
+            border: 1px solid var(--color-border);
+        }
+
+        .evolution__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .evolution__card {
+            background: var(--color-bg-card);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--color-border);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .evolution__card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 165, 181, 0.1);
+        }
+
+        .evolution__card--wordpress {
+            border-color: #8B1E2D;
+        }
+
+        .evolution__card--static {
+            border-color: var(--color-primary);
+            background: linear-gradient(135deg, #fff 0%, #fdf2f8 100%);
+        }
+
+        .evolution__icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .evolution__card--wordpress .evolution__icon {
+            color: #8B1E2D;
+        }
+
+        .evolution__card--static .evolution__icon {
+            color: var(--color-primary);
+        }
+
+        .evolution__title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .evolution__text {
+            font-size: 0.9rem;
+            color: var(--color-gray);
+            line-height: 1.6;
+        }
+
+        .evolution__tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .gallery__grid-proyecto {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery__item-proyecto {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 2px dashed var(--color-border);
+            color: var(--color-gray-light);
+            transition: var(--transition);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .gallery__item-proyecto:hover {
+            border-color: var(--color-primary);
+            transform: scale(1.02);
+        }
+
+        .gallery__item-proyecto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 13px;
+        }
+
+        @media (max-width: 992px) {
+            .evolution__grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery__grid-proyecto {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery__grid-proyecto {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../../assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h1 class="proyecto__title">Sama <span class="title__color">Vintage</span></h1>
+                    <p class="proyecto__subtitle">Ecommerce estático de joyería vintage | Rebranding completo</p>
+
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Web</span>
+                        <span class="proyecto__tag">Ecommerce</span>
+                        <span class="proyecto__tag">Frontend</span>
+                        <span class="proyecto__tag">DAM</span>
+                    </div>
+                </header>
+
+                <!-- Imagen principal / Mockup -->
+                <div class="proyecto__hero">
+                    <img src="https://evagr11.github.io/sama-vintage/assets/images/BORCHE-MARIPOSA-DORADO-1.png" alt="Sama Vintage - Joyería" class="proyecto__hero-image">
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>Sama Vintage</strong> es un sitio web estático de ecommerce para una tienda de joyería vintage. 
+                        El proyecto surgió como parte del módulo <strong>SGE (Sistemas de Gestión Empresarial)</strong> del segundo 
+                        curso de DAM, donde el objetivo era realizar el <strong>rebranding completo</strong> de una web real existente.
+                    </p>
+                    <p class="proyecto__text">
+                        Inicialmente se desarrolló en <strong>WordPress</strong> con WooCommerce, utilizando plugins como 
+                        Code Snippets, Contact Form 7 y Simple Custom CSS. Posteriormente, reconstruí el proyecto desde cero 
+                        como sitio estático en <strong>HTML, CSS y JavaScript vanilla</strong>, eliminando dependencias de CMS 
+                        para crear una versión portable y mantenible como portfolio.
+                    </p>
+                </div>
+
+                <!-- Evolución del proyecto -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Evolución del proyecto</h2>
+                    <div class="evolution__grid">
+                        <div class="evolution__card evolution__card--wordpress">
+                            <div class="evolution__icon">
+                                <i class="fa-brands fa-wordpress"></i>
+                            </div>
+                            <h3 class="evolution__title">Fase 1: WordPress</h3>
+                            <p class="evolution__text">
+                                Versión original desarrollada en equipo con WooCommerce, 
+                                plugins personalizados y tema customizado. Proyecto académico 
+                                colaborativo con compañeros de clase.
+                            </p>
+                            <span class="evolution__tag">Proyecto en equipo</span>
+                        </div>
+
+                        <div class="evolution__card evolution__card--static">
+                            <div class="evolution__icon">
+                                <i class="fa-brands fa-html5"></i>
+                            </div>
+                            <h3 class="evolution__title">Fase 2: Sitio Estático</h3>
+                            <p class="evolution__text">
+                                Reconstrucción completa en HTML/CSS/JS puro. Carrito persistente 
+                                con localStorage, páginas dinámicas vía URL params y deploy en 
+                                GitHub Pages.
+                            </p>
+                            <span class="evolution__tag">Portfolio personal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid de características -->
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="feature__title">Catálogo de Productos</h3>
+                        <p class="feature__text">Visualización de 50+ piezas de joyería organizadas por categorías: broches, pendientes y collares.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="feature__title">Páginas Dinámicas</h3>
+                        <p class="feature__text">Vista detallada de producto reutilizable mediante parámetros <code>?id=</code> en la URL.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <h3 class="feature__title">Carrito Persistente</h3>
+                        <p class="feature__text">Añadir, eliminar y actualizar productos con persistencia en localStorage entre sesiones.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <h3 class="feature__title">Diseño Responsive</h3>
+                        <p class="feature__text">Navegación adaptable con menú responsive controlado por JavaScript. Compatible con todos los dispositivos.</p>
+                    </div>
+                </div>
+
+                <!-- Tech Stack detallado -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Frontend</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-html5"></i> HTML5 Semántico</li>
+                                <li><i class="fa-brands fa-css3-alt"></i> CSS3 + Variables</li>
+                                <li><i class="fa-brands fa-js"></i> JavaScript Vanilla</li>
+                                <li><i class="fa-solid fa-database"></i> localStorage API</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Diseño & Prototipado</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-figma"></i> Figma (Prototipos)</li>
+                                <li><i class="fa-brands fa-canva"></i> Canva (Guía de estilos)</li>
+                                <li><i class="fa-solid fa-palette"></i> Paleta: Granate, Dorado, Crema</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Deploy & Origen</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-github"></i> GitHub Pages</li>
+                                <li><i class="fa-brands fa-wordpress"></i> WordPress (v1.0)</li>
+                                <li><i class="fa-brands fa-woocommerce"></i> WooCommerce (v1.0)</li>
+                                <li><i class="fa-solid fa-plug"></i> Code Snippets, CF7</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería / Screenshots -->
+                <div class="proyecto__gallery">
+                    <h2 class="proyecto__section-title">Galería de productos</h2>
+                    <div class="gallery__grid-proyecto">
+                        <div class="gallery__item-proyecto">
+                            <img src="https://evagr11.github.io/sama-vintage/assets/images/BORCHE-MARIPOSA-DORADO-1.png" alt="Broche Mariposa">
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <img src="https://evagr11.github.io/sama-vintage/assets/images/BROCHE-BRILANTE-ESTRELLA-DE-MAR-PIEDRA-BLANCA-1.png" alt="Broche Estrella de Mar">
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <img src="https://evagr11.github.io/sama-vintage/assets/images/Broche-Caballo-Dorado-1.png" alt="Broche Caballo">
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <img src="https://evagr11.github.io/sama-vintage/assets/images/COLGANTE-DORADO-NUDO-1.png" alt="Colgante Dorado">
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <img src="https://evagr11.github.io/sama-vintage/assets/images/PENDIENTE-CIRCULAR-CON-PIEDRA-ROSA-NUDE-Y-FRANJA-DORADA-Y-CIRCULOS-DORADOS-1.png" alt="Pendiente Circular">
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <img src="https://evagr11.github.io/sama-vintage/assets/images/PENDIENTE-DORADO-ESTILO-TABLERO-DE-AJEDREZ-CON-CUADRADOS-NEGROS-Y-DORADOS-1.png" alt="Pendiente Ajedrez">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guía de estilos Canva -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Guía de estilos</h2>
+                    <div class="proyecto__canva-container">
+                        <iframe 
+                            src="https://www.canva.com/design/DAHJc2xwsEQ/YocAPbgGcrajA-eUFvZ1Yg/view?embed" 
+                            class="proyecto__iframe"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <a href="https://www.canva.com/design/DAHJc2xwsEQ/YocAPbgGcrajA-eUFvZ1Yg/view" target="_blank" class="proyecto__canva-link">
+                        <i class="fa-solid fa-expand"></i> Ver en pantalla completa
+                    </a>
+                </section>
+
+                <!-- Figma -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Diseño en Figma</h2>
+                    <div class="proyecto__figma-container">
+                        <iframe
+                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/7KPGwbiydSfIxcY5ylmO27/SAMA-VINTAGE?node-id=0-1&t=HI8ZvVFxp6JqF2Dr-1"
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="600"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+
+                    <div class="links__container">
+                        <a href="https://evagr11.github.io/sama-vintage/" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-solid fa-globe"></i>
+                            Ver web en vivo
+                        </a>
+
+                        <a href="https://github.com/evagr11/sama-vintage" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+
+                        <a href="https://www.figma.com/design/7KPGwbiydSfIxcY5ylmO27/SAMA-VINTAGE" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-figma"></i>
+                            Ver en Figma
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

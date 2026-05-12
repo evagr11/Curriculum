@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Juego5 - Eva Gallardo</title>
+
+    <link rel="icon" href="../../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../../css/proyecto.css">
+
+    <style>
+        /* Estilos adicionales específicos para Juego5 */
+        .status__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #166534;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .status__badge i {
+            font-size: 0.8rem;
+        }
+
+        .abilities__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .ability__card {
+            background: var(--color-bg-card);
+            border-radius: 15px;
+            padding: 1.8rem;
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ability__card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 165, 181, 0.1);
+            border-color: var(--color-primary);
+        }
+
+        .ability__card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+        }
+
+        .ability__header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .ability__icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .ability__title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-black);
+        }
+
+        .ability__key {
+            font-size: 0.75rem;
+            color: var(--color-gray-light);
+            background: #f3f4f6;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .ability__text {
+            font-size: 0.9rem;
+            color: var(--color-gray);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .ability__stats {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .ability__stat {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--color-gray-light);
+        }
+
+        .ability__stat i {
+            color: var(--color-primary);
+        }
+
+        .mechanics__list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .mechanic__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .mechanic__item:hover {
+            border-color: var(--color-primary);
+            transform: translateX(5px);
+        }
+
+        .mechanic__icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .mechanic__content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.3rem;
+        }
+
+        .mechanic__content p {
+            font-size: 0.85rem;
+            color: var(--color-gray);
+            line-height: 1.5;
+        }
+
+        .controls__section {
+            margin-bottom: 3rem;
+        }
+
+        .controls__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .controls__player {
+            background: var(--color-bg-card);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .controls__player-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        .controls__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .controls__list li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .controls__key {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+            padding: 0.3rem 0.6rem;
+            background: #f3f4f6;
+            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+
+        .gallery__grid-proyecto {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery__item-proyecto {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 2px dashed var(--color-border);
+            color: var(--color-gray-light);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery__item-proyecto:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            transform: scale(1.02);
+        }
+
+        .gallery__item-proyecto i {
+            font-size: 2rem;
+        }
+
+        .gallery__item-proyecto span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .code__snippet {
+            background: #1e1e2e;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            overflow-x: auto;
+        }
+
+        .code__snippet pre {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #a6accd;
+            margin: 0;
+        }
+
+        .code__keyword { color: #c792ea; }
+        .code__string { color: #c3e88d; }
+        .code__variable { color: #82aaff; }
+        .code__comment { color: #676e95; font-style: italic; }
+        .code__function { color: #82aaff; }
+
+        @media (max-width: 992px) {
+            .abilities__grid {
+                grid-template-columns: 1fr;
+            }
+            .controls__grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery__grid-proyecto {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery__grid-proyecto {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../../assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h1 class="proyecto__title">Tri-<span class="title__color">Blaster</span></h1>
+                    <p class="proyecto__subtitle">Shooter arcade 2D con sistema de habilidades y cooldowns</p>
+
+                    <div class="status__badge">
+                        <i class="fa-solid fa-check-circle"></i>
+                        Proyecto finalizado
+                    </div>
+
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Unity</span>
+                        <span class="proyecto__tag">C#</span>
+                        <span class="proyecto__tag">2D</span>
+                        <span class="proyecto__tag">DAM</span>
+                    </div>
+                </header>
+
+                <!-- Hero con screenshot + botón de juego -->
+                <div class="proyecto__hero">
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                        <!-- Screenshot del juego (placeholder) -->
+                        <div style="width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; gap: 1rem;">
+                            <i class="fa-solid fa-crosshairs" style="font-size: 5rem; opacity: 0.8;"></i>
+                            <span style="font-size: 1.5rem; font-weight: 600;">Juego5</span>
+                            <span style="font-size: 0.9rem; opacity: 0.7;">Shooter 2D - Triángulo vs Círculos</span>
+                        </div>
+
+                        <!-- Overlay con botón -->
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; justify-content: center;">
+                            <a href="https://evagr.itch.io/juego5" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                                <i class="fa-brands fa-itch-io" style="font-size: 1.3rem;"></i> 
+                                Jugar ahora en Itch.io
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>Juego5</strong> es un <strong>shooter arcade en 2D</strong> desarrollado en <strong>Unity</strong> durante la asignatura de 
+                        <em>Programación</em> del primer año de DAM. El jugador controla un <strong>triángulo central</strong> que gira automáticamente 
+                        apuntando hacia la posición del puntero del ratón, creando una mecánica de apuntado fluida e intuitiva.
+                    </p>
+                    <p class="proyecto__text">
+                        Desde los bordes de la pantalla, <strong>círculos enemigos</strong> se acercan al centro con la intención de colisionar con el jugador. 
+                        El objetivo es eliminarlos usando un <strong>sistema de 4 habilidades</strong>, cada una con su propio cooldown visualizado 
+                        mediante barras de progreso en la interfaz.
+                    </p>
+                    <p class="proyecto__text">
+                        La vida del jugador y de los enemigos se representa con <strong>gradientes de color</strong> que cambian dinámicamente según el daño recibido, 
+                        proporcionando feedback visual inmediato del estado del combate.
+                    </p>
+                </div>
+
+                <!-- Mecánicas principales -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Mecánicas principales</h2>
+                    <div class="mechanics__list">
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-rotate"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Rotación con puntero</h4>
+                                <p>El triángulo del jugador gira constantemente apuntando hacia la posición del cursor del ratón, permitiendo apuntado preciso en 360°.</p>
+                            </div>
+                        </div>
+
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Vida con gradientes de color</h4>
+                                <p>La salud se visualiza mediante gradientes que cambian de verde a rojo, tanto en el jugador como en los enemigos, para feedback visual instantáneo.</p>
+                            </div>
+                        </div>
+
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-hourglass-half"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Sistema de cooldowns visuales</h4>
+                                <p>Cada habilidad muestra su cooldown mediante un icono que se rellena progresivamente. No se puede usar la habilidad hasta que el icono esté completo.</p>
+                            </div>
+                        </div>
+
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Spawning de enemigos</h4>
+                                <p>Los círculos enemigos aparecen desde los bordes de la pantalla y se dirigen hacia el centro, creando oleadas cada vez más intensas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Habilidades -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Sistema de habilidades (4 habilidades)</h2>
+                    <div class="abilities__grid">
+                        <div class="ability__card">
+                            <div class="ability__header">
+                                <div class="ability__icon">
+                                    <i class="fa-solid fa-fire"></i>
+                                </div>
+                                <div>
+                                    <h3 class="ability__title">Proyectil Básico</h3>
+                                    <span class="ability__key">Click Izquierdo</span>
+                                </div>
+                            </div>
+                            <p class="ability__text">
+                                Dispara un proyectil en la dirección del puntero. El tamaño del proyectil escala con la fuerza del jugador, 
+                                haciéndolo más poderoso según las mejoras.
+                            </p>
+                            <div class="ability__stats">
+                                <span class="ability__stat"><i class="fa-solid fa-clock"></i> Cooldown base</span>
+                                <span class="ability__stat"><i class="fa-solid fa-up-right-and-down-left-from-center"></i> Escala con fuerza</span>
+                            </div>
+                        </div>
+
+                        <div class="ability__card">
+                            <div class="ability__header">
+                                <div class="ability__icon">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div>
+                                    <h3 class="ability__title">Curación Instantánea</h3>
+                                    <span class="ability__key">Tecla 2</span>
+                                </div>
+                            </div>
+                            <p class="ability__text">
+                                Restaura una cantidad fija de salud al jugador. Incluye efectos de partículas visuales durante la curación. 
+                                Útil para recuperarse en momentos críticos.
+                            </p>
+                            <div class="ability__stats">
+                                <span class="ability__stat"><i class="fa-solid fa-heart"></i> +Vida fija</span>
+                                <span class="ability__stat"><i class="fa-solid fa-wand-magic-sparkles"></i> Efectos de partículas</span>
+                            </div>
+                        </div>
+
+                        <div class="ability__card">
+                            <div class="ability__header">
+                                <div class="ability__icon">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h3 class="ability__title">Boost de Curación</h3>
+                                    <span class="ability__key">Tecla 3</span>
+                                </div>
+                            </div>
+                            <p class="ability__text">
+                                Multiplica la regeneración de vida durante 10 segundos. Ideal para mantener la salud alta durante oleadas 
+                                intensas de enemigos.
+                            </p>
+                            <div class="ability__stats">
+                                <span class="ability__stat"><i class="fa-solid fa-clock"></i> Duración: 10s</span>
+                                <span class="ability__stat"><i class="fa-solid fa-percent"></i> Multiplicador de curación</span>
+                            </div>
+                        </div>
+
+                        <div class="ability__card">
+                            <div class="ability__header">
+                                <div class="ability__icon">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <div>
+                                    <h3 class="ability__title">Boost de Fuerza</h3>
+                                    <span class="ability__key">Tecla 4</span>
+                                </div>
+                            </div>
+                            <p class="ability__text">
+                                Duplica la fuerza del jugador durante 6 segundos. Los proyectiles son más grandes y causan más daño. 
+                                Incluye efectos visuales de potenciación.
+                            </p>
+                            <div class="ability__stats">
+                                <span class="ability__stat"><i class="fa-solid fa-clock"></i> Duración: 6s</span>
+                                <span class="ability__stat"><i class="fa-solid fa-hand-fist"></i> Fuerza ×2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles -->
+                <div class="controls__section">
+                    <h2 class="proyecto__section-title">Controles</h2>
+                    <div class="controls__grid">
+                        <div class="controls__player">
+                            <h3 class="controls__player-title">
+                                <i class="fa-solid fa-computer-mouse"></i> Movimiento y Ataque
+                            </h3>
+                            <ul class="controls__list">
+                                <li><span class="controls__key">Ratón</span> Apuntar (el triángulo sigue el cursor)</li>
+                                <li><span class="controls__key">Click Izq</span> Proyectil básico</li>
+                                <li><span class="controls__key">1 / 2 / 3 / 4</span> Seleccionar habilidad</li>
+                            </ul>
+                        </div>
+
+                        <div class="controls__player">
+                            <h3 class="controls__player-title">
+                                <i class="fa-solid fa-keyboard"></i> Acciones
+                            </h3>
+                            <ul class="controls__list">
+                                <li><span class="controls__key">Space</span> Iniciar juego</li>
+                                <li><span class="controls__key">R</span> Reiniciar tras derrota</li>
+                                <li><span class="controls__key">Click Izq</span> Usar habilidad seleccionada</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack detallado -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Motor & Lógica</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-unity"></i> Unity 2D</li>
+                                <li><i class="fa-solid fa-code"></i> C# (Scripts)</li>
+                                <li><i class="fa-solid fa-rotate"></i> Rotación con Mathf.Atan2</li>
+                                <li><i class="fa-solid fa-arrows-up-down-left-right"></i> Vector2 para movimiento</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Gameplay Systems</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-fire"></i> Sistema de 4 habilidades</li>
+                                <li><i class="fa-solid fa-hourglass"></i> Cooldowns con fillAmount</li>
+                                <li><i class="fa-solid fa-heart"></i> Vida con gradientes</li>
+                                <li><i class="fa-solid fa-bullseye"></i> Spawning de enemigos</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Visual & Eventos</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-palette"></i> Gradientes de color dinámicos</li>
+                                <li><i class="fa-solid fa-wand-magic-sparkles"></i> Efectos de partículas</li>
+                                <li><i class="fa-solid fa-bolt"></i> UnityEvent system</li>
+                                <li><i class="fa-solid fa-layer-group"></i> Patrón Director/Ability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería / Screenshots -->
+                <div class="proyecto__gallery">
+                    <h2 class="proyecto__section-title">Capturas de pantalla</h2>
+                    <div class="gallery__grid-proyecto">
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Triángulo apuntando con ratón</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Círculos enemigos acercándose</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Gradientes de vida</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Cooldowns de habilidades</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Proyectiles y efectos</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Pantalla de derrota</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+
+                    <div class="links__container">
+                        <a href="https://evagr.itch.io/juego5" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-itch-io"></i>
+                            Jugar en Itch.io
+                        </a>
+
+                        <a href="https://github.com/evagr11/Juego5" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

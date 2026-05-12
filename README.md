@@ -1,6 +1,6 @@
 # Portfolio Eva Gallardo - Estructura de Archivos
 
-Este proyecto ha sido refactorizado para separar el CSS en archivos independientes, mejorando la organización y mantenibilidad del código.
+Portfolio personal estático de Eva Gallardo, Desarrolladora de Aplicaciones Multiplataforma (DAM). Proyecto refactorizado con CSS modular, diseño responsive y navegación fluida entre proyectos.
 
 ## 📁 Estructura de Carpetas
 
@@ -10,65 +10,71 @@ Este proyecto ha sido refactorizado para separar el CSS en archivos independient
 │   ├── reset.css         # Reset y variables CSS
 │   ├── sidebar.css       # Estilos de la barra lateral
 │   ├── estilos.css       # Estilos del contenido principal
-│   └── responsive.css    # Media queries responsivas
+│   ├── responsive.css    # Media queries responsivas
+│   └── proyecto.css      # Estilos específicos para páginas de proyecto
 ├── js/
 │   ├── menu.js           # Funcionalidad del menú toggle
 │   └── maps.js           # Carga lazy de mapas
 ├── assets/
 │   ├── img/              # Imágenes
 │   ├── icons/            # Iconos
-│   └── cv/               # CV en PDF
+│   ├── cv/               # CV en PDF
+│   └── pdf/              # Documentación técnica (LaTeX)
+├── proyectos/
+│   ├── app-tickets.html      # App de gestión de incidencias 
+│   ├── imirly-android.html   # TFC - App de servicios profesionales (Kotlin/Spring Boot)
+│   ├── inventario-lacimurga.html  # App web de inventario (HTML/CSS/JS)
+│   ├── marketplace-android.html   # App ecommerce en desarrollo (Kotlin/Jetpack Compose)
+│   ├── multi-move.html       # Sandbox plataformas 2D (Unity/C#)
+│   ├── pokedex.html          # Enciclopedia Pokémon con PokeAPI (Java/XML)
+│   ├── real-time-tactics.html   # Juego táctica 1v1 por turnos (Unity/C#)
+│   ├── sama-vintage.html     # Ecommerce joyería vintage (HTML/CSS/JS)
+│   └── tri-blaster.html      # Shooter arcade 2D (Unity/C#)
 ├── index.html            # Página principal (Home)
 ├── sobremi.html          # Página Sobre Mí
 ├── curriculum.html       # Página Curriculum
-├── portafolio.html       # Página Portafolio
-├── contacto.html         # Página Contacto
+├── portfolio.html        # Página Portafolio con filtros
+├── contacto.html         # Página Contacto con mapas
 └── manifest.json         # Configuración PWA
 ```
 
-## 📄 Descripción de Archivos CSS
 
-### reset.css
-- Reset de estilos por defecto del navegador
-- Configuración base (tipografía, box-sizing)
-- Variables CSS globales (colores, tamaños)
+## 📄 Descripción de Archivos
 
-### sidebar.css
-- Barra lateral completa (`.layout__aside`)
-- Foto de perfil y nombre
-- Menú de navegación con tooltips
-- Redes sociales
-- Botón de descarga CV
-- Footer del sidebar
+### CSS
+| Archivo | Descripción |
+|---------|-------------|
+| `reset.css` | Reset de estilos, variables CSS globales (colores, tamaños, tipografía) |
+| `sidebar.css` | Barra lateral fija: foto, nombre, menú de navegación con efecto hover, redes sociales, botón CV, footer |
+| `estilos.css` | Layout principal y estilos de todas las secciones (Home, Sobre Mí, Curriculum, Portafolio, Contacto) + animaciones |
+| `responsive.css` | Media queries: tablet grande (1200px), tablet con sidebar colapsado (992px), móvil con navegación inferior (768px), móvil pequeño (480px) |
+| `proyecto.css` | Estilos reutilizables para páginas de proyecto: hero, features grid, tech stack, galería, navegación entre proyectos |
 
-### estilos.css
-- Layout principal (`.layout`, `.layout__content`)
-- Estilos de páginas específicas:
-  - **Home**: Header, proyectos, tech stack
-  - **Sobre Mí**: Intro, cards, código Java, timeline, cita
-  - **Curriculum**: Grid, educación, experiencia, skills, idiomas
-  - **Portafolio**: Filtros, galería de proyectos
-  - **Contacto**: Info, mapas, botones de contacto
-- Animaciones y efectos
-- Scrollbar personalizada
+### JavaScript
+| Archivo | Descripción |
+|---------|-------------|
+| `menu.js` | Toggle del menú responsive, gestión de iconos hamburguesa/cerrar, comportamiento en resize |
+| `maps.js` | Carga lazy de iframes de Google Maps para mejorar rendimiento |
 
-### responsive.css
-- Media queries para diferentes tamaños de pantalla:
-  - `1200px`: Tablet grande
-  - `992px`: Tablet (sidebar colapsado)
-  - `768px`: Móvil (navegación inferior)
-  - `480px`: Móvil pequeño
+## 🎨 Stack Tecnológica del Portfolio
+
+- **Frontend**: HTML5 semántico, CSS3 (Flexbox/Grid), JavaScript vanilla
+- **Diseño**: Mobile-first, sidebar responsive, tematización con variables CSS
+- **Iconos**: Font Awesome 6.4
+- **Tipografía**: Google Fonts (Poppins)
+- **PWA**: Manifest.json con theme color e iconos
 
 ## 🚀 Cómo Usar
 
-1. **Copiar archivos**: Copia toda la estructura a tu servidor web
-2. **Mantener rutas**: Asegúrate de que las rutas a `css/` y `js/` sean correctas
-3. **Assets**: Coloca tus imágenes en `assets/img/` y el CV en `assets/cv/`
+1. **Clonar o descargar** el repositorio
+2. **Mantener rutas**: Asegúrate de que las rutas a `css/`, `js/` y `assets/` sean correctas desde cada HTML
+3. **Assets**: Coloca tus imágenes en `assets/img/`, el CV en `assets/cv/` y documentos en `assets/pdf/`
+4. **Abrir**: Ejecuta `index.html` en cualquier navegador moderno (no requiere servidor)
 
-## 📝 Notas
+## 📝 Notas de Mantenimiento
 
-- Los archivos HTML ahora enlazan a los CSS externos en el `<head>`
-- Se eliminó todo el CSS embebido de los HTML
-- Se agregó `portafolio.html` que no existía antes
-- Los JavaScript están separados en `js/`
-- Las variables CSS facilitan cambiar colores desde un solo lugar
+- **Variables CSS**: Modifica colores y tamaños globales desde `reset.css`
+- **Proyectos nuevos**: Crea el HTML en `proyectos/`, enlázalo desde `portfolio.html` y añade la navegación anterior/siguiente
+- **Filtros del portfolio**: Usa `data-category="android"`, `"unity"` o `"web"` para categorizar correctamente
+- **Navegación entre proyectos**: Cada proyecto debe enlazar al anterior y siguiente para flujo continuo
+- **CSS embebido**: Evita estilos inline; usa `proyecto.css` para estilos comunes de proyectos

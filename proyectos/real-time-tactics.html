@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Real-Time Tactics - Eva Gallardo</title>
+
+    <link rel="icon" href="../../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../../css/proyecto.css">
+
+    <style>
+        /* Estilos adicionales específicos para RTT */
+        .status__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #166534;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .status__badge i {
+            font-size: 0.8rem;
+        }
+
+        .gameplay__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .gameplay__card {
+            background: var(--color-bg-card);
+            border-radius: 15px;
+            padding: 1.8rem;
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .gameplay__card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 165, 181, 0.1);
+            border-color: var(--color-primary);
+        }
+
+        .gameplay__icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .gameplay__title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .gameplay__text {
+            font-size: 0.9rem;
+            color: var(--color-gray);
+            line-height: 1.6;
+        }
+
+        .controls__section {
+            margin-bottom: 3rem;
+        }
+
+        .controls__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .controls__player {
+            background: var(--color-bg-card);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .controls__player--p1 {
+            border-left: 4px solid #06b6d4;
+        }
+
+        .controls__player--p2 {
+            border-left: 4px solid #ef4444;
+        }
+
+        .controls__player-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .controls__player--p1 .controls__player-title {
+            color: #06b6d4;
+        }
+
+        .controls__player--p2 .controls__player-title {
+            color: #ef4444;
+        }
+
+        .controls__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .controls__list li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .controls__key {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+            padding: 0.3rem 0.6rem;
+            background: #f3f4f6;
+            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+
+        .mechanics__list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .mechanic__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .mechanic__item:hover {
+            border-color: var(--color-primary);
+            transform: translateX(5px);
+        }
+
+        .mechanic__icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .mechanic__content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin-bottom: 0.3rem;
+        }
+
+        .mechanic__content p {
+            font-size: 0.85rem;
+            color: var(--color-gray);
+            line-height: 1.5;
+        }
+
+        .gallery__grid-proyecto {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery__item-proyecto {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 2px dashed var(--color-border);
+            color: var(--color-gray-light);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery__item-proyecto:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            transform: scale(1.02);
+        }
+
+        .gallery__item-proyecto i {
+            font-size: 2rem;
+        }
+
+        .gallery__item-proyecto span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .itch__embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+
+        .itch__embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 992px) {
+            .gameplay__grid {
+                grid-template-columns: 1fr;
+            }
+            .controls__grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery__grid-proyecto {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery__grid-proyecto {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../../assets/cv/CV(Español).pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-chess-board"></i>
+                    </div>
+                    <h1 class="proyecto__title">Real-Time <span class="title__color">Tactics</span></h1>
+                    <p class="proyecto__subtitle">Juego de estrategia táctica 1v1 por turnos en tiempo real</p>
+
+                    <div class="status__badge">
+                        <i class="fa-solid fa-check-circle"></i>
+                        Proyecto finalizado
+                    </div>
+
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Unity</span>
+                        <span class="proyecto__tag">C#</span>
+                        <span class="proyecto__tag">3D</span>
+                        <span class="proyecto__tag">DAM</span>
+                    </div>
+                </header>
+
+                <!-- Hero con screenshot + botón de juego -->
+                <div class="proyecto__hero">
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                        <!-- Screenshot del juego (placeholder) -->
+                        <div style="width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; gap: 1rem;">
+                            <i class="fa-solid fa-chess-board" style="font-size: 5rem; opacity: 0.8;"></i>
+                            <span style="font-size: 1.5rem; font-weight: 600;">Real-Time Tactics</span>
+                            <span style="font-size: 0.9rem; opacity: 0.7;">Screenshot del juego - Bosque encantado nocturno</span>
+                        </div>
+
+                        <!-- Overlay con botón -->
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; justify-content: center;">
+                            <a href="https://evagr.itch.io/real-time-tactics" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                                <i class="fa-brands fa-itch-io" style="font-size: 1.3rem;"></i> 
+                                Jugar ahora en Itch.io
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>Real-Time Tactics (RTT)</strong> es un juego de estrategia táctica 1v1 desarrollado en <strong>Unity 3D</strong> 
+                        durante la asignatura de <em>Programación</em> del primer año de DAM. El juego transcurre en un <strong>tablero 5x5 
+                        con geometría toroidal</strong> (si sales por un lado, entras por el opuesto) ambientado en un <strong>bosque encantado de noche</strong>, 
+                        con modelos 3D de árboles, efectos de partículas y atmósfera inmersiva.
+                    </p>
+                    <p class="proyecto__text">
+                        Cada jugador controla <strong>3 piezas con vida</strong> que pueden moverse, atacar y curarse. Las piezas tienen 
+                        una altura visual que representa su salud (3 puntos = altura completa, 1 punto = altura mínima). 
+                        El objetivo es simple: <strong>eliminar todas las piezas del oponente</strong>.
+                    </p>
+                    <p class="proyecto__text">
+                        La mecánica clave son los <strong>turnos en tiempo real</strong>: cada jugador tiene un tiempo limitado para realizar 
+                        todas las acciones que pueda antes de que el turno pase automáticamente al oponente. Además, el juego incluye 
+                        un <strong>sistema de catch-up</strong>: si pierdes piezas, tus cooldowns de ataque se reducen, dándote una ventaja de remontada.
+                    </p>
+                </div>
+
+                <!-- Gameplay Features -->
+                <div class="gameplay__grid">
+                    <div class="gameplay__card">
+                        <div class="gameplay__icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h3 class="gameplay__title">Turnos en Tiempo Real</h3>
+                        <p class="gameplay__text">Cada jugador dispone de un tiempo limitado por turno para realizar todas las acciones que pueda. La barra de tiempo se acorta visualmente.</p>
+                    </div>
+
+                    <div class="gameplay__card">
+                        <div class="gameplay__icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="gameplay__title">Geometría Toroidal</h3>
+                        <p class="gameplay__text">El tablero 5x5 es un toroide: salir por la izquierda te hace entrar por la derecha, y viceversa. Añade profundidad estratégica.</p>
+                    </div>
+
+                    <div class="gameplay__card">
+                        <div class="gameplay__icon">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="gameplay__title">Salud Visual</h3>
+                        <p class="gameplay__text">La altura de cada pieza representa su salud (3→1). Al recibir daño, la pieza se encoge visualmente hasta desaparecer.</p>
+                    </div>
+
+                    <div class="gameplay__card">
+                        <div class="gameplay__icon">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+                        <h3 class="gameplay__title">Cajas y Curación</h3>
+                        <p class="gameplay__text">Cajas aparecen aleatoriamente en el tablero. Al destruir una, generan un item de curación que restaura +1 de salud.</p>
+                    </div>
+                </div>
+
+                <!-- Mecánicas detalladas -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Mecánicas de combate</h2>
+                    <div class="mechanics__list">
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-hand-fist"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Ataque Ortogonal</h4>
+                                <p>Al sostener una pieza, puedes atacar las 4 casillas adyacentes (arriba, abajo, izquierda, derecha). Cada ataque inflige 1 punto de daño.</p>
+                            </div>
+                        </div>
+
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-hourglass-half"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Cooldown de Ataque</h4>
+                                <p>Cada ataque activa un cooldown visual (1.5s base). Durante el cooldown no puedes atacar, pero sí moverte y recoger items.</p>
+                            </div>
+                        </div>
+
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Catch-Up Mechanic</h4>
+                                <p>Si pierdes piezas, tu cooldown de ataque se reduce automáticamente. Esto equilibra el juego y permite remontadas épicas.</p>
+                            </div>
+                        </div>
+
+                        <div class="mechanic__item">
+                            <div class="mechanic__icon">
+                                <i class="fa-solid fa-arrows-up-down-left-right"></i>
+                            </div>
+                            <div class="mechanic__content">
+                                <h4>Agarrar y Mover</h4>
+                                <p>El cursor puede agarrar piezas aliadas, moverlas por el tablero y soltarlas en cualquier casilla válida.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles -->
+                <div class="controls__section">
+                    <h2 class="proyecto__section-title">Controles</h2>
+                    <div class="controls__grid">
+                        <div class="controls__player controls__player--p1">
+                            <h3 class="controls__player-title">
+                                <i class="fa-solid fa-user"></i> Jugador 1
+                            </h3>
+                            <ul class="controls__list">
+                                <li><span class="controls__key">W A S D</span> Mover cursor</li>
+                                <li><span class="controls__key">Left Ctrl</span> Agarrar/Soltar pieza</li>
+                                <li><span class="controls__key">Space</span> Atacar</li>
+                            </ul>
+                        </div>
+
+                        <div class="controls__player controls__player--p2">
+                            <h3 class="controls__player-title">
+                                <i class="fa-solid fa-user"></i> Jugador 2
+                            </h3>
+                            <ul class="controls__list">
+                                <li><span class="controls__key">↑ ↓ ← →</span> Mover cursor</li>
+                                <li><span class="controls__key">Right Ctrl</span> Agarrar/Soltar pieza</li>
+                                <li><span class="controls__key">Enter</span> Atacar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack detallado -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Motor & Lógica</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-unity"></i> Unity 3D</li>
+                                <li><i class="fa-solid fa-code"></i> C# (Scripts)</li>
+                                <li><i class="fa-solid fa-cube"></i> Sistema de coordenadas 3D</li>
+                                <li><i class="fa-solid fa-rotate"></i> Geometría toroidal</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Gameplay Systems</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-hourglass"></i> Sistema de turnos por tiempo</li>
+                                <li><i class="fa-solid fa-heart"></i> Salud visual (escala Y)</li>
+                                <li><i class="fa-solid fa-box"></i> Spawning procedural de cajas</li>
+                                <li><i class="fa-solid fa-bolt"></i> Cooldown dinámico (catch-up)</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Visual & Audio</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-tree"></i> Modelos 3D (árboles, escenario)</li>
+                                <li><i class="fa-solid fa-wand-magic-sparkles"></i> Efectos de partículas</li>
+                                <li><i class="fa-solid fa-moon"></i> Ambientación nocturna</li>
+                                <li><i class="fa-solid fa-palette"></i> Oscilación y giro de cajas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería / Screenshots -->
+                <div class="proyecto__gallery">
+                    <h2 class="proyecto__section-title">Capturas de pantalla</h2>
+                    <div class="gallery__grid-proyecto">
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Tablero 5x5 - Bosque nocturno</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Piezas en combate</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Efectos de partículas</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Cajas y items de curación</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>UI de turnos y tiempo</span>
+                        </div>
+                        <div class="gallery__item-proyecto">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Pantalla de victoria</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+
+                    <div class="links__container">
+                        <a href="https://evagr.itch.io/real-time-tactics" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-itch-io"></i>
+                            Jugar en Itch.io
+                        </a>
+
+                        <a href="https://github.com/evagr11/Real-Time-Tactics" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
