@@ -95,55 +95,15 @@
             margin-top: 1rem;
         }
 
-        .gallery__grid-proyecto {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
 
-        .gallery__item-proyecto {
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            border: 2px dashed var(--color-border);
-            color: var(--color-gray-light);
-            transition: var(--transition);
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .gallery__item-proyecto:hover {
-            border-color: var(--color-primary);
-            transform: scale(1.02);
-        }
-
-        .gallery__item-proyecto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 13px;
-        }
 
         @media (max-width: 992px) {
             .evolution__grid {
                 grid-template-columns: 1fr;
             }
-            .gallery__grid-proyecto {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .gallery__grid-proyecto {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
+<base target="_blank">
 </head>
 
 <body>
@@ -265,7 +225,10 @@
 
                 <!-- Imagen principal / Mockup -->
                 <div class="proyecto__hero">
-                    <img src="https://evagr11.github.io/sama-vintage/assets/images/BORCHE-MARIPOSA-DORADO-1.png" alt="Sama Vintage - Joyería" class="proyecto__hero-image">
+                    <div class="proyecto__mockup">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Mockup Sama Vintage — pendiente</span>
+                    </div>
                 </div>
 
                 <!-- Descripción -->
@@ -389,25 +352,75 @@
 
                 <!-- Galería / Screenshots -->
                 <div class="proyecto__gallery">
-                    <h2 class="proyecto__section-title">Galería de productos</h2>
-                    <div class="gallery__grid-proyecto">
-                        <div class="gallery__item-proyecto">
-                            <img src="https://evagr11.github.io/sama-vintage/assets/images/BORCHE-MARIPOSA-DORADO-1.png" alt="Broche Mariposa">
+                    <h2 class="proyecto__section-title">Galería</h2>
+
+                    <!-- Fila 1: Versión Ordenador -->
+                    <h3 class="gallery__subtitle">Versión Escritorio</h3>
+                    <div class="gallery__grid-proyecto gallery__grid--desktop">
+                        <div class="gallery__item-proyecto gallery__item--desktop">
+                            <img src="../assets/img/SamaVintage/desktop-home.png" 
+                                 alt="Home - Versión Escritorio" 
+                                 class="gallery__image-proyecto"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery__placeholder" style="display:none;">
+                                <i class="fa-solid fa-desktop"></i>
+                                <span>Home - Escritorio</span>
+                            </div>
                         </div>
-                        <div class="gallery__item-proyecto">
-                            <img src="https://evagr11.github.io/sama-vintage/assets/images/BROCHE-BRILANTE-ESTRELLA-DE-MAR-PIEDRA-BLANCA-1.png" alt="Broche Estrella de Mar">
+                        <div class="gallery__item-proyecto gallery__item--desktop">
+                            <img src="../assets/img/SamaVintage/desktop-catalogo.png" 
+                                 alt="Catálogo - Versión Escritorio" 
+                                 class="gallery__image-proyecto"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery__placeholder" style="display:none;">
+                                <i class="fa-solid fa-desktop"></i>
+                                <span>Catálogo - Escritorio</span>
+                            </div>
                         </div>
-                        <div class="gallery__item-proyecto">
-                            <img src="https://evagr11.github.io/sama-vintage/assets/images/Broche-Caballo-Dorado-1.png" alt="Broche Caballo">
+                    </div>
+
+                    <!-- Fila 2: Versión Móvil -->
+                    <h3 class="gallery__subtitle">Versión Móvil</h3>
+                    <div class="gallery__grid-proyecto gallery__grid--mobile">
+                        <div class="gallery__item-proyecto gallery__item--mobile">
+                            <img src="../assets/img/SamaVintage/mobile-home.png" 
+                                 alt="Home - Versión Móvil" 
+                                 class="gallery__image-proyecto"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery__placeholder" style="display:none;">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>Home - Móvil</span>
+                            </div>
                         </div>
-                        <div class="gallery__item-proyecto">
-                            <img src="https://evagr11.github.io/sama-vintage/assets/images/COLGANTE-DORADO-NUDO-1.png" alt="Colgante Dorado">
+                        <div class="gallery__item-proyecto gallery__item--mobile">
+                            <img src="../assets/img/SamaVintage/mobile-producto.png" 
+                                 alt="Producto - Versión Móvil" 
+                                 class="gallery__image-proyecto"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery__placeholder" style="display:none;">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>Producto - Móvil</span>
+                            </div>
                         </div>
-                        <div class="gallery__item-proyecto">
-                            <img src="https://evagr11.github.io/sama-vintage/assets/images/PENDIENTE-CIRCULAR-CON-PIEDRA-ROSA-NUDE-Y-FRANJA-DORADA-Y-CIRCULOS-DORADOS-1.png" alt="Pendiente Circular">
+                        <div class="gallery__item-proyecto gallery__item--mobile">
+                            <img src="../assets/img/SamaVintage/mobile-carrito.png" 
+                                 alt="Carrito - Versión Móvil" 
+                                 class="gallery__image-proyecto"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery__placeholder" style="display:none;">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>Carrito - Móvil</span>
+                            </div>
                         </div>
-                        <div class="gallery__item-proyecto">
-                            <img src="https://evagr11.github.io/sama-vintage/assets/images/PENDIENTE-DORADO-ESTILO-TABLERO-DE-AJEDREZ-CON-CUADRADOS-NEGROS-Y-DORADOS-1.png" alt="Pendiente Ajedrez">
+                        <div class="gallery__item-proyecto gallery__item--mobile">
+                            <img src="../assets/img/SamaVintage/mobile-perfil.png" 
+                                 alt="Perfil - Versión Móvil" 
+                                 class="gallery__image-proyecto"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="gallery__placeholder" style="display:none;">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>Perfil - Móvil</span>
+                            </div>
                         </div>
                     </div>
                 </div>
