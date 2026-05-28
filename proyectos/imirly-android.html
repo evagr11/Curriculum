@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <!-- CSS específico para páginas de proyecto -->
     <link rel="stylesheet" href="../css/proyecto.css">
+<base target="_blank">
 </head>
 
 <body>
@@ -140,9 +141,26 @@
                     </div>
                 </header>
 
-                <!-- Imagen principal / Mockup -->
+
+                <!-- Hero con screenshot + botón de MVP Web -->
                 <div class="proyecto__hero">
-                    <img src="../assets/img/iMirly/imirly-android.jpg" alt="iMirly Android App" class="proyecto__hero-image">
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                        
+                        <!-- Imagen principal / Mockup -->
+                        <img 
+                            src="../assets/img/iMirly/imirly-android.jpg" 
+                            alt="iMirly Android App"
+                            style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;"
+                        >
+                        
+                        <!-- Overlay con botón -->
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; justify-content: center;">
+                            <a href="https://imirly.github.io/iMirlyWeb-MVP/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                                <i class="fa-solid fa-globe" style="font-size: 1.3rem;"></i> 
+                                Ver MVP Web
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Descripción -->
@@ -327,6 +345,11 @@
                         <a href="../assets/pdf/documentacion-imirly.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-solid fa-file-pdf"></i>
                             Documentación PDF
+                        </a>
+
+                        <a href="https://imirly.github.io/iMirlyWeb-MVP/" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-globe"></i>
+                            Ver MVP Web
                         </a>
                 </div>
 
