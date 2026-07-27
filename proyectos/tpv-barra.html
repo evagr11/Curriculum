@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <title>Sama Vintage - Eva Gallardo</title>
+    <title>TPV Barra - Eva Gallardo</title>
 
     <link rel="icon" href="../assets/icons/icon-192.png">
     <meta name="theme-color" content="#d4a5b5">
@@ -23,83 +23,139 @@
     <link rel="stylesheet" href="../css/proyecto.css">
 
     <style>
-        /* Estilos adicionales específicos para Sama Vintage */
-        .proyecto__hero-image {
-            border: 1px solid var(--color-border);
+        /* Estilos adicionales específicos para TPV Barra */
+        .status__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #166534;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
         }
 
-        .evolution__grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
+        .status__badge i {
+            font-size: 0.8rem;
         }
 
-        .evolution__card {
-            background: var(--color-bg-card);
+        .doc__highlight {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
             border-radius: 15px;
             padding: 2rem;
-            border: 1px solid var(--color-border);
-            text-align: center;
-            transition: var(--transition);
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--color-primary);
         }
 
-        .evolution__card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(212, 165, 181, 0.1);
-        }
-
-        .evolution__card--wordpress {
-            border-color: #8B1E2D;
-        }
-
-        .evolution__card--static {
-            border-color: var(--color-primary);
-            background: linear-gradient(135deg, #fff 0%, #fdf2f8 100%);
-        }
-
-        .evolution__icon {
-            font-size: 2.5rem;
+        .doc__highlight-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 1rem;
         }
 
-        .evolution__card--wordpress .evolution__icon {
-            color: #8B1E2D;
+        .doc__highlight-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
         }
 
-        .evolution__card--static .evolution__icon {
-            color: var(--color-primary);
-        }
-
-        .evolution__title {
+        .doc__highlight-title {
             font-size: 1.2rem;
             font-weight: 600;
             color: var(--color-black);
-            margin-bottom: 0.5rem;
         }
 
-        .evolution__text {
-            font-size: 0.9rem;
+        .doc__highlight-text {
             color: var(--color-gray);
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 1rem;
         }
 
-        .evolution__tag {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            color: white;
-            padding: 0.3rem 0.8rem;
+        .doc__highlight-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .doc__highlight-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .doc__highlight-list li i {
+            color: var(--color-primary);
+            font-size: 0.8rem;
+        }
+
+        .context__box {
+            background: var(--color-bg-card);
             border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 1rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--color-border);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
         }
 
+        .context__box i {
+            font-size: 1.4rem;
+            color: var(--color-primary);
+            margin-top: 0.2rem;
+        }
 
+        .context__box p {
+            color: var(--color-gray);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .proyecto__features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
 
         @media (max-width: 992px) {
-            .evolution__grid {
+            .doc__highlight-list {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .context__box {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .proyecto__features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .doc__highlight-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .context__box {
+                flex-direction: column;
+                gap: 0.8rem;
             }
         }
     </style>
@@ -209,20 +265,23 @@
                 <!-- Header del proyecto -->
                 <header class="proyecto__header">
                     <div class="proyecto__icon-big">
-                        <i class="fa-solid fa-gem"></i>
+                        <i class="fa-solid fa-cash-register"></i>
                     </div>
-                    <h1 class="proyecto__title">Sama <span class="title__color">Vintage</span></h1>
-                    <p class="proyecto__subtitle">Ecommerce estático de joyería vintage | Rebranding completo</p>
+                    <h1 class="proyecto__title">TPV <span class="title__color">Barra</span></h1>
+                    <p class="proyecto__subtitle">Punto de venta táctil para cobrar tickets de bebida en barras de eventos y festivales</p>
+
+                    <div class="status__badge">
+                        <i class="fa-solid fa-check-circle"></i>
+                        Proyecto finalizado
+                    </div>
 
                     <div class="proyecto__tags">
                         <span class="proyecto__tag">Web</span>
-                        <span class="proyecto__tag">Ecommerce</span>
-                        <span class="proyecto__tag">Frontend</span>
-                        <span class="proyecto__tag">DAM</span>
+                        <span class="proyecto__tag">JavaScript</span>
+                        <span class="proyecto__tag">Mobile First</span>
+                        <span class="proyecto__tag">Herramienta</span>
                     </div>
                 </header>
-
-                <!-- Imagen principal / Mockup -->
 
                 <!-- Hero con screenshot + botón de navegación -->
                 <div class="proyecto__hero">
@@ -230,14 +289,14 @@
                         
                         <!-- Screenshot del juego (IMAGEN REAL) -->
                         <img 
-                            src="../assets/img/SamaVintage/MockupSamaVintage.jpeg" 
-                            alt="Sama Vintage - Mockup"
+                            src="../assets/img/TPVBarra/MockupTPVBarra.png" 
+                            alt="TPV Barra"
                             style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;"
                         >
                         
                         <!-- Overlay con botón -->
                         <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; justify-content: center;">
-                            <a href="https://evagr11.github.io/sama-vintage/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                            <a href="https://evagr11.github.io/TPV-para-Tickets/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
                                 <i class="fa-solid fa-globe" style="font-size: 1.3rem;"></i>
                                 Ver en GitHub Pages
                             </a>
@@ -245,86 +304,111 @@
                     </div>
                 </div>
 
+                <!-- Contexto del encargo -->
+                <div class="context__box">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <p>
+                        Herramienta desarrollada para uso propio como cajera en la barra de un festival, donde
+                        necesitaba cobrar rápido tres tipos de ticket de bebida y calcular el cambio sin margen
+                        de error. Un caso real, pensado y probado para funcionar bajo presión, con muchos
+                        clientes seguidos y poco tiempo entre cada cobro.
+                    </p>
+                </div>
+
                 <!-- Descripción -->
                 <div class="proyecto__description">
                     <h2 class="proyecto__section-title">Sobre el proyecto</h2>
                     <p class="proyecto__text">
-                        <strong>Sama Vintage</strong> es un sitio web estático de ecommerce para una tienda de joyería vintage. 
-                        El proyecto surgió como parte del módulo <strong>SGE (Sistemas de Gestión Empresarial)</strong> del segundo 
-                        curso de DAM, donde el objetivo era realizar el <strong>rebranding completo</strong> de una web real existente.
+                        <strong>TPV Barra</strong> es una pequeña aplicación web pensada como <strong>punto de venta táctil</strong>
+                        para la gestión de cobros en la barra de un evento. Permite llevar la cuenta de tres tipos de ticket
+                        (combinado, cerveza/refresco y agua), sumar el total automáticamente y calcular el cambio exacto
+                        a partir del dinero que entrega el cliente.
                     </p>
                     <p class="proyecto__text">
-                        Inicialmente se desarrolló en <strong>WordPress</strong> con WooCommerce, utilizando plugins como 
-                        Code Snippets, Contact Form 7 y Simple Custom CSS. Posteriormente, reconstruí el proyecto desde cero 
-                        como sitio estático en <strong>HTML, CSS y JavaScript vanilla</strong>, eliminando dependencias de CMS 
-                        para crear una versión portable y mantenible como portfolio.
+                        Está construida en <strong>HTML, CSS y JavaScript vanilla</strong>, sin frameworks ni dependencias,
+                        para que cargue al instante y funcione de forma fiable en <strong>Safari sobre iPhone</strong>,
+                        el dispositivo real con el que se usa en la barra. Los precios de cada ticket son
+                        <strong>configurables</strong> y se guardan en el propio dispositivo, así que solo hace falta
+                        ajustarlos una vez antes del evento.
+                    </p>
+                    <p class="proyecto__text">
+                        El diseño prioriza <strong>botones grandes para el pulgar</strong>, alto contraste para verse bien
+                        al sol, y un flujo de trabajo mínimo: sumar tickets, teclear el pago, leer el cambio y limpiar
+                        para el siguiente cliente.
                     </p>
                 </div>
 
-                <!-- Evolución del proyecto -->
-                <div class="proyecto__section">
-                    <h2 class="proyecto__section-title">Evolución del proyecto</h2>
-                    <div class="evolution__grid">
-                        <div class="evolution__card evolution__card--wordpress">
-                            <div class="evolution__icon">
-                                <i class="fa-brands fa-wordpress"></i>
-                            </div>
-                            <h3 class="evolution__title">Fase 1: WordPress</h3>
-                            <p class="evolution__text">
-                                Versión original desarrollada en equipo con WooCommerce, 
-                                plugins personalizados y tema customizado. Proyecto académico 
-                                colaborativo con compañeros de clase.
-                            </p>
-                            <span class="evolution__tag">Proyecto en equipo</span>
+                <!-- Precisión en los cálculos -->
+                <div class="doc__highlight">
+                    <div class="doc__highlight-header">
+                        <div class="doc__highlight-icon">
+                            <i class="fa-solid fa-coins"></i>
                         </div>
-
-                        <div class="evolution__card evolution__card--static">
-                            <div class="evolution__icon">
-                                <i class="fa-brands fa-html5"></i>
-                            </div>
-                            <h3 class="evolution__title">Fase 2: Sitio Estático</h3>
-                            <p class="evolution__text">
-                                Reconstrucción completa en HTML/CSS/JS puro. Carrito persistente 
-                                con localStorage, páginas dinámicas vía URL params y deploy en 
-                                GitHub Pages.
-                            </p>
-                            <span class="evolution__tag">Portfolio personal</span>
-                        </div>
+                        <h3 class="doc__highlight-title">Matemáticas exactas: todo se calcula en céntimos</h3>
                     </div>
+                    <p class="doc__highlight-text">
+                        El punto más delicado de un TPV es el cambio: un error de redondeo con decimales puede hacer
+                        que la cuenta no cuadre. Por eso todo el dinero se maneja internamente como
+                        <strong>números enteros de céntimos</strong> en lugar de decimales, evitando los típicos
+                        fallos de coma flotante de JavaScript.
+                    </p>
+                    <ul class="doc__highlight-list">
+                        <li><i class="fa-solid fa-check"></i> Precios y subtotales en céntimos enteros</li>
+                        <li><i class="fa-solid fa-check"></i> Teclado de pago tipo datáfono, sin ambigüedad decimal</li>
+                        <li><i class="fa-solid fa-check"></i> Cambio siempre exacto, sin errores de redondeo</li>
+                        <li><i class="fa-solid fa-check"></i> Aviso visual si el pago no cubre el total</li>
+                    </ul>
                 </div>
 
                 <!-- Grid de características -->
                 <div class="proyecto__features">
                     <div class="feature__card">
                         <div class="feature__icon">
-                            <i class="fa-solid fa-store"></i>
+                            <i class="fa-solid fa-plus-minus"></i>
                         </div>
-                        <h3 class="feature__title">Catálogo de Productos</h3>
-                        <p class="feature__text">Visualización de 50+ piezas de joyería organizadas por categorías: broches, pendientes y collares.</p>
+                        <h3 class="feature__title">Contadores por ticket</h3>
+                        <p class="feature__text">Tres secciones (combinado, cerveza/refresco y agua) con botones + y − para ir sumando lo que pide cada cliente.</p>
                     </div>
 
                     <div class="feature__card">
                         <div class="feature__icon">
-                            <i class="fa-solid fa-file-lines"></i>
+                            <i class="fa-solid fa-calculator"></i>
                         </div>
-                        <h3 class="feature__title">Páginas Dinámicas</h3>
-                        <p class="feature__text">Vista detallada de producto reutilizable mediante parámetros <code>?id=</code> en la URL.</p>
+                        <h3 class="feature__title">Teclado de cobro</h3>
+                        <p class="feature__text">Teclado numérico en pantalla para introducir el dinero entregado, con entrada estilo datáfono para máxima rapidez.</p>
                     </div>
 
                     <div class="feature__card">
                         <div class="feature__icon">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i class="fa-solid fa-coins"></i>
                         </div>
-                        <h3 class="feature__title">Carrito Persistente</h3>
-                        <p class="feature__text">Añadir, eliminar y actualizar productos con persistencia en localStorage entre sesiones.</p>
+                        <h3 class="feature__title">Cambio automático</h3>
+                        <p class="feature__text">Calcula al instante cuánto dinero de cambio hay que devolver, o avisa si el importe entregado no es suficiente.</p>
+                    </div>
+                </div>
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <h3 class="feature__title">Precios editables</h3>
+                        <p class="feature__text">Panel de ajustes para fijar el precio de cada tipo de ticket antes del evento, guardado en el propio dispositivo.</p>
                     </div>
 
                     <div class="feature__card">
                         <div class="feature__icon">
-                            <i class="fa-solid fa-mobile-screen"></i>
+                            <i class="fa-solid fa-broom"></i>
                         </div>
-                        <h3 class="feature__title">Diseño Responsive</h3>
-                        <p class="feature__text">Navegación adaptable con menú responsive controlado por JavaScript. Compatible con todos los dispositivos.</p>
+                        <h3 class="feature__title">Limpiar para el siguiente</h3>
+                        <p class="feature__text">Un solo botón pone a cero contadores y pago para atender al siguiente cliente sin arrastrar datos del anterior.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-hand-pointer"></i>
+                        </div>
+                        <h3 class="feature__title">Pensada para el móvil</h3>
+                        <p class="feature__text">Botones grandes, sin zoom accidental por toques rápidos y alto contraste para usarla cómodamente al aire libre.</p>
                     </div>
                 </div>
 
@@ -334,31 +418,29 @@
 
                     <div class="tech__categories">
                         <div class="tech__category">
-                            <h4 class="tech__category-title">Frontend</h4>
+                            <h4 class="tech__category-title">Lenguaje & UI</h4>
                             <ul class="tech__list">
                                 <li><i class="fa-brands fa-html5"></i> HTML5 Semántico</li>
-                                <li><i class="fa-brands fa-css3-alt"></i> CSS3 + Variables</li>
+                                <li><i class="fa-brands fa-css3-alt"></i> CSS3 (Grid + Variables)</li>
                                 <li><i class="fa-brands fa-js"></i> JavaScript Vanilla</li>
-                                <li><i class="fa-solid fa-database"></i> localStorage API</li>
                             </ul>
                         </div>
 
                         <div class="tech__category">
-                            <h4 class="tech__category-title">Diseño & Prototipado</h4>
+                            <h4 class="tech__category-title">Datos & Precisión</h4>
                             <ul class="tech__list">
-                                <li><i class="fa-brands fa-figma"></i> Figma (Prototipos)</li>
-                                <li><i class="fa-brands fa-canva"></i> Canva (Guía de estilos)</li>
-                                <li><i class="fa-solid fa-palette"></i> Paleta: Granate, Dorado, Crema</li>
+                                <li><i class="fa-solid fa-coins"></i> Aritmética en céntimos enteros</li>
+                                <li><i class="fa-solid fa-database"></i> LocalStorage API</li>
+                                <li><i class="fa-solid fa-euro-sign"></i> Formato monetario es-ES</li>
                             </ul>
                         </div>
 
                         <div class="tech__category">
-                            <h4 class="tech__category-title">Deploy & Origen</h4>
+                            <h4 class="tech__category-title">Despliegue</h4>
                             <ul class="tech__list">
+                                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
                                 <li><i class="fa-brands fa-github"></i> GitHub Pages</li>
-                                <li><i class="fa-brands fa-wordpress"></i> WordPress (v1.0)</li>
-                                <li><i class="fa-brands fa-woocommerce"></i> WooCommerce (v1.0)</li>
-                                <li><i class="fa-solid fa-plug"></i> Code Snippets, CF7</li>
+                                <li><i class="fa-brands fa-safari"></i> Optimizada para Safari iOS</li>
                             </ul>
                         </div>
                     </div>
@@ -367,125 +449,63 @@
                 <!-- Galería / Screenshots -->
                 <div class="proyecto__gallery">
                     <h2 class="proyecto__section-title">Galería</h2>
-
-                    <!-- Fila 1: Versión Ordenador -->
-                    <h3 class="gallery__subtitle">Versión Escritorio</h3>
-                    <div class="gallery__grid-proyecto gallery__grid--desktop">
-                        <div class="gallery__item-proyecto gallery__item--desktop">
-                            <img src="../assets/img/SamaVintage/desktop-home.png" 
-                                 alt="Home - Versión Escritorio" 
-                                 class="gallery__image-proyecto"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="gallery__placeholder" style="display:none;">
-                                <i class="fa-solid fa-desktop"></i>
-                                <span>Home - Escritorio</span>
-                            </div>
-                        </div>
-                        <div class="gallery__item-proyecto gallery__item--desktop">
-                            <img src="../assets/img/SamaVintage/desktop-catalogo.png" 
-                                 alt="Catálogo - Versión Escritorio" 
-                                 class="gallery__image-proyecto"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="gallery__placeholder" style="display:none;">
-                                <i class="fa-solid fa-desktop"></i>
-                                <span>Catálogo - Escritorio</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Fila 2: Versión Móvil -->
-                    <h3 class="gallery__subtitle">Versión Móvil</h3>
                     <div class="gallery__grid-proyecto gallery__grid--mobile">
                         <div class="gallery__item-proyecto gallery__item--mobile">
-                            <img src="../assets/img/SamaVintage/mobile-home.png" 
-                                 alt="Home - Versión Móvil" 
+                            <img src="../assets/img/TPVBarra/Tickets.png"
+                                alt="Secciones de tickets"
                                  class="gallery__image-proyecto"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="gallery__placeholder" style="display:none;">
                                 <i class="fa-solid fa-mobile-screen"></i>
-                                <span>Home - Móvil</span>
+                                <span>Secciones de tickets</span>
                             </div>
                         </div>
                         <div class="gallery__item-proyecto gallery__item--mobile">
-                            <img src="../assets/img/SamaVintage/mobile-producto.png" 
-                                 alt="Producto - Versión Móvil" 
+                            <img src="../assets/img/TPVBarra/Precios.png"
+                                alt="Ajuste de precios"
                                  class="gallery__image-proyecto"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="gallery__placeholder" style="display:none;">
                                 <i class="fa-solid fa-mobile-screen"></i>
-                                <span>Producto - Móvil</span>
+                                <span>Ajuste de precios</span>
                             </div>
                         </div>
                         <div class="gallery__item-proyecto gallery__item--mobile">
-                            <img src="../assets/img/SamaVintage/mobile-carrito.png" 
-                                 alt="Carrito - Versión Móvil" 
+                            <img src="../assets/img/TPVBarra/Teclado.png"
+                                alt="Teclado de cobro"
                                  class="gallery__image-proyecto"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="gallery__placeholder" style="display:none;">
                                 <i class="fa-solid fa-mobile-screen"></i>
-                                <span>Carrito - Móvil</span>
+                                <span>Teclado de cobro</span>
                             </div>
                         </div>
                         <div class="gallery__item-proyecto gallery__item--mobile">
-                            <img src="../assets/img/SamaVintage/mobile-perfil.png" 
-                                 alt="Perfil - Versión Móvil" 
+                            <img src="../assets/img/TPVBarra/Cambio.png"
+                                alt="Cambio calculado"
                                  class="gallery__image-proyecto"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="gallery__placeholder" style="display:none;">
                                 <i class="fa-solid fa-mobile-screen"></i>
-                                <span>Perfil - Móvil</span>
+                                <span>Cambio calculado</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Guía de estilos Canva -->
-                <section class="proyecto__section">
-                    <h2 class="proyecto__section-title">Guía de estilos</h2>
-                    <div class="proyecto__canva-container">
-                        <iframe 
-                            src="https://www.canva.com/design/DAHJc2xwsEQ/YocAPbgGcrajA-eUFvZ1Yg/view?embed" 
-                            class="proyecto__iframe"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <a href="https://www.canva.com/design/DAHJc2xwsEQ/YocAPbgGcrajA-eUFvZ1Yg/view" target="_blank" class="proyecto__canva-link">
-                        <i class="fa-solid fa-expand"></i> Ver en pantalla completa
-                    </a>
-                </section>
-
-                <!-- Figma -->
-                <section class="proyecto__section">
-                    <h2 class="proyecto__section-title">Diseño en Figma</h2>
-                    <div class="proyecto__figma-container">
-                        <iframe
-                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/7KPGwbiydSfIxcY5ylmO27/SAMA-VINTAGE?node-id=0-1&t=HI8ZvVFxp6JqF2Dr-1"
-                            class="proyecto__iframe"
-                            width="100%"
-                            height="600"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </section>
 
                 <!-- Enlaces -->
                 <div class="proyecto__links">
                     <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
 
                     <div class="links__container">
-                        <a href="https://evagr11.github.io/sama-vintage/" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                        <a href="https://evagr11.github.io/tpv-barra/" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
                             <i class="fa-solid fa-globe"></i>
                             Ver web en vivo
                         </a>
 
-                        <a href="https://github.com/evagr11/sama-vintage" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                        <a href="https://github.com/evagr11/tpv-barra" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-github"></i>
                             Ver código en GitHub
-                        </a>
-
-                        <a href="https://www.figma.com/design/7KPGwbiydSfIxcY5ylmO27/SAMA-VINTAGE" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
-                            <i class="fa-brands fa-figma"></i>
-                            Ver en Figma
                         </a>
                     </div>
                 </div>
