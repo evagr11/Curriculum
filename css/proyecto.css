@@ -670,3 +670,280 @@
         aspect-ratio: 4/3 !important;
     }
 }
+/* ============================================
+   COMPONENTES COMUNES DE LAS PÁGINAS DE PROYECTO
+   (estado, flujo, controles, consola y galería de capturas)
+   ============================================ */
+
+.status__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    color: #166534;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.status__badge--practice {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    color: #075985;
+}
+
+.status__badge--real {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    color: #92400e;
+}
+
+.status__badge i {
+    font-size: 0.8rem;
+}
+
+.doc__highlight {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-left: 5px solid var(--color-primary);
+}
+
+.doc__highlight-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.doc__highlight-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.doc__highlight-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.doc__highlight-text {
+    color: var(--color-gray);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.doc__highlight-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.doc__highlight-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.doc__highlight-list li i {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+}
+
+.flow__section {
+    margin-bottom: 3rem;
+}
+
+.flow__steps {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.flow__step {
+    flex: 1;
+    min-width: 150px;
+    background: var(--color-bg-card);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    position: relative;
+}
+
+.flow__step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.flow__icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.flow__title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-black);
+    margin-bottom: 0.3rem;
+}
+
+.flow__text {
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    line-height: 1.5;
+}
+
+.keys__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.keys__list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    color: #555;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+}
+
+.keys__key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    padding: 0.3rem 0.6rem;
+    background: #f3f4f6;
+    border-radius: 6px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.console__window {
+    background: #1e1b2e;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.console__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1rem;
+    background: #2a2640;
+    color: #a5a1c2;
+    font-size: 0.8rem;
+}
+
+.console__dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #ff5f57;
+}
+
+.console__dot:nth-child(2) { background: #febc2e; }
+.console__dot:nth-child(3) { background: #28c840; margin-right: 0.5rem; }
+
+.console__output {
+    margin: 0;
+    padding: 1.2rem 1.5rem;
+    color: #e9e6f7;
+    font-family: 'Fira Code', Consolas, monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.shots__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.shots__item {
+    margin: 0;
+}
+
+.shots__item img {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    display: block;
+}
+
+.shots__item figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--color-gray);
+    text-align: center;
+}
+
+.shots__item--mobile img {
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .doc__highlight-list,
+    .keys__list {
+        grid-template-columns: 1fr;
+    }
+
+    .flow__step:not(:last-child)::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .flow__steps {
+        flex-direction: column;
+    }
+
+    .shots__grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>SIMCRA - Eva Gallardo</title>
+
+    <link rel="icon" href="../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../css/proyecto.css">
+
+    <meta name="description" content="SIMCRA: app Android que simula una crisis de 7 días en tiempo real con notificaciones programadas.">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../assets/cv/CV_EvaGallardoRomero.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-tower-broadcast"></i>
+                    </div>
+                    <h1 class="proyecto__title">SIM<span class="title__color">CRA</span></h1>
+                    <p class="proyecto__subtitle">Simulación de una crisis de 7 días en tiempo real con alertas, notificaciones y sensores</p>
+                    <div class="status__badge">
+                        <i class="fa-solid fa-check-circle"></i>
+                        Proyecto finalizado
+                    </div>
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Android</span>
+                        <span class="proyecto__tag">Java</span>
+                        <span class="proyecto__tag">XML</span>
+                        <span class="proyecto__tag">AlarmManager</span>
+                        <span class="proyecto__tag">Sensores</span>
+                        <span class="proyecto__tag">DAM</span>
+                    </div>
+                </header>
+
+                <!-- Mockup / Hero -->
+                <div class="proyecto__hero">
+                    <div class="proyecto__mockup">
+                        <i class="fa-solid fa-tower-broadcast"></i>
+                        <span>SIMCRA</span>
+                        <span style="font-size: 0.9rem; font-weight: 400;">Java · AlarmManager · BroadcastReceiver · Sensores</span>
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>SIMCRA</strong> (<em>Sistema Integrado de Monitoreo de Recursos y Contingencia Ambiental</em>) es una app Android que simula ser el único sistema de información que sigue funcionando durante una catástrofe en España: una sequía extrema que desencadena racionamiento, una epidemia y un apagón nacional.
+                    </p>
+                    <p class="proyecto__text">
+                        La historia <strong>avanza en tiempo real durante 7 días</strong> desde el primer día que abres la app. Cada día llegan nuevas alertas como notificaciones a su hora, se van abriendo fichas de personas desaparecidas y, al final, la crisis se contiene y empieza la reconstrucción.
+                    </p>
+                    <p class="proyecto__text">
+                        Lo desarrollé en la asignatura de <em>Programación Multimedia y Dispositivos Móviles</em> de 2º de DAM. La idea era construir una experiencia que se viviera durante varios días, combinando recursos del dispositivo (sensores, batería, notificaciones y alarmas) con una narrativa que diera sentido a cada pantalla. Es una historia de ficción: los hechos, las cifras y las personas son inventados.
+                    </p>
+                </div>
+
+                <!-- Flujo -->
+                <div class="flow__section">
+                    <h2 class="proyecto__section-title">Cómo avanza la historia</h2>
+                    <div class="flow__steps">
+                        <div class="flow__step">
+                            <div class="flow__icon">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <h4 class="flow__title">Primer inicio</h4>
+                            <p class="flow__text">Introducción narrativa, permisos y programación de las 33 alertas</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <h4 class="flow__title">Alertas</h4>
+                            <p class="flow__text">Notificaciones a las 08:00, 12:30, 16:00, 18:00 y 21:00, aunque la app esté cerrada</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon">
+                                <i class="fa-solid fa-user-group"></i>
+                            </div>
+                            <h4 class="flow__title">Desaparecidos</h4>
+                            <p class="flow__text">129 fichas que se desbloquean con los reportes de cada día</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon">
+                                <i class="fa-solid fa-flag-checkered"></i>
+                            </div>
+                            <h4 class="flow__title">Día 7</h4>
+                            <p class="flow__text">La crisis se contiene y empieza la reconstrucción</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Características -->
+                <h2 class="proyecto__section-title">Características principales</h2>
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-newspaper"></i>
+                        </div>
+                        <h3 class="feature__title">33 alertas en 7 días</h3>
+                        <p class="feature__text">Titular, resumen y texto ampliado. Solo se ven las que ya han llegado según la fecha y la hora reales.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-bell"></i>
+                        </div>
+                        <h3 class="feature__title">Notificaciones programadas</h3>
+                        <p class="feature__text">AlarmManager con alarmas exactas y un BroadcastReceiver que lanza cada alerta como notificación.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                        <h3 class="feature__title">Registro de desaparecidos</h3>
+                        <p class="feature__text">129 fichas con nombre, edad y lugar en un RecyclerView, que se van desbloqueando día a día.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="feature__title">Datos del dispositivo</h3>
+                        <p class="feature__text">Batería en tiempo real, modelo, versión de Android y valores del giroscopio y el acelerómetro.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+                        <h3 class="feature__title">Encuesta y estadísticas</h3>
+                        <p class="feature__text">Una encuesta emocional diaria antes de ver los recursos de agua, energía, comida y moral.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <h3 class="feature__title">Navegación inferior</h3>
+                        <p class="feature__text">Inicio, Alertas, Desaparecidos y Estadísticas con una BaseActivity común.</p>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Lenguaje & UI</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-java"></i> Java 11</li>
+                                <li><i class="fa-brands fa-android"></i> XML Layouts</li>
+                                <li><i class="fa-solid fa-bars"></i> BottomNavigationView</li>
+                                <li><i class="fa-solid fa-list"></i> RecyclerView y ListView</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Sistema</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-clock"></i> AlarmManager</li>
+                                <li><i class="fa-solid fa-tower-broadcast"></i> BroadcastReceiver</li>
+                                <li><i class="fa-solid fa-bell"></i> NotificationChannel</li>
+                                <li><i class="fa-solid fa-compass"></i> SensorManager</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Datos & Arquitectura</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-floppy-disk"></i> Almacenamiento interno</li>
+                                <li><i class="fa-solid fa-sliders"></i> SharedPreferences</li>
+                                <li><i class="fa-solid fa-sitemap"></i> Modelo / Vista / Controlador</li>
+                                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+                    <div class="links__container">
+                        <a href="https://github.com/evagr11/SIMCRA" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+                        <a href="https://github.com/evagr11/SIMCRA/releases" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-download"></i>
+                            Descargar APK
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

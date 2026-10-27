@@ -262,38 +262,39 @@
                         <i class="fa-solid fa-box-open"></i>
                     </div>
                     <h1 class="proyecto__title">Inventario <span class="title__color">IES Lacimurga</span></h1>
-                    <p class="proyecto__subtitle">App web de inventario para gestión de material deportivo y educativo</p>
+                    <p class="proyecto__subtitle">Inventario del almacén del gimnasio con etiquetas QR y datos en Google Sheets</p>
 
-                    <div class="status__badge">
-                        <i class="fa-solid fa-check-circle"></i>
-                        Proyecto finalizado
+                    <div class="status__badge status__badge--real">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Proyecto real · En uso
                     </div>
 
                     <div class="proyecto__tags">
                         <span class="proyecto__tag">Web</span>
                         <span class="proyecto__tag">JavaScript</span>
-                        <span class="proyecto__tag">CSS3</span>
+                        <span class="proyecto__tag">PWA</span>
+                        <span class="proyecto__tag">Google Sheets</span>
+                        <span class="proyecto__tag">Códigos QR</span>
                         <span class="proyecto__tag">GitHub Pages</span>
-                        <span class="proyecto__tag">DAM</span>
                     </div>
                 </header>
 
                 <!-- Hero con screenshot + botón -->
                 <div class="proyecto__hero">
                     <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
-                        
-                        <!-- Imagen principal / Mockup -->
+
+                        <!-- Imagen principal -->
                         <img 
-                            src="../assets/img/Inventario/MockupInventario.png" 
-                            alt="Inventario IES Lacimurga"
-                            style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;"
+                            src="../assets/img/Inventario/InventarioInicio.jpg" 
+                            alt="Página de inicio del inventario del gimnasio con buscador y categorías"
+                            style="width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; display: block;"
                         >
 
                         <!-- Overlay con botón -->
                         <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; justify-content: center;">
-                            <a href="https://ieslacimurga.github.io/Inventario/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                            <a href="https://evagr11.github.io/inventario-gimnasio-estatico/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
                                 <i class="fa-solid fa-globe" style="font-size: 1.3rem;"></i>
-                                Ver en GitHub Pages
+                                Ver la web
                             </a>
                         </div>
                     </div>
@@ -303,81 +304,118 @@
                 <div class="proyecto__description">
                     <h2 class="proyecto__section-title">Sobre el proyecto</h2>
                     <p class="proyecto__text">
-                        <strong>Inventario IES Lacimurga</strong> es una aplicación web de inventario desarrollada de manera 
-                        <strong>desinteresada</strong> para mi antiguo instituto <strong>IES Lacimurga</strong>. Permite gestionar 
-                        el material deportivo y educativo del centro, con búsqueda por categorías, control de stock por tallas 
-                        y exportación a Excel.
+                        <strong>Inventario del Gimnasio</strong> es la web que usa el departamento de Educación Física del 
+                        <strong>IES Lacimurga</strong>, mi antiguo instituto, para saber qué material hay en el almacén: cuántas 
+                        unidades, de qué talla, en qué estado y en qué estantería está. Cada estantería, armario o caja lleva una 
+                        <strong>etiqueta QR</strong>; al escanearla con el móvil se abre su página con todo lo que contiene.
                     </p>
                     <p class="proyecto__text">
-                        El proyecto está alojado en una <strong>organización de GitHub</strong> creada específicamente para el instituto, 
-                        con GitHub Pages como hosting. Actualmente contiene datos de muestra, a la espera de incorporar el 
-                        inventario real del centro.
+                        Lo desarrollé de forma <strong>desinteresada</strong>. Las condiciones eran claras: coste cero, seguro y que 
+                        los datos de los alumnos no salieran del centro. Diseñé primero los wireframes en Figma y, tras valorar una 
+                        primera versión con servidor y préstamos, la simplifiqué a una <strong>web estática</strong>: los profesores 
+                        mantienen el inventario en una hoja de <strong>Google Sheets</strong> que ya saben usar y la web la lee y 
+                        calcula todos los totales.
                     </p>
                 </div>
 
-                <!-- Características principales -->
-                <div class="proyecto__section">
-                    <h2 class="proyecto__section-title">Características principales</h2>
-                    <div class="features__grid">
-                        <div class="feature__item">
-                            <div class="feature__icon">
-                                <i class="fa-solid fa-folder-tree"></i>
-                            </div>
-                            <div class="feature__content">
-                                <h4>Categorías dinámicas</h4>
-                                <p>Sidebar con categorías y subcategorías desplegables para filtrar materiales por tipo.</p>
-                            </div>
-                        </div>
-
-                        <div class="feature__item">
-                            <div class="feature__icon">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                            <div class="feature__content">
-                                <h4>Búsqueda inteligente</h4>
-                                <p>Normalización de tildes y caracteres especiales para búsquedas precisas en tiempo real.</p>
-                            </div>
-                        </div>
-
-                        <div class="feature__item">
-                            <div class="feature__icon">
+                <!-- Flujo -->
+                <div class="flow__section">
+                    <h2 class="proyecto__section-title">Cómo funciona</h2>
+                    <div class="flow__steps">
+                        <div class="flow__step">
+                            <div class="flow__icon">
                                 <i class="fa-solid fa-table"></i>
                             </div>
-                            <div class="feature__content">
-                                <h4>Tabla avanzada</h4>
-                                <p>Paginación, ordenación por columnas y filtros combinados para gestión eficiente.</p>
-                            </div>
+                            <h4 class="flow__title">Google Sheets</h4>
+                            <p class="flow__text">Los profesores editan el inventario en 5 pestañas, con permisos e historial de cambios</p>
                         </div>
+                        <div class="flow__step">
+                            <div class="flow__icon">
+                                <i class="fa-solid fa-file-csv"></i>
+                            </div>
+                            <h4 class="flow__title">Publicado como CSV</h4>
+                            <p class="flow__text">La hoja se publica en solo lectura, sin servidor ni base de datos</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <h4 class="flow__title">La web calcula</h4>
+                            <p class="flow__text">Descarga las pestañas y calcula disponibles, tallas, estados y ubicaciones</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon">
+                                <i class="fa-solid fa-qrcode"></i>
+                            </div>
+                            <h4 class="flow__title">Etiquetas QR</h4>
+                            <p class="flow__text">Cada ubicación tiene su QR para abrir su contenido desde el móvil</p>
+                        </div>
+                    </div>
+                </div>
 
-                        <div class="feature__item">
-                            <div class="feature__icon">
-                                <i class="fa-solid fa-ruler-combined"></i>
-                            </div>
-                            <div class="feature__content">
-                                <h4>Inventario por tallas</h4>
-                                <p>Detalle de cada material con control de stock individual por talla (XS a XXL).</p>
-                            </div>
+                <!-- Características principales -->
+                <h2 class="proyecto__section-title">Características principales</h2>
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
+                        <h3 class="feature__title">Buscador y filtros</h3>
+                        <p class="feature__text">Búsqueda por nombre, talla, ubicación o código, filtros por estado y navegación por categorías.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="feature__title">Cantidades siempre cuadradas</h3>
+                        <p class="feature__text">Las unidades se escriben una sola vez y la web calcula todos los totales.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </div>
+                        <h3 class="feature__title">Ubicaciones con QR</h3>
+                        <p class="feature__text">Almacén, estantería, estante y caja, con generador de QR propio e impresión de etiquetas en varios tamaños.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-file-excel"></i>
+                        </div>
+                        <h3 class="feature__title">Exportar e imprimir</h3>
+                        <p class="feature__text">Exportación a Excel protegida contra inyección de fórmulas y estilos propios para papel.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <h3 class="feature__title">Instalable (PWA)</h3>
+                        <p class="feature__text">Se instala como app en el móvil y, sin conexión, muestra la última copia descargada.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="feature__title">Segura y probada</h3>
+                        <p class="feature__text">Solo lectura, CSP, protección XSS y 26 pruebas automáticas con el test runner de Node.</p>
+                    </div>
+                </div>
 
-                        <div class="feature__item">
-                            <div class="feature__icon">
-                                <i class="fa-solid fa-file-excel"></i>
-                            </div>
-                            <div class="feature__content">
-                                <h4>Exportación Excel</h4>
-                                <p>Descarga del inventario filtrado en formato .xlsx para gestión externa del centro.</p>
-                            </div>
-                        </div>
-
-                        <div class="feature__item">
-                            <div class="feature__icon">
-                                <i class="fa-solid fa-mobile-screen"></i>
-                            </div>
-                            <div class="feature__content">
-                                <h4>Diseño responsive</h4>
-                                <p>Menú hamburguesa y adaptación completa para tablets y móviles.</p>
-                            </div>
-                        </div>
+                <!-- Capturas -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Capturas</h2>
+                    <div class="shots__grid">
+                        <figure class="shots__item">
+                            <img src="../assets/img/Inventario/InventarioUbicacion.jpg" alt="Página de una ubicación con su contenido" loading="lazy">
+                            <figcaption>Contenido de una ubicación</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Inventario/InventarioEtiquetas.jpg" alt="Etiquetas QR listas para imprimir" loading="lazy">
+                            <figcaption>Etiquetas QR para imprimir</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/Inventario/InventarioMovil.jpg" alt="El inventario en un móvil" loading="lazy">
+                            <figcaption>Versión móvil</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -390,19 +428,19 @@
                             <h4 class="tech__category-title">Frontend</h4>
                             <ul class="tech__list">
                                 <li><i class="fa-brands fa-html5"></i> HTML5 Semántico</li>
-                                <li><i class="fa-brands fa-css3-alt"></i> CSS3 (Flexbox/Grid)</li>
-                                <li><i class="fa-brands fa-js"></i> JavaScript Vanilla</li>
-                                <li><i class="fa-solid fa-font-awesome"></i> Font Awesome</li>
+                                <li><i class="fa-brands fa-css3-alt"></i> CSS3 (responsive e impresión)</li>
+                                <li><i class="fa-brands fa-js"></i> JavaScript con módulos ES</li>
+                                <li><i class="fa-solid fa-mobile-screen"></i> PWA (manifest + service worker)</li>
                             </ul>
                         </div>
 
                         <div class="tech__category">
                             <h4 class="tech__category-title">Datos & Lógica</h4>
                             <ul class="tech__list">
-                                <li><i class="fa-solid fa-database"></i> JSON estático (data.js)</li>
-                                <li><i class="fa-solid fa-floppy-disk"></i> LocalStorage</li>
-                                <li><i class="fa-solid fa-table-cells"></i> Paginación JS</li>
-                                <li><i class="fa-solid fa-filter"></i> Filtros dinámicos</li>
+                                <li><i class="fa-solid fa-table"></i> Google Sheets publicado como CSV</li>
+                                <li><i class="fa-solid fa-qrcode"></i> Generador de QR propio</li>
+                                <li><i class="fa-solid fa-vial"></i> node --test (26 pruebas)</li>
+                                <li><i class="fa-solid fa-filter"></i> Filtros y totales calculados</li>
                             </ul>
                         </div>
 
@@ -410,60 +448,9 @@
                             <h4 class="tech__category-title">Herramientas</h4>
                             <ul class="tech__list">
                                 <li><i class="fa-brands fa-github"></i> GitHub Pages</li>
-                                <li><i class="fa-solid fa-building"></i> GitHub Organization</li>
-                                <li><i class="fa-brands fa-figma"></i> Figma (prototipo)</li>
-                                <li><i class="fa-solid fa-file-excel"></i> SheetJS (Excel)</li>
+                                <li><i class="fa-brands fa-figma"></i> Figma (wireframes)</li>
+                                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Galería / Screenshots -->
-                <div class="proyecto__gallery">
-                    <h2 class="proyecto__section-title">Galería</h2>
-                    <div class="gallery__grid-proyecto gallery__grid--desktop">
-                        <div class="gallery__item-proyecto gallery__item--desktop">
-                            <img src="../assets/img/Inventario/Home.png" 
-                                 alt="Home del Inventario" 
-                                 class="gallery__image-proyecto"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="gallery__placeholder" style="display:none;">
-                                <i class="fa-solid fa-desktop"></i>
-                                <span>Home del Inventario</span>
-                            </div>
-                        </div>
-                        <div class="gallery__item-proyecto gallery__item--desktop">
-                            <img src="../assets/img/Inventario/Filtrado.png" 
-                                 alt="Inventario con filtro aplicado" 
-                                 class="gallery__image-proyecto"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="gallery__placeholder" style="display:none;">
-                                <i class="fa-solid fa-desktop"></i>
-                                <span>Inventario con filtro aplicado</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery__grid-proyecto gallery__grid--desktop">
-                        <div class="gallery__item-proyecto gallery__item--desktop">
-                            <img src="../assets/img/Inventario/Detalle.png" 
-                                 alt="Detalles de un material" 
-                                 class="gallery__image-proyecto"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="gallery__placeholder" style="display:none;">
-                                <i class="fa-solid fa-desktop"></i>
-                                <span>Detalles de un material</span>
-                            </div>
-                        </div>
-                        <div class="gallery__item-proyecto gallery__item--desktop">
-                            <img src="../assets/img/Inventario/Buscador.png" 
-                                 alt="Buscador de materiales" 
-                                 class="gallery__image-proyecto"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="gallery__placeholder" style="display:none;">
-                                <i class="fa-solid fa-desktop"></i>
-                                <span>Buscador de materiales</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -487,12 +474,12 @@
                     <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
 
                     <div class="links__container">
-                        <a href="https://ieslacimurga.github.io/Inventario/" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                        <a href="https://evagr11.github.io/inventario-gimnasio-estatico/" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
                             <i class="fa-solid fa-globe"></i>
-                            Ver en GitHub Pages
+                            Ver la web
                         </a>
 
-                        <a href="https://github.com/IESLACIMURGA/Inventario" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                        <a href="https://github.com/evagr11/inventario-gimnasio-estatico" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-github"></i>
                             Ver repositorio
                         </a>

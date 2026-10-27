@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Digipymon - Eva Gallardo</title>
+
+    <link rel="icon" href="../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../css/proyecto.css">
+
+    <meta name="description" content="Digipymon: RPG por consola en Python inspirado en Digimon.">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../assets/cv/CV_EvaGallardoRomero.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-egg"></i>
+                    </div>
+                    <h1 class="proyecto__title">Digi<span class="title__color">pymon</span></h1>
+                    <p class="proyecto__subtitle">RPG por consola en Python inspirado en Digimon</p>
+                    <div class="status__badge">
+                        <i class="fa-solid fa-check-circle"></i>
+                        Proyecto finalizado
+                    </div>
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Consola</span>
+                        <span class="proyecto__tag">Python</span>
+                        <span class="proyecto__tag">POO</span>
+                        <span class="proyecto__tag">Videojuego</span>
+                        <span class="proyecto__tag">DAM</span>
+                    </div>
+                </header>
+
+                <!-- Mockup / Hero -->
+                <div class="proyecto__hero">
+                    <div class="proyecto__mockup">
+                        <i class="fa-solid fa-egg"></i>
+                        <span>Digipymon</span>
+                        <span style="font-size: 0.9rem; font-weight: 400;">Python 3 · Programación orientada a objetos</span>
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>Digipymon</strong> es un <strong>videojuego RPG por consola</strong> hecho en Python. Empiezas con un compañero aleatorio y unas digipyballs; buscas criaturas para capturarlas, te enfrentas a entrenadores para ganar digicoins y los gastas en la tienda para curar, potenciar y hacer evolucionar a tu equipo.
+                    </p>
+                    <p class="proyecto__text">
+                        Fue la <strong>práctica final de Programación</strong> de 1º de DAM en New Digital Talent (Granada). Partía de un enunciado con las clases y el funcionamiento básico; sobre esa base añadí la narrativa y tres mejoras propias: el bonus por nivel, la evolución y la ventaja de tipos.
+                    </p>
+                </div>
+
+                <!-- Consola -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Así se ve un combate</h2>
+                    <div class="console__window">
+                        <div class="console__bar">
+                            <span class="console__dot"></span><span class="console__dot"></span><span class="console__dot"></span>
+                            Digipymon — consola
+                        </div>
+<pre class="console__output">COMBATE 1
+Tentomon [fuego]  VS  Betamon [planta]
+ BONUS DE NIVEL
+   Tentomon: 10 + 0.3 = 10.3
+   Betamon: 10 + 0.1 = 10.1
+ ¡VENTAJA DE TIPO! fuego es fuerte contra planta
+   Tentomon: 10.3 + 3.0 (30% de ataque base) = 13.3
+ RESUMEN FINAL:
+   Tentomon: ATAQUE TOTAL = 13.3
+   Betamon: ATAQUE TOTAL = 10.1
+¡Has ganado el combate! Tentomon ha recibido 10 de daño.</pre>
+                    </div>
+                </div>
+
+                <!-- Características -->
+                <h2 class="proyecto__section-title">Características principales</h2>
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-dice"></i>
+                        </div>
+                        <h3 class="feature__title">Captura con probabilidad</h3>
+                        <p class="feature__text">Cada criatura se genera al azar y es más difícil de capturar cuanto más nivel tiene.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <h3 class="feature__title">Ventaja de tipos</h3>
+                        <p class="feature__text">Fuego > Planta > Agua > Fuego. El que tiene ventaja suma un 30 % de su ataque base.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </div>
+                        <h3 class="feature__title">Niveles y evolución</h3>
+                        <p class="feature__text">Al llegar a nivel 5 el Digipymon evoluciona y gana vida y ataque.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="feature__title">Digishop e inventario</h3>
+                        <p class="feature__text">Digipyballs, pociones y objetos para subir de nivel, guardados en un diccionario.</p>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Lenguaje</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-python"></i> Python 3</li>
+                                <li><i class="fa-solid fa-cubes"></i> POO (5 clases)</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Librería estándar</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-dice"></i> random</li>
+                                <li><i class="fa-solid fa-clock"></i> time (texto letra a letra)</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Estructuras</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-list"></i> Listas</li>
+                                <li><i class="fa-solid fa-book"></i> Diccionarios</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+                    <div class="links__container">
+                        <a href="https://github.com/evagr11/Digipymon" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

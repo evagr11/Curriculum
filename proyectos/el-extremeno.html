@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>El Extremeño - Eva Gallardo</title>
+
+    <link rel="icon" href="../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../css/proyecto.css">
+
+    <meta name="description" content="Web de El Extremeño, negocio de mantenimiento y jardines en Navalvillar de Pela.">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../assets/cv/CV_EvaGallardoRomero.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h1 class="proyecto__title">El <span class="title__color">Extremeño</span></h1>
+                    <p class="proyecto__subtitle">Web de presentación para un negocio local de jardinería y mantenimiento</p>
+                    <div class="status__badge status__badge--real">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Proyecto real · En producción
+                    </div>
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Web</span>
+                        <span class="proyecto__tag">HTML5</span>
+                        <span class="proyecto__tag">CSS3</span>
+                        <span class="proyecto__tag">JavaScript</span>
+                        <span class="proyecto__tag">SEO local</span>
+                        <span class="proyecto__tag">Cloudflare</span>
+                    </div>
+                </header>
+
+                <!-- Mockup / Hero -->
+                <div class="proyecto__hero">
+                    <img src="../assets/img/ElExtremeno/Hero.jpg" alt="Portada de la web de El Extremeño con el comparador de antes y después" class="proyecto__hero-image" loading="lazy">
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>El Extremeño · Mantenimiento y Jardines</strong> es la web del negocio de Alfonso Martín Blanco, que hace jardinería, desbroces, podas, riego y reparaciones del hogar en <strong>Navalvillar de Pela (Badajoz)</strong>, los pueblos de alrededor y Madrid.
+                    </p>
+                    <p class="proyecto__text">
+                        Es un <strong>proyecto real</strong>. Alfonso solo trabajaba con Instagram y necesitaba una web a la que mandar a los clientes, con sus trabajos ordenados y una forma rápida de contactar. Me encargué de todo el proceso: organizar el contenido con él, seleccionar y optimizar las fotos, diseñar y programar la web y publicarla con despliegue automático desde GitHub.
+                    </p>
+                </div>
+
+                <!-- Destacado -->
+                <div class="doc__highlight">
+                    <div class="doc__highlight-header">
+                        <div class="doc__highlight-icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3 class="doc__highlight-title">Trabajo con un cliente real</h3>
+                    </div>
+                    <p class="doc__highlight-text">
+                        La web gira alrededor de lo que el cliente necesitaba: que quien llegue desde Instagram o una búsqueda vea trabajos reales y pueda llamar o escribir en un toque.
+                    </p>
+                    <ul class="doc__highlight-list">
+                        <li><i class="fa-solid fa-check"></i> Contenido organizado con el cliente</li>
+                        <li><i class="fa-solid fa-check"></i> Fotos seleccionadas y optimizadas</li>
+                        <li><i class="fa-solid fa-check"></i> Diseño mobile-first</li>
+                        <li><i class="fa-solid fa-check"></i> SEO local con datos estructurados</li>
+                        <li><i class="fa-solid fa-check"></i> Publicación automática en cada cambio</li>
+                        <li><i class="fa-solid fa-check"></i> Caras difuminadas por privacidad</li>
+                    </ul>
+                </div>
+
+                <!-- Características -->
+                <h2 class="proyecto__section-title">Características principales</h2>
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-left-right"></i>
+                        </div>
+                        <h3 class="feature__title">Comparador antes/después</h3>
+                        <p class="feature__text">Se arrastra la línea sobre la foto; funciona con ratón, dedo y teclado porque es un input range.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-images"></i>
+                        </div>
+                        <h3 class="feature__title">Galería con visor</h3>
+                        <p class="feature__text">Las miniaturas se abren en grande en un &lt;dialog&gt; que se cierra con X, Escape o pulsando fuera.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <h3 class="feature__title">Contacto directo</h3>
+                        <p class="feature__text">Botones de llamar y WhatsApp siempre visibles y botón para copiar el número.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-moon"></i>
+                        </div>
+                        <h3 class="feature__title">Modo oscuro automático</h3>
+                        <p class="feature__text">Se adapta al tema del dispositivo con prefers-color-scheme.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-magnifying-glass-location"></i>
+                        </div>
+                        <h3 class="feature__title">SEO local</h3>
+                        <p class="feature__text">JSON-LD LocalBusiness, Open Graph para compartir por WhatsApp y canonical.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="feature__title">Ligera</h3>
+                        <p class="feature__text">Sin frameworks, imágenes con carga diferida y vídeo que solo se descarga al darle al play.</p>
+                    </div>
+                </div>
+
+                <!-- Capturas -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Capturas</h2>
+                    <div class="shots__grid">
+                    <figure class="shots__item">
+                        <img src="../assets/img/ElExtremeno/Jardineria.jpg" alt="Sección de jardinería con la lista de servicios" loading="lazy">
+                        <figcaption>Jardinería y fincas</figcaption>
+                    </figure>
+                    <figure class="shots__item">
+                        <img src="../assets/img/ElExtremeno/Trabajos.jpg" alt="Galería de trabajos hechos" loading="lazy">
+                        <figcaption>Trabajos hechos con su galería</figcaption>
+                    </figure>
+                    <figure class="shots__item shots__item--mobile">
+                        <img src="../assets/img/ElExtremeno/Movil.jpg" alt="Portada en un móvil" loading="lazy">
+                        <figcaption>Versión móvil</figcaption>
+                    </figure>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Frontend</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-html5"></i> HTML5 semántico</li>
+                                <li><i class="fa-brands fa-css3-alt"></i> CSS3 (Grid, Flexbox, variables)</li>
+                                <li><i class="fa-brands fa-js"></i> JavaScript Vanilla</li>
+                                <li><i class="fa-solid fa-font"></i> Barlow (Google Fonts)</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">SEO & Rendimiento</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-code"></i> JSON-LD LocalBusiness</li>
+                                <li><i class="fa-solid fa-share-nodes"></i> Open Graph</li>
+                                <li><i class="fa-solid fa-image"></i> Carga diferida</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Despliegue</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-cloudflare"></i> Cloudflare</li>
+                                <li><i class="fa-brands fa-github"></i> Publicación desde GitHub</li>
+                                <li><i class="fa-solid fa-database"></i> Caché con _headers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+                    <div class="links__container">
+                        <a href="https://el-extremeno.evagallardor.workers.dev/" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-solid fa-globe"></i>
+                            Ver la web
+                        </a>
+                        <a href="https://github.com/evagr11/el-extremeno" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+                        <a href="https://www.instagram.com/mantenimientos_y_jardines_/" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-instagram"></i>
+                            Instagram del negocio
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

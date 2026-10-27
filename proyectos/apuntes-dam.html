@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Apuntes de DAM - Eva Gallardo</title>
+
+    <link rel="icon" href="../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../css/proyecto.css">
+
+    <meta name="description" content="Mis apuntes y cuadernos de código de DAM: Codebase, ADD-NDT y Acceso a Datos.">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../assets/cv/CV_EvaGallardoRomero.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h1 class="proyecto__title">Apuntes de <span class="title__color">DAM</span></h1>
+                    <p class="proyecto__subtitle">Mis cuadernos de código y apuntes del ciclo, ordenados para volver a ellos</p>
+                    <div class="status__badge status__badge--practice">
+                        <i class="fa-solid fa-book-open"></i>
+                        Apuntes en continua ampliación
+                    </div>
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Apuntes</span>
+                        <span class="proyecto__tag">Java</span>
+                        <span class="proyecto__tag">Spring Boot</span>
+                        <span class="proyecto__tag">Node.js</span>
+                        <span class="proyecto__tag">SQL</span>
+                        <span class="proyecto__tag">MongoDB</span>
+                    </div>
+                </header>
+
+                <!-- Mockup / Hero -->
+                <div class="proyecto__hero">
+                    <img src="../assets/img/Apuntes/AccesoDatosInicio.jpg" alt="Web de apuntes de Acceso a Datos" class="proyecto__hero-image" loading="lazy">
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        Durante el ciclo he ido guardando en GitHub todo lo que hago en clase: teoría, ejercicios y prácticas con el código que funciona y la prueba de que funciona. Así puedo volver a cualquier tema sin rehacer la práctica, y sirve de guía a quien esté estudiando lo mismo.
+                    </p>
+                    <p class="proyecto__text">
+                        Son tres repositorios que recorren el ciclo de principio a fin: el cuaderno de primero, los apuntes de Acceso a Datos y la web que los convierte en páginas navegables.
+                    </p>
+                </div>
+
+                <!-- Flujo -->
+                <div class="flow__section">
+                    <h2 class="proyecto__section-title">Los tres cuadernos</h2>
+                    <div class="flow__steps">
+                        <div class="flow__step">
+                            <div class="flow__icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h4 class="flow__title">Codebase (1º DAM)</h4>
+                            <p class="flow__text">DOM con JavaScript, servidores Node.js + SQLite, p5.js, Python, retos de Linux y SQL y 14 cheatsheets</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <h4 class="flow__title">ADD-NDT</h4>
+                            <p class="flow__text">Ficheros, Streams, XML, JDBC + PostgreSQL, Hibernate/JPA, APIs REST con Spring Boot y MongoDB</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <h4 class="flow__title">Acceso a Datos (web)</h4>
+                            <p class="flow__text">19 tareas resueltas, código interpretado línea a línea y diccionario de excepciones</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Características -->
+                <h2 class="proyecto__section-title">Características principales</h2>
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-terminal"></i>
+                        </div>
+                        <h3 class="feature__title">Código + prueba</h3>
+                        <p class="feature__text">Cada práctica tiene el código completo, explicado paso a paso, con capturas de la ejecución.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3 class="feature__title">Diccionario de excepciones</h3>
+                        <p class="feature__text">Cada excepción que aparece: si es checked o unchecked, cuándo salta y en qué tareas se usa.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-puzzle-piece"></i>
+                        </div>
+                        <h3 class="feature__title">Componentes reutilizables</h3>
+                        <p class="feature__text">El menú y las barras laterales de la web se escriben una vez y se inyectan con JavaScript.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="feature__title">Cheatsheets</h3>
+                        <p class="feature__text">Guías rápidas de Git, Linux, SSH, redes, JSON, async/await, MVC y ORM.</p>
+                    </div>
+                </div>
+
+                <!-- Capturas -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Web de Acceso a Datos</h2>
+                    <div class="shots__grid">
+                    <figure class="shots__item">
+                        <img src="../assets/img/Apuntes/AccesoDatosTarea.jpg" alt="Página de una tarea con explicación y código" loading="lazy">
+                        <figcaption>Explicación, conceptos clave, código y salida de cada tarea</figcaption>
+                    </figure>
+                    <figure class="shots__item">
+                        <img src="../assets/img/Apuntes/AccesoDatosCodigo.jpg" alt="Código interpretado línea a línea" loading="lazy">
+                        <figcaption>Ejemplos del libro explicados línea a línea</figcaption>
+                    </figure>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Backend & Datos</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-java"></i> Java, JDBC, Hibernate/JPA</li>
+                                <li><i class="fa-solid fa-leaf"></i> Spring Boot</li>
+                                <li><i class="fa-solid fa-database"></i> PostgreSQL, H2, MongoDB</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Web & Scripts</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-node-js"></i> Node.js + Express</li>
+                                <li><i class="fa-brands fa-js"></i> JavaScript, p5.js</li>
+                                <li><i class="fa-brands fa-python"></i> Python</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Herramientas</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-linux"></i> Linux y SSH</li>
+                                <li><i class="fa-brands fa-markdown"></i> Markdown</li>
+                                <li><i class="fa-brands fa-github"></i> GitHub Pages</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+                    <div class="links__container">
+                        <a href="https://evagr11.github.io/acceso-a-datos/" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-solid fa-globe"></i>
+                            Web de Acceso a Datos
+                        </a>
+                        <a href="https://github.com/evagr11/codebase" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-github"></i>
+                            Codebase
+                        </a>
+                        <a href="https://github.com/evagr11/ADD-NDT" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-github"></i>
+                            ADD-NDT
+                        </a>
+                        <a href="https://github.com/evagr11/acceso-a-datos" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-github"></i>
+                            Acceso a Datos
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

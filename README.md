@@ -24,7 +24,7 @@ Este proyecto es el **portfolio personal y curriculum web** de Eva Gallardo, una
 
 *   🎨 **Diseño Moderno:** Interfaz limpia y elegante con un layout asimétrico que guía al usuario a través de las diferentes secciones.
 *   📱 **100% Responsive:** El diseño se adapta perfectamente a cualquier dispositivo, desde monitores de escritorio hasta teléfonos móviles.
-*   📂 **Portfolio Interactivo:** Sección de proyectos con tarjetas visuales y un sistema de filtros para navegar fácilmente por los trabajos realizados, con páginas de detalle para cada proyecto.
+*   📂 **Portfolio Interactivo:** Más de 20 proyectos (Android, Unity, web, backend, escritorio y apuntes) con tarjetas visuales, filtros por tipo y una página de detalle para cada uno.
 *   🏗️ **CSS Modular:** La hoja de estilos está organizada en módulos (sidebar, responsive, estilos principales) para facilitar el mantenimiento y la escalabilidad del código.
 *   💨 **Navegación Fluida:** Transiciones suaves y una estructura de navegación intuitiva que mejora la experiencia de usuario al moverse entre las distintas páginas del sitio.
 
@@ -48,12 +48,12 @@ Este es un **proyecto personal** creado con el objetivo de servir como carta de 
   <img src="https://img.shields.io/badge/Font_Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white" alt="Font Awesome">
   <img src="https://img.shields.io/badge/status-Stable-green?style=for-the-badge" alt="Status">
 </div>
+
 Este es un proyecto puramente front-end, construido con tecnologías web estándar:
 
 *   **Lenguajes:** HTML5, CSS3, JavaScript (Vanilla JS).
 *   **Librerías/Frameworks:**
     *   **Font Awesome:** Para la iconografía utilizada en toda la web.
-*   **Herramientas de Diseño (implícito):** El cuidado diseño sugiere el uso de herramientas como Figma para el prototipado. <!-- 💡 Sugerencia: añade un badge de Figma si lo usaste -->
 *   **Hosting:** GitHub Pages.
 
 # 📂 Estructura del Proyecto
@@ -63,22 +63,25 @@ La estructura del proyecto está organizada de forma modular para separar las di
 ```bash
 Curriculum/
 ├── assets
-│   ├── cv/
-│   ├── fonts/
+│   ├── cv/          # CV en PDF
+│   ├── fonts/       # Font Awesome
 │   ├── icons/
-│   ├── img/
-│   └── readme/
+│   ├── img/         # Mockups y capturas de cada proyecto
+│   └── pdf/         # Documentación de los proyectos
 ├── css
+│   ├── reset.css
 │   ├── estilos.css
-│   ├── proyecto.css
+│   ├── proyecto.css     # Estilos comunes de las páginas de proyecto
 │   ├── responsive.css
 │   └── sidebar.css
 ├── js
 │   ├── maps.js
 │   └── menu.js
-├── proyectos/
-│   ├── app-tickets.html
-│   └── ... (y otros proyectos)
+├── proyectos/       # Una página de detalle por proyecto
+│   ├── imirly-android.html
+│   ├── simcra.html
+│   ├── el-extremeno.html
+│   └── ...
 ├── contacto.html
 ├── curriculum.html
 ├── index.html
