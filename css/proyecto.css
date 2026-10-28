@@ -947,3 +947,138 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   ECOSISTEMA DE UN PROYECTO
+   (tarjetas de webs, repos y materiales)
+   ============================================ */
+
+.eco__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.eco__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.eco__card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 25px rgba(212, 165, 181, 0.1);
+}
+
+.eco__head {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.eco__icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.eco__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.eco__type {
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.eco__text {
+    font-size: 0.85rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.eco__link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.eco__mine {
+    align-self: flex-start;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    color: #92400e;
+}
+
+.team__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.team__member {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 15px;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.team__member--me {
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 25px rgba(212, 165, 181, 0.15);
+}
+
+.team__name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.team__role {
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    margin-top: 0.3rem;
+}
+
+@media (max-width: 992px) {
+    .eco__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .eco__grid {
+        grid-template-columns: 1fr;
+    }
+}
