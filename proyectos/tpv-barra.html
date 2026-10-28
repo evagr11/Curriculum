@@ -123,29 +123,6 @@
             margin: 0;
         }
 
-        .proyecto__features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        @media (max-width: 992px) {
-            .doc__highlight-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .context__box {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-
-            .proyecto__features {
-                grid-template-columns: 1fr;
-            }
-        }
-
         @media (max-width: 992px) {
             .doc__highlight-list {
                 grid-template-columns: 1fr;
@@ -268,18 +245,19 @@
                         <i class="fa-solid fa-cash-register"></i>
                     </div>
                     <h1 class="proyecto__title">TPV <span class="title__color">Barra</span></h1>
-                    <p class="proyecto__subtitle">Punto de venta táctil para cobrar tickets de bebida en barras de eventos y festivales</p>
+                    <p class="proyecto__subtitle">TPV en el móvil para cobrar la barra de un festival: suma la ronda, calcula el cambio y funciona sin cobertura</p>
 
                     <div class="status__badge">
                         <i class="fa-solid fa-check-circle"></i>
-                        Proyecto finalizado
+                        Usada de verdad en Contempopranea
                     </div>
 
                     <div class="proyecto__tags">
                         <span class="proyecto__tag">Web</span>
                         <span class="proyecto__tag">JavaScript</span>
                         <span class="proyecto__tag">Mobile First</span>
-                        <span class="proyecto__tag">Herramienta</span>
+                        <span class="proyecto__tag">PWA</span>
+                        <span class="proyecto__tag">Offline</span>
                     </div>
                 </header>
 
@@ -287,7 +265,6 @@
                 <div class="proyecto__hero">
                     <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
                         
-                        <!-- Screenshot del juego (IMAGEN REAL) -->
                         <img 
                             src="../assets/img/TPVBarra/MockupTPVBarra.png" 
                             alt="TPV Barra"
@@ -298,7 +275,7 @@
                         <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; justify-content: center;">
                             <a href="https://evagr11.github.io/TPV-para-Tickets/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
                                 <i class="fa-solid fa-globe" style="font-size: 1.3rem;"></i>
-                                Ver en GitHub Pages
+                                Abrir la app
                             </a>
                         </div>
                     </div>
@@ -308,10 +285,7 @@
                 <div class="context__box">
                     <i class="fa-solid fa-lightbulb"></i>
                     <p>
-                        Herramienta desarrollada para uso propio como cajera en la barra de un festival, donde
-                        necesitaba cobrar rápido tres tipos de ticket de bebida y calcular el cambio sin margen
-                        de error. Un caso real, pensado y probado para funcionar bajo presión, con muchos
-                        clientes seguidos y poco tiempo entre cada cobro.
+                        La hice para mí, para cobrar en la barra del festival Contempopranea (Don Benito) con mi propio iPhone. Necesitaba sumar rondas con muchos productos distintos, calcular el cambio sin equivocarme con colas largas y que funcionara aunque en el recinto no hubiera cobertura.
                     </p>
                 </div>
 
@@ -319,22 +293,13 @@
                 <div class="proyecto__description">
                     <h2 class="proyecto__section-title">Sobre el proyecto</h2>
                     <p class="proyecto__text">
-                        <strong>TPV Barra</strong> es una pequeña aplicación web pensada como <strong>punto de venta táctil</strong>
-                        para la gestión de cobros en la barra de un evento. Permite llevar la cuenta de tres tipos de ticket
-                        (combinado, cerveza/refresco y agua), sumar el total automáticamente y calcular el cambio exacto
-                        a partir del dinero que entrega el cliente.
+                        <strong>TPV Barra</strong> es una aplicación web que hace de <strong>punto de venta táctil</strong> en la barra de un evento. Lleva la cuenta de lo que pide cada cliente, suma el total y calcula el cambio a partir del dinero que entrega.
                     </p>
                     <p class="proyecto__text">
-                        Está construida en <strong>HTML, CSS y JavaScript vanilla</strong>, sin frameworks ni dependencias,
-                        para que cargue al instante y funcione de forma fiable en <strong>Safari sobre iPhone</strong>,
-                        el dispositivo real con el que se usa en la barra. Los precios de cada ticket son
-                        <strong>configurables</strong> y se guardan en el propio dispositivo, así que solo hace falta
-                        ajustarlos una vez antes del evento.
+                        Ahora tiene la carta de Contempopranea: <strong>11 productos en tres bloques</strong> (vaso, agua y Monster; y cerveza, tinto de verano, refresco y combinado en vasos de 400 y 900 ml). Toda la carta sale de un único array en <code>script.js</code>, así que adaptarla a otro evento es cambiar unas líneas.
                     </p>
                     <p class="proyecto__text">
-                        El diseño prioriza <strong>botones grandes para el pulgar</strong>, alto contraste para verse bien
-                        al sol, y un flujo de trabajo mínimo: sumar tickets, teclear el pago, leer el cambio y limpiar
-                        para el siguiente cliente.
+                        Está hecha en <strong>HTML, CSS y JavaScript</strong>, sin frameworks. Es una <strong>PWA</strong>: se instala en la pantalla de inicio con su icono y un <em>service worker</em> la guarda en el móvil, así que abre y funciona sin conexión. Los precios se cambian desde la propia app y se guardan en el dispositivo.
                     </p>
                 </div>
 
@@ -364,51 +329,31 @@
                 <div class="proyecto__features">
                     <div class="feature__card">
                         <div class="feature__icon">
-                            <i class="fa-solid fa-plus-minus"></i>
+                            <i class="fa-solid fa-layer-group"></i>
                         </div>
-                        <h3 class="feature__title">Contadores por ticket</h3>
-                        <p class="feature__text">Tres secciones (combinado, cerveza/refresco y agua) con botones + y − para ir sumando lo que pide cada cliente.</p>
+                        <h3 class="feature__title">Carta por bloques</h3>
+                        <p class="feature__text">Cada producto tiene sus botones + y − y su subtotal, agrupados por color: la bebida, vaso de 400 ml y vaso de 900 ml.</p>
                     </div>
-
                     <div class="feature__card">
                         <div class="feature__icon">
                             <i class="fa-solid fa-calculator"></i>
                         </div>
-                        <h3 class="feature__title">Teclado de cobro</h3>
-                        <p class="feature__text">Teclado numérico en pantalla para introducir el dinero entregado, con entrada estilo datáfono para máxima rapidez.</p>
+                        <h3 class="feature__title">Cobro y cambio</h3>
+                        <p class="feature__text">Teclado tipo datáfono para el dinero entregado; el cambio sale al momento y avisa con "Falta dinero" si no llega.</p>
                     </div>
-
-                    <div class="feature__card">
-                        <div class="feature__icon">
-                            <i class="fa-solid fa-coins"></i>
-                        </div>
-                        <h3 class="feature__title">Cambio automático</h3>
-                        <p class="feature__text">Calcula al instante cuánto dinero de cambio hay que devolver, o avisa si el importe entregado no es suficiente.</p>
-                    </div>
-                </div>
-                <div class="proyecto__features">
                     <div class="feature__card">
                         <div class="feature__icon">
                             <i class="fa-solid fa-tags"></i>
                         </div>
                         <h3 class="feature__title">Precios editables</h3>
-                        <p class="feature__text">Panel de ajustes para fijar el precio de cada tipo de ticket antes del evento, guardado en el propio dispositivo.</p>
+                        <p class="feature__text">Panel de ajustes para fijar el precio de cada producto; se guarda en el móvil con localStorage.</p>
                     </div>
-
                     <div class="feature__card">
                         <div class="feature__icon">
-                            <i class="fa-solid fa-broom"></i>
+                            <i class="fa-solid fa-wifi"></i>
                         </div>
-                        <h3 class="feature__title">Limpiar para el siguiente</h3>
-                        <p class="feature__text">Un solo botón pone a cero contadores y pago para atender al siguiente cliente sin arrastrar datos del anterior.</p>
-                    </div>
-
-                    <div class="feature__card">
-                        <div class="feature__icon">
-                            <i class="fa-solid fa-hand-pointer"></i>
-                        </div>
-                        <h3 class="feature__title">Pensada para el móvil</h3>
-                        <p class="feature__text">Botones grandes, sin zoom accidental por toques rápidos y alto contraste para usarla cómodamente al aire libre.</p>
+                        <h3 class="feature__title">Sin cobertura</h3>
+                        <p class="feature__text">Instalable como app y con service worker: tras abrirla una vez con conexión, funciona offline.</p>
                     </div>
                 </div>
 
@@ -440,7 +385,8 @@
                             <ul class="tech__list">
                                 <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
                                 <li><i class="fa-brands fa-github"></i> GitHub Pages</li>
-                                <li><i class="fa-brands fa-safari"></i> Optimizada para Safari iOS</li>
+                                <li><i class="fa-solid fa-mobile-screen"></i> PWA: manifest + service worker</li>
+                                <li><i class="fa-brands fa-safari"></i> Probada en Safari para iPhone</li>
                             </ul>
                         </div>
                     </div>
@@ -449,47 +395,15 @@
                 <!-- Galería / Screenshots -->
                 <div class="proyecto__gallery">
                     <h2 class="proyecto__section-title">Galería</h2>
-                    <div class="gallery__grid-proyecto gallery__grid--mobile">
-                        <div class="gallery__item-proyecto gallery__item--mobile">
-                            <img src="../assets/img/TPVBarra/Tickets.png"
-                                alt="Secciones de tickets"
-                                 class="gallery__image-proyecto"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="gallery__placeholder" style="display:none;">
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                <span>Secciones de tickets</span>
-                            </div>
-                        </div>
-                        <div class="gallery__item-proyecto gallery__item--mobile">
-                            <img src="../assets/img/TPVBarra/Precios.png"
-                                alt="Ajuste de precios"
-                                 class="gallery__image-proyecto"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="gallery__placeholder" style="display:none;">
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                <span>Ajuste de precios</span>
-                            </div>
-                        </div>
-                        <div class="gallery__item-proyecto gallery__item--mobile">
-                            <img src="../assets/img/TPVBarra/Teclado.png"
-                                alt="Teclado de cobro"
-                                 class="gallery__image-proyecto"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="gallery__placeholder" style="display:none;">
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                <span>Teclado de cobro</span>
-                            </div>
-                        </div>
-                        <div class="gallery__item-proyecto gallery__item--mobile">
-                            <img src="../assets/img/TPVBarra/Cambio.png"
-                                alt="Cambio calculado"
-                                 class="gallery__image-proyecto"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="gallery__placeholder" style="display:none;">
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                <span>Cambio calculado</span>
-                            </div>
-                        </div>
+                    <div class="shots__grid">
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/TPVBarra/venta.jpg" alt="Venta en curso con el total, el importe entregado y el cambio" loading="lazy">
+                            <figcaption>Venta en curso: total, importe entregado y cambio</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/TPVBarra/precios.jpg" alt="Panel para ajustar el precio de cada producto" loading="lazy">
+                            <figcaption>Ajuste de precios, guardados en el móvil</figcaption>
+                        </figure>
                     </div>
                 </div>
 
