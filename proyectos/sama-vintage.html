@@ -212,23 +212,25 @@
                         <i class="fa-solid fa-gem"></i>
                     </div>
                     <h1 class="proyecto__title">Sama <span class="title__color">Vintage</span></h1>
-                    <p class="proyecto__subtitle">Ecommerce estático de joyería vintage | Rebranding completo</p>
+                    <p class="proyecto__subtitle">Rebranding de una tienda real de joyería vintage: diseño en Figma y Canva, y web estática en HTML, CSS y JavaScript</p>
+                    <div class="status__badge">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Publicada en GitHub Pages
+                    </div>
 
                     <div class="proyecto__tags">
                         <span class="proyecto__tag">Web</span>
                         <span class="proyecto__tag">Ecommerce</span>
-                        <span class="proyecto__tag">Frontend</span>
-                        <span class="proyecto__tag">DAM</span>
+                        <span class="proyecto__tag">JavaScript</span>
+                        <span class="proyecto__tag">Figma</span>
+                        <span class="proyecto__tag">Canva</span>
                     </div>
                 </header>
-
-                <!-- Imagen principal / Mockup -->
 
                 <!-- Hero con screenshot + botón de navegación -->
                 <div class="proyecto__hero">
                     <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
                         
-                        <!-- Screenshot del juego (IMAGEN REAL) -->
                         <img 
                             src="../assets/img/SamaVintage/MockupSamaVintage.jpeg" 
                             alt="Sama Vintage - Mockup"
@@ -239,7 +241,7 @@
                         <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; justify-content: center;">
                             <a href="https://evagr11.github.io/sama-vintage/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
                                 <i class="fa-solid fa-globe" style="font-size: 1.3rem;"></i>
-                                Ver en GitHub Pages
+                                Ver la web
                             </a>
                         </div>
                     </div>
@@ -249,15 +251,10 @@
                 <div class="proyecto__description">
                     <h2 class="proyecto__section-title">Sobre el proyecto</h2>
                     <p class="proyecto__text">
-                        <strong>Sama Vintage</strong> es un sitio web estático de ecommerce para una tienda de joyería vintage. 
-                        El proyecto surgió como parte del módulo <strong>SGE (Sistemas de Gestión Empresarial)</strong> del segundo 
-                        curso de DAM, donde el objetivo era realizar el <strong>rebranding completo</strong> de una web real existente.
+                        <strong>Sama Vintage</strong> es una tienda real de joyería vintage. En el módulo <strong>SGE (Sistemas de Gestión Empresarial)</strong> de DAM teníamos que hacer el <strong>rebranding completo</strong> de una web que ya existiera, y la elegimos: nueva guía de estilos en Canva, prototipos en Figma y la tienda montada desde cero.
                     </p>
                     <p class="proyecto__text">
-                        Inicialmente se desarrolló en <strong>WordPress</strong> con WooCommerce, utilizando plugins como 
-                        Code Snippets, Contact Form 7 y Simple Custom CSS. Posteriormente, reconstruí el proyecto desde cero 
-                        como sitio estático en <strong>HTML, CSS y JavaScript vanilla</strong>, eliminando dependencias de CMS 
-                        para crear una versión portable y mantenible como portfolio.
+                        La primera versión la hicimos en equipo con Ana Núñez y Ángel Millán en <strong>WordPress</strong> con WooCommerce. Después la rehíce yo sola como web estática en <strong>HTML, CSS y JavaScript</strong>, sin CMS ni frameworks, para poder publicarla gratis en GitHub Pages y conservarla en mi portfolio. Tiene catálogo de 53 piezas, ficha de producto, carrito y un checkout simulado (sin pago real).
                     </p>
                 </div>
 
@@ -271,9 +268,7 @@
                             </div>
                             <h3 class="evolution__title">Fase 1: WordPress</h3>
                             <p class="evolution__text">
-                                Versión original desarrollada en equipo con WooCommerce, 
-                                plugins personalizados y tema customizado. Proyecto académico 
-                                colaborativo con compañeros de clase.
+                                Versión original hecha en equipo con Ana Núñez y Ángel Millán: WooCommerce, tema personalizado y plugins como Code Snippets, Contact Form 7 y Simple Custom CSS and JS.
                             </p>
                             <span class="evolution__tag">Proyecto en equipo</span>
                         </div>
@@ -284,9 +279,7 @@
                             </div>
                             <h3 class="evolution__title">Fase 2: Sitio Estático</h3>
                             <p class="evolution__text">
-                                Reconstrucción completa en HTML/CSS/JS puro. Carrito persistente 
-                                con localStorage, páginas dinámicas vía URL params y deploy en 
-                                GitHub Pages.
+                                Reconstrucción mía desde cero en HTML, CSS y JavaScript: carrito con localStorage, una sola plantilla de producto que lee el <code>?id=</code> de la URL e imágenes en WebP. Publicada en GitHub Pages.
                             </p>
                             <span class="evolution__tag">Portfolio personal</span>
                         </div>
@@ -299,32 +292,32 @@
                         <div class="feature__icon">
                             <i class="fa-solid fa-store"></i>
                         </div>
-                        <h3 class="feature__title">Catálogo de Productos</h3>
-                        <p class="feature__text">Visualización de 50+ piezas de joyería organizadas por categorías: broches, pendientes y collares.</p>
+                        <h3 class="feature__title">Catálogo de 53 piezas</h3>
+                        <p class="feature__text">Broches, pendientes y collares, con filtro por categoría y ordenación por precio.</p>
                     </div>
 
                     <div class="feature__card">
                         <div class="feature__icon">
                             <i class="fa-solid fa-file-lines"></i>
                         </div>
-                        <h3 class="feature__title">Páginas Dinámicas</h3>
-                        <p class="feature__text">Vista detallada de producto reutilizable mediante parámetros <code>?id=</code> en la URL.</p>
+                        <h3 class="feature__title">Una plantilla para todo</h3>
+                        <p class="feature__text">La ficha lee el <code>?id=</code> de la URL y pinta los datos y la galería de fotos desde <code>data.js</code>.</p>
                     </div>
 
                     <div class="feature__card">
                         <div class="feature__icon">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
-                        <h3 class="feature__title">Carrito Persistente</h3>
-                        <p class="feature__text">Añadir, eliminar y actualizar productos con persistencia en localStorage entre sesiones.</p>
+                        <h3 class="feature__title">Carrito y checkout</h3>
+                        <p class="feature__text">Añadir, quitar y cambiar cantidades con localStorage, contador sincronizado en todas las páginas y checkout simulado.</p>
                     </div>
 
                     <div class="feature__card">
                         <div class="feature__icon">
                             <i class="fa-solid fa-mobile-screen"></i>
                         </div>
-                        <h3 class="feature__title">Diseño Responsive</h3>
-                        <p class="feature__text">Navegación adaptable con menú responsive controlado por JavaScript. Compatible con todos los dispositivos.</p>
+                        <h3 class="feature__title">Ligera y responsive</h3>
+                        <p class="feature__text">Menú hamburguesa en móvil y fotos en WebP con carga diferida: el catálogo pasó de 171 MB a menos de 10 MB.</p>
                     </div>
                 </div>
 
@@ -339,7 +332,8 @@
                                 <li><i class="fa-brands fa-html5"></i> HTML5 Semántico</li>
                                 <li><i class="fa-brands fa-css3-alt"></i> CSS3 + Variables</li>
                                 <li><i class="fa-brands fa-js"></i> JavaScript Vanilla</li>
-                                <li><i class="fa-solid fa-database"></i> localStorage API</li>
+                                <li><i class="fa-solid fa-database"></i> localStorage</li>
+                                <li><i class="fa-solid fa-image"></i> Imágenes WebP</li>
                             </ul>
                         </div>
 
@@ -347,7 +341,7 @@
                             <h4 class="tech__category-title">Diseño & Prototipado</h4>
                             <ul class="tech__list">
                                 <li><i class="fa-brands fa-figma"></i> Figma (Prototipos)</li>
-                                <li><i class="fa-brands fa-canva"></i> Canva (Guía de estilos)</li>
+                                <li><i class="fa-solid fa-swatchbook"></i> Canva (Guía de estilos)</li>
                                 <li><i class="fa-solid fa-palette"></i> Paleta: Granate, Dorado, Crema</li>
                             </ul>
                         </div>
@@ -444,8 +438,10 @@
                     <h2 class="proyecto__section-title">Guía de estilos</h2>
                     <div class="proyecto__canva-container">
                         <iframe 
-                            src="https://www.canva.com/design/DAHJc2xwsEQ/YocAPbgGcrajA-eUFvZ1Yg/view?embed" 
+                            src="https://www.canva.com/design/DAHJc2xwsEQ/YocAPbgGcrajA-eUFvZ1Yg/view?embed"
                             class="proyecto__iframe"
+                            title="Guía de estilos de Sama Vintage en Canva"
+                            loading="lazy"
                             allowfullscreen>
                         </iframe>
                     </div>
@@ -461,6 +457,8 @@
                         <iframe
                             src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/7KPGwbiydSfIxcY5ylmO27/SAMA-VINTAGE?node-id=0-1&t=HI8ZvVFxp6JqF2Dr-1"
                             class="proyecto__iframe"
+                            title="Diseño de Sama Vintage en Figma"
+                            loading="lazy"
                             width="100%"
                             height="600"
                             allowfullscreen>
@@ -486,6 +484,11 @@
                         <a href="https://www.figma.com/design/7KPGwbiydSfIxcY5ylmO27/SAMA-VINTAGE" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-figma"></i>
                             Ver en Figma
+                        </a>
+
+                        <a href="https://www.canva.com/design/DAHJc2xwsEQ/YocAPbgGcrajA-eUFvZ1Yg/view" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-palette"></i>
+                            Guía de estilos en Canva
                         </a>
                     </div>
                 </div>
