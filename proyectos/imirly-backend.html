@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>iMirly Backend - Eva Gallardo</title>
+
+    <link rel="icon" href="../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+    
+    <!-- CSS externos - Rutas corregidas ../../ -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../css/proyecto.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú - Rutas corregidas para volver a raíz -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../assets/cv/CV_EvaGallardoRomero.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h1 class="proyecto__title">iMirly <span class="title__color">Backend</span></h1>
+                    <p class="proyecto__subtitle">API REST con Spring Boot y panel web para gestionar cuentas, anuncios y favoritos del marketplace iMirly</p>
+                    <div class="status__badge status__badge--practice">
+                        <i class="fa-solid fa-users"></i>
+                        Parte del TFC iMirly · Proyecto en equipo
+                    </div>
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Java 17</span>
+                        <span class="proyecto__tag">Spring Boot</span>
+                        <span class="proyecto__tag">Spring Security</span>
+                        <span class="proyecto__tag">JWT</span>
+                        <span class="proyecto__tag">JPA</span>
+                        <span class="proyecto__tag">H2 / PostgreSQL</span>
+                    </div>
+                </header>
+
+                <!-- Mockup -->
+                <div class="proyecto__hero">
+                    <img src="../assets/img/iMirlyBackend/MockupBackend.jpg" alt="Mockup del panel web del backend de iMirly en un portátil" class="proyecto__hero-image">
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        Es uno de los backends de <a href="imirly-android.html"><strong>iMirly</strong></a>, mi TFC en equipo: un marketplace que conecta a quien necesita un servicio con profesionales de su zona. Este repositorio expone una <strong>API REST</strong> para la app Android y además sirve, desde el propio Spring Boot, un <strong>panel web en HTML, CSS y JavaScript</strong> para probarla sin herramientas externas.
+                    </p>
+                    <p class="proyecto__text">
+                        Está organizado por capas clásicas (controlador → servicio → repositorio) con DTO de entrada y salida, validación y un manejador global de errores. En desarrollo usa <strong>H2</strong> en archivo y al arrancar carga las categorías y subcategorías del catálogo; para producción tiene un perfil con <strong>PostgreSQL</strong>.
+                    </p>
+                    <p class="proyecto__text">
+                        La versión principal del backend, con arquitectura hexagonal, contratos y monedero, está en el repositorio <a href="https://github.com/iMirly/iMirly" target="_blank">iMirly/iMirly</a>.
+                    </p>
+                </div>
+
+                <!-- Mi papel -->
+                <div class="doc__highlight">
+                    <div class="doc__highlight-header">
+                        <div class="doc__highlight-icon">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </div>
+                        <h3 class="doc__highlight-title">Quién hizo qué</h3>
+                    </div>
+                    <p class="doc__highlight-text">
+                        El código lo desarrolló sobre todo <strong>Ana Núñez</strong> (API, entidades y panel web), con la configuración de seguridad de <strong>Ángel Millán</strong>. Mi parte fue la <strong>documentación del repositorio</strong>: el README con la explicación del proyecto, la arquitectura y cómo ponerlo en marcha.
+                    </p>
+                </div>
+
+                <!-- Características -->
+                <h2 class="proyecto__section-title">Características principales</h2>
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon"><i class="fa-solid fa-lock"></i></div>
+                        <h3 class="feature__title">JWT sin estado</h3>
+                        <p class="feature__text">Registro e inicio de sesión con Spring Security, contraseñas con BCrypt y token en cada petición.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon"><i class="fa-solid fa-route"></i></div>
+                        <h3 class="feature__title">29 endpoints</h3>
+                        <p class="feature__text">Usuarios, anuncios, categorías y favoritos, con listados públicos paginados y búsqueda.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon"><i class="fa-solid fa-list-check"></i></div>
+                        <h3 class="feature__title">Anuncios en dos pasos</h3>
+                        <p class="feature__text">Datos generales y luego campos propios de cada subcategoría; estados borrador, publicado y despublicado.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon"><i class="fa-solid fa-table-columns"></i></div>
+                        <h3 class="feature__title">Panel web integrado</h3>
+                        <p class="feature__text">HTML, CSS y JavaScript servidos desde <code>static/</code> para probar toda la API desde el navegador.</p>
+                    </div>
+                </div>
+
+                <!-- Capas -->
+                <div class="flow__section">
+                    <h2 class="proyecto__section-title">Cómo se atiende una petición</h2>
+                    <div class="flow__steps">
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h4 class="flow__title">Filtro JWT</h4>
+                            <p class="flow__text">Valida el token y carga el usuario</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-signs-post"></i></div>
+                            <h4 class="flow__title">Controller</h4>
+                            <p class="flow__text">Recibe el DTO y lo valida</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-gears"></i></div>
+                            <h4 class="flow__title">Service</h4>
+                            <p class="flow__text">Aplica las reglas del negocio</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-database"></i></div>
+                            <h4 class="flow__title">Repository</h4>
+                            <p class="flow__text">JPA + Hibernate sobre H2 o PostgreSQL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Galería</h2>
+                    <p class="proyecto__text">Capturas del panel web con datos de ejemplo.</p>
+                    <div class="shots__grid">
+                        <figure class="shots__item">
+                            <img src="../assets/img/iMirlyBackend/login.jpg" alt="Pantalla de acceso con inicio de sesión y registro" loading="lazy">
+                            <figcaption>Acceso: inicio de sesión y registro</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/iMirlyBackend/panel.jpg" alt="Panel con la cuenta del usuario y el formulario para publicar un servicio" loading="lazy">
+                            <figcaption>Mi cuenta y publicación de un servicio (paso 1)</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/iMirlyBackend/mis-anuncios.jpg" alt="Listado de mis anuncios con sus estados" loading="lazy">
+                            <figcaption>Mis anuncios con su estado y acciones</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/iMirlyBackend/explorar.jpg" alt="Explorador de servicios de otros usuarios con favoritos" loading="lazy">
+                            <figcaption>Explorar servicios de otros usuarios y marcar favoritos</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Backend</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-java"></i> Java 17</li>
+                                <li><i class="fa-solid fa-leaf"></i> Spring Boot 3.2</li>
+                                <li><i class="fa-solid fa-lock"></i> Spring Security + JWT</li>
+                                <li><i class="fa-solid fa-check-double"></i> Bean Validation</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Datos</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-database"></i> JPA + Hibernate</li>
+                                <li><i class="fa-solid fa-hard-drive"></i> H2 (desarrollo)</li>
+                                <li><i class="fa-solid fa-database"></i> PostgreSQL (producción)</li>
+                                <li><i class="fa-solid fa-seedling"></i> Datos iniciales con data.sql</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Herramientas</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-cube"></i> Maven</li>
+                                <li><i class="fa-solid fa-pepper-hot"></i> Lombok y MapStruct</li>
+                                <li><i class="fa-brands fa-js"></i> Panel en HTML, CSS y JS</li>
+                                <li><i class="fa-brands fa-github"></i> GitHub (organización iMirly)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+                    <div class="links__container">
+                        <a href="https://github.com/iMirly/ImirlyAppbackend" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+                        <a href="imirly-android.html" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-bolt"></i>
+                            Proyecto iMirly completo
+                        </a>
+                        <a href="https://imirly.github.io/iMirlyDocumentacion/" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-book"></i>
+                            Documentación técnica
+                        </a>
+                        <a href="https://github.com/iMirly" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-users"></i>
+                            Organización iMirly
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
