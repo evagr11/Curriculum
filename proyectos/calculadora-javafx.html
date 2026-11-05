@@ -22,7 +22,7 @@
     <!-- CSS específico para páginas de proyecto -->
     <link rel="stylesheet" href="../css/proyecto.css">
 
-    <meta name="description" content="Calculadora de escritorio en JavaFX con FXML, MVC, JUnit 5 y Javadoc.">
+    <meta name="description" content="Calculadora de escritorio en JavaFX que se maneja con ratón y teclado: diseño en Figma, MVC, JUnit 5 y Javadoc.">
 </head>
 
 <body>
@@ -132,31 +132,31 @@
                         <i class="fa-solid fa-calculator"></i>
                     </div>
                     <h1 class="proyecto__title">Calculadora <span class="title__color">JavaFX</span></h1>
-                    <p class="proyecto__subtitle">Aplicación de escritorio con JavaFX, FXML y arquitectura MVC</p>
+                    <p class="proyecto__subtitle">Calculadora de escritorio que se maneja con el ratón y con el teclado, del sketch al patrón MVC</p>
                     <div class="status__badge status__badge--practice">
                         <i class="fa-solid fa-graduation-cap"></i>
-                        Práctica de clase
+                        Práctica de clase · Desarrollo de Interfaces
                     </div>
                     <div class="proyecto__tags">
                         <span class="proyecto__tag">Escritorio</span>
-                        <span class="proyecto__tag">Java</span>
                         <span class="proyecto__tag">JavaFX</span>
                         <span class="proyecto__tag">FXML</span>
+                        <span class="proyecto__tag">Teclado</span>
                         <span class="proyecto__tag">JUnit 5</span>
-                        <span class="proyecto__tag">Maven</span>
+                        <span class="proyecto__tag">Figma</span>
                     </div>
                 </header>
 
-                <!-- Mockup / Hero -->
+                <!-- Mockup + descarga -->
                 <div class="proyecto__hero">
-                    <div class="proyecto__mockup">
-                        <i class="fa-solid fa-calculator"></i>
-                        <span>Calculadora JavaFX</span>
-                        <span style="font-size: 0.9rem; font-weight: 400;">Java 11 · JavaFX · FXML · JUnit 5 · Javadoc</span>
-                        <a href="https://github.com/evagr11/Calculadora/releases/latest" target="_blank" style="display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 1rem; padding: 0.9rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1rem; text-decoration: none; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
-                            <i class="fa-brands fa-windows" style="font-size: 1.1rem;"></i>
-                            Descargar para Windows
-                        </a>
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                        <img src="../assets/img/Calculadora/MockupCalculadora.jpg" alt="Mockup de la calculadora en un portátil, con otra ventana mostrando un resultado y las teclas 7 + 2 Enter" style="width: 100%; display: block;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1rem; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); display: flex; justify-content: center;">
+                            <a href="https://github.com/evagr11/Calculadora/releases/latest" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.05rem; text-decoration: none; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                                <i class="fa-brands fa-windows" style="font-size: 1.2rem;"></i>
+                                Descargar para Windows
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -164,41 +164,58 @@
                 <div class="proyecto__description">
                     <h2 class="proyecto__section-title">Sobre el proyecto</h2>
                     <p class="proyecto__text">
-                        <strong>Calculadora</strong> es una aplicación de escritorio hecha en <strong>JavaFX</strong> que realiza suma, resta, multiplicación y división. La interfaz está definida en <strong>FXML</strong> con un diseño oscuro y botones redondeados.
+                        <strong>Calculadora</strong> es una aplicación de escritorio hecha en <strong>JavaFX</strong> que suma, resta, multiplica y divide, encadena operaciones y se maneja <strong>con el ratón y con el teclado</strong>. La interfaz está en <strong>FXML</strong>, con fondo negro, botones redondos y un solo color vivo para las operaciones.
                     </p>
                     <p class="proyecto__text">
-                        Es una práctica de la asignatura de <em>Desarrollo de Interfaces</em> de 2º de DAM, partiendo del arquetipo FXML de Maven en IntelliJ IDEA. El objetivo era separar bien vista, lógica y control de eventos (<strong>MVC</strong>), probar el código y documentarlo.
-                    </p>
-                    <p class="proyecto__text">
-                        Se puede <strong>descargar para Windows</strong> sin tener Java instalado: el zip lleva la aplicación y un Java reducido generado con <code>jlink</code>.
+                        Es una práctica de <em>Desarrollo de Interfaces</em> de 2º de DAM en dos tareas: primero el diseño (sketch, wireframe y prototipo en Figma) y la implementación con <strong>MVC</strong>, pruebas JUnit y Javadoc; después, el uso con el teclado. Se puede <strong>descargar para Windows</strong> sin tener Java instalado.
                     </p>
                 </div>
 
-                <!-- Flujo -->
+                <!-- Proceso de diseño -->
                 <div class="flow__section">
-                    <h2 class="proyecto__section-title">Arquitectura MVC</h2>
+                    <h2 class="proyecto__section-title">Del boceto a la aplicación</h2>
                     <div class="flow__steps">
                         <div class="flow__step">
-                            <div class="flow__icon">
-                                <i class="fa-solid fa-calculator"></i>
-                            </div>
-                            <h4 class="flow__title">Modelo</h4>
-                            <p class="flow__text">Calculadora.java hace las cuentas y lanza una excepción al dividir entre 0</p>
+                            <div class="flow__icon"><i class="fa-solid fa-pencil"></i></div>
+                            <h4 class="flow__title">Sketch</h4>
+                            <p class="flow__text">Pantalla arriba y botones en cuadrícula</p>
                         </div>
                         <div class="flow__step">
-                            <div class="flow__icon">
-                                <i class="fa-solid fa-table-cells"></i>
-                            </div>
-                            <h4 class="flow__title">Vista</h4>
-                            <p class="flow__text">calculadora.fxml: pantalla y botonera en un GridPane de 4 × 5</p>
+                            <div class="flow__icon"><i class="fa-solid fa-border-all"></i></div>
+                            <h4 class="flow__title">Wireframe</h4>
+                            <p class="flow__text">4 × 5 en grises; C y 0 más anchos</p>
                         </div>
                         <div class="flow__step">
-                            <div class="flow__icon">
-                                <i class="fa-solid fa-hand-pointer"></i>
-                            </div>
-                            <h4 class="flow__title">Controlador</h4>
-                            <p class="flow__text">Recoge los clics, guarda el estado y llama al modelo</p>
+                            <div class="flow__icon"><i class="fa-brands fa-figma"></i></div>
+                            <h4 class="flow__title">Prototipo</h4>
+                            <p class="flow__text">Negro, grises y naranja para las operaciones</p>
                         </div>
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-code"></i></div>
+                            <h4 class="flow__title">JavaFX</h4>
+                            <p class="flow__text">FXML, modelo y controlador</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proyecto__section">
+                    <div class="shots__grid shots__grid--4">
+                        <figure class="shots__item">
+                            <img src="../assets/img/Calculadora/boceto.jpg" alt="Sketch a mano de la calculadora" loading="lazy">
+                            <figcaption>Sketch</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Calculadora/wireframe.png" alt="Wireframe en grises de la calculadora" loading="lazy">
+                            <figcaption>Wireframe</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Calculadora/prototipo.png" alt="Prototipo con colores de la calculadora" loading="lazy">
+                            <figcaption>Prototipo</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Calculadora/inicio.png" alt="Calculadora hecha en JavaFX al arrancar" loading="lazy">
+                            <figcaption>JavaFX</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -206,33 +223,63 @@
                 <h2 class="proyecto__section-title">Características principales</h2>
                 <div class="proyecto__features">
                     <div class="feature__card">
-                        <div class="feature__icon">
-                            <i class="fa-solid fa-link"></i>
-                        </div>
+                        <div class="feature__icon"><i class="fa-solid fa-keyboard"></i></div>
+                        <h3 class="feature__title">Ratón y teclado</h3>
+                        <p class="feature__text">Cada tecla llama al mismo método que su botón, así que el resultado es idéntico.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon"><i class="fa-solid fa-link"></i></div>
                         <h3 class="feature__title">Operaciones encadenadas</h3>
-                        <p class="feature__text">Si hay una operación pendiente se calcula al pulsar el siguiente operador: 2 + 3 + 4 da 9.</p>
+                        <p class="feature__text">Si hay una operación pendiente se calcula al pulsar la siguiente: 3 + 4 + 5 da 12.</p>
                     </div>
                     <div class="feature__card">
-                        <div class="feature__icon">
-                            <i class="fa-solid fa-ban"></i>
-                        </div>
-                        <h3 class="feature__title">División entre cero</h3>
-                        <p class="feature__text">El modelo lanza una ArithmeticException y la pantalla muestra Error.</p>
+                        <div class="feature__icon"><i class="fa-solid fa-ban"></i></div>
+                        <h3 class="feature__title">Sin sorpresas</h3>
+                        <p class="feature__text">División entre cero muestra Error, y 0,1 + 0,2 da 0.3, no 0.30000000000000004.</p>
                     </div>
                     <div class="feature__card">
-                        <div class="feature__icon">
-                            <i class="fa-solid fa-broom"></i>
-                        </div>
-                        <h3 class="feature__title">Resultados limpios</h3>
-                        <p class="feature__text">Enteros sin .0 y decimales redondeados a 8 cifras.</p>
+                        <div class="feature__icon"><i class="fa-solid fa-vial"></i></div>
+                        <h3 class="feature__title">Pruebas y Javadoc</h3>
+                        <p class="feature__text">Cinco pruebas JUnit del modelo y Javadoc publicado en GitHub Pages.</p>
                     </div>
-                    <div class="feature__card">
-                        <div class="feature__icon">
-                            <i class="fa-solid fa-vial"></i>
-                        </div>
-                        <h3 class="feature__title">Pruebas y documentación</h3>
-                        <p class="feature__text">Pruebas unitarias del modelo con JUnit 5 y Javadoc publicado en GitHub Pages.</p>
+                </div>
+
+                <!-- Teclado -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">Uso con el teclado</h2>
+                    <ul class="keys__list">
+                        <li><span class="keys__key">0 – 9</span> Escribe el número (teclado normal o numérico)</li>
+                        <li><span class="keys__key">+ − * /</span> Elige la operación</li>
+                        <li><span class="keys__key">. o ,</span> Punto decimal</li>
+                        <li><span class="keys__key">Enter o =</span> Muestra el resultado</li>
+                        <li><span class="keys__key">Ctrl + C</span> Borra, igual que el botón C</li>
+                    </ul>
+                    <p class="proyecto__text">
+                        <code>App</code> escucha las teclas en la <strong>escena</strong> con <code>setOnKeyPressed</code>, porque los eventos suben desde el nodo con el foco hasta la raíz, y se las pasa al controlador. Los botones no cogen el foco (<code>focusTraversable="false"</code>) para que <code>Enter</code> no pulse uno por error.
+                    </p>
+                </div>
+
+                <!-- Galería -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">La aplicación</h2>
+                    <div class="shots__grid shots__grid--3">
+                        <figure class="shots__item">
+                            <img src="../assets/img/Calculadora/inicio.png" alt="Calculadora al arrancar" loading="lazy">
+                            <figcaption>Al arrancar</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Calculadora/resultado.png" alt="Resultado de una operación" loading="lazy">
+                            <figcaption>Resultado</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Calculadora/error.png" alt="Error al dividir entre cero" loading="lazy">
+                            <figcaption>División entre cero</figcaption>
+                        </figure>
                     </div>
+                    <figure class="shots__item">
+                        <img src="../assets/img/Calculadora/pruebas.png" alt="Las cinco pruebas JUnit superadas en IntelliJ" loading="lazy">
+                        <figcaption>Las cinco pruebas de JUnit en verde</figcaption>
+                    </figure>
                 </div>
 
                 <!-- Tech Stack -->
@@ -243,28 +290,63 @@
                             <h4 class="tech__category-title">Lenguaje & UI</h4>
                             <ul class="tech__list">
                                 <li><i class="fa-brands fa-java"></i> Java 11</li>
-                                <li><i class="fa-solid fa-window-maximize"></i> JavaFX 13</li>
-                                <li><i class="fa-solid fa-file-code"></i> FXML</li>
+                                <li><i class="fa-solid fa-window-maximize"></i> JavaFX 13 + FXML</li>
+                                <li><i class="fa-solid fa-keyboard"></i> KeyCode y KeyCodeCombination</li>
                             </ul>
                         </div>
                         <div class="tech__category">
-                            <h4 class="tech__category-title">Calidad</h4>
+                            <h4 class="tech__category-title">Diseño y calidad</h4>
                             <ul class="tech__list">
+                                <li><i class="fa-brands fa-figma"></i> Figma: wireframe y prototipo</li>
                                 <li><i class="fa-solid fa-vial"></i> JUnit 5</li>
-                                <li><i class="fa-solid fa-book"></i> Javadoc</li>
-                                <li><i class="fa-solid fa-sitemap"></i> MVC</li>
+                                <li><i class="fa-solid fa-book"></i> Javadoc y memoria en LaTeX</li>
                             </ul>
                         </div>
                         <div class="tech__category">
                             <h4 class="tech__category-title">Herramientas</h4>
                             <ul class="tech__list">
-                                <li><i class="fa-solid fa-cube"></i> Maven</li>
+                                <li><i class="fa-solid fa-cube"></i> Maven + jlink</li>
                                 <li><i class="fa-solid fa-laptop-code"></i> IntelliJ IDEA</li>
-                                <li><i class="fa-brands fa-github"></i> GitHub Pages</li>
+                                <li><i class="fa-brands fa-github"></i> GitHub Pages y Releases</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
+                <!-- Figma -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Wireframe y prototipo</h2>
+                    <div class="proyecto__figma-container">
+                        <iframe
+                            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FfG8BWf2mneEuCanVuY8ATo%2FCalculadora-JavaFX---Wireframe-y-Prototipo%3Fnode-id%3D1-2"
+                            class="proyecto__iframe"
+                            title="Wireframe y prototipo de la calculadora en Figma"
+                            loading="lazy"
+                            width="100%"
+                            height="600"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <!-- Documentación -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Documentación</h2>
+                    <div class="proyecto__pdf-container">
+                        <iframe
+                            src="../assets/pdf/Calculadora.pdf"
+                            class="proyecto__iframe"
+                            title="Documentación de la calculadora"
+                            loading="lazy"
+                            width="100%"
+                            height="700"
+                            style="border: none; border-radius: 16px;">
+                        </iframe>
+                    </div>
+                    <a href="../assets/pdf/Calculadora.pdf" download class="proyecto__canva-link" style="margin-top: 1rem; display: inline-flex;">
+                        <i class="fa-solid fa-download"></i> Descargar PDF
+                    </a>
+                </section>
 
                 <!-- Enlaces -->
                 <div class="proyecto__links">
@@ -280,7 +362,19 @@
                         </a>
                         <a href="https://evagr11.github.io/Calculadora/" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-solid fa-book"></i>
-                            Ver documentación (Javadoc)
+                            Javadoc
+                        </a>
+                        <a href="https://www.figma.com/design/fG8BWf2mneEuCanVuY8ATo/Calculadora-JavaFX---Wireframe-y-Prototipo" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-border-all"></i>
+                            Wireframe en Figma
+                        </a>
+                        <a href="https://www.figma.com/design/fG8BWf2mneEuCanVuY8ATo/Calculadora-JavaFX---Wireframe-y-Prototipo?node-id=1-2" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-figma"></i>
+                            Prototipo en Figma
+                        </a>
+                        <a href="../assets/pdf/Calculadora.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Documentación PDF
                         </a>
                     </div>
                 </div>
