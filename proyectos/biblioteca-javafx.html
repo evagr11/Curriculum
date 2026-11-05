@@ -147,9 +147,17 @@
                     </div>
                 </header>
 
-                <!-- Mockup -->
+                <!-- Mockup + descarga -->
                 <div class="proyecto__hero">
-                    <img src="../assets/img/Biblioteca/MockupBiblioteca.jpg" alt="Mockup de Mi biblioteca en un portátil con la ventana principal y la administración de libros" class="proyecto__hero-image">
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                        <img src="../assets/img/Biblioteca/MockupBiblioteca.jpg" alt="Mockup de Mi biblioteca en un portátil con la ventana principal y la administración de libros" style="width: 100%; display: block;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1rem; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); display: flex; justify-content: center;">
+                            <a href="https://github.com/evagr11/Biblioteca/releases/latest" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.05rem; text-decoration: none; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                                <i class="fa-brands fa-windows" style="font-size: 1.2rem;"></i>
+                                Descargar para Windows
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Descripción -->
@@ -160,6 +168,9 @@
                     </p>
                     <p class="proyecto__text">
                         Es una práctica de <em>Desarrollo de Interfaces</em> de 2º de DAM hecha en cuatro partes: diseño en sketch, wireframe y prototipo; vistas con <strong>SceneBuilder</strong>; modelo; y controladores que completan el patrón <strong>MVC</strong>. Lo documenté todo en una memoria en LaTeX de 42 páginas.
+                    </p>
+                    <p class="proyecto__text">
+                        Se puede <strong>descargar para Windows</strong> sin tener Java instalado: el zip lleva la aplicación y un Java reducido generado con <code>jlink</code>.
                     </p>
                 </div>
 
@@ -352,7 +363,11 @@
                 <div class="proyecto__links">
                     <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
                     <div class="links__container">
-                        <a href="https://github.com/evagr11/Biblioteca" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                        <a href="https://github.com/evagr11/Biblioteca/releases/latest" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-windows"></i>
+                            Descargar para Windows
+                        </a>
+                        <a href="https://github.com/evagr11/Biblioteca" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-github"></i>
                             Ver código en GitHub
                         </a>
