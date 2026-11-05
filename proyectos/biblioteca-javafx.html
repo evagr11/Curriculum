@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>Mi biblioteca JavaFX - Eva Gallardo</title>
+
+    <link rel="icon" href="../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#d4a5b5">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../css/proyecto.css">
+
+    <meta name="description" content="Calculadora de escritorio en JavaFX con FXML, MVC, JUnit 5 y Javadoc.">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../assets/cv/CV_EvaGallardoRomero.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h1 class="proyecto__title">Mi <span class="title__color">biblioteca</span></h1>
+                    <p class="proyecto__subtitle">Aplicación de escritorio en JavaFX para gestionar los libros de casa, del boceto a mano al patrón MVC</p>
+                    <div class="status__badge status__badge--practice">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Práctica de clase · Desarrollo de Interfaces
+                    </div>
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Escritorio</span>
+                        <span class="proyecto__tag">Java</span>
+                        <span class="proyecto__tag">JavaFX</span>
+                        <span class="proyecto__tag">SceneBuilder</span>
+                        <span class="proyecto__tag">Figma</span>
+                        <span class="proyecto__tag">Javadoc</span>
+                    </div>
+                </header>
+
+                <!-- Mockup -->
+                <div class="proyecto__hero">
+                    <img src="../assets/img/Biblioteca/MockupBiblioteca.jpg" alt="Mockup de Mi biblioteca en un portátil con la ventana principal y la administración de libros" class="proyecto__hero-image">
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>Mi biblioteca</strong> es una aplicación de escritorio para saber qué libros hay en casa y dónde están. Permite añadir, modificar, eliminar y buscar <strong>libros</strong> y <strong>autores</strong>, y ver la ficha de cada libro.
+                    </p>
+                    <p class="proyecto__text">
+                        Es una práctica de <em>Desarrollo de Interfaces</em> de 2º de DAM hecha en cuatro partes: diseño en sketch, wireframe y prototipo; vistas con <strong>SceneBuilder</strong>; modelo; y controladores que completan el patrón <strong>MVC</strong>. Lo documenté todo en una memoria en LaTeX de 42 páginas.
+                    </p>
+                </div>
+
+                <!-- Proceso de diseño -->
+                <div class="flow__section">
+                    <h2 class="proyecto__section-title">Del boceto a la aplicación</h2>
+                    <div class="flow__steps">
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-pencil"></i></div>
+                            <h4 class="flow__title">Sketch</h4>
+                            <p class="flow__text">Las tres ventanas a mano en papel</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-border-all"></i></div>
+                            <h4 class="flow__title">Wireframe</h4>
+                            <p class="flow__text">Estructura en grises en Figma</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-brands fa-figma"></i></div>
+                            <h4 class="flow__title">Prototipo</h4>
+                            <p class="flow__text">Estilo visual y navegación entre ventanas</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-code"></i></div>
+                            <h4 class="flow__title">JavaFX</h4>
+                            <p class="flow__text">Vistas en SceneBuilder, modelo y controladores</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proyecto__section">
+                    <div class="shots__grid shots__grid--3">
+                        <figure class="shots__item">
+                            <img src="../assets/img/Biblioteca/boceto.jpg" alt="Sketch a mano de la ventana principal" loading="lazy">
+                            <figcaption>Sketch a mano</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Biblioteca/wireframe.jpg" alt="Wireframe en escala de grises de la ventana principal" loading="lazy">
+                            <figcaption>Wireframe</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Biblioteca/prototipo.jpg" alt="Prototipo con color de la ventana principal" loading="lazy">
+                            <figcaption>Prototipo</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- Características -->
+                <h2 class="proyecto__section-title">Características principales</h2>
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <h3 class="feature__title">Buscar y filtrar</h3>
+                        <p class="feature__text">Buscador por título o autor, filtros de tipo e idioma y ficha del libro seleccionado.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon"><i class="fa-solid fa-book-open"></i></div>
+                        <h3 class="feature__title">Libros y autores</h3>
+                        <p class="feature__text">Añadir, editar y eliminar, con relación muchos a muchos entre libros y autores.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h3 class="feature__title">Validaciones</h3>
+                        <p class="feature__text">Campos obligatorios, errores en rojo que explican qué corregir y confirmación antes de eliminar.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon"><i class="fa-solid fa-file-code"></i></div>
+                        <h3 class="feature__title">Javadoc</h3>
+                        <p class="feature__text">Todas las clases y métodos documentados y publicados en GitHub Pages.</p>
+                    </div>
+                </div>
+
+                <!-- MVC -->
+                <div class="flow__section">
+                    <h2 class="proyecto__section-title">Arquitectura MVC: buscar un libro</h2>
+                    <div class="flow__steps">
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-keyboard"></i></div>
+                            <h4 class="flow__title">Vista</h4>
+                            <p class="flow__text">Al soltar una tecla, onKeyReleased llama a buscar()</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-hand-pointer"></i></div>
+                            <h4 class="flow__title">Controlador</h4>
+                            <p class="flow__text">Pide al modelo filtrarLibros(texto, tipo, idioma)</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-database"></i></div>
+                            <h4 class="flow__title">Modelo</h4>
+                            <p class="flow__text">Devuelve los libros que cumplen las tres condiciones</p>
+                        </div>
+                        <div class="flow__step">
+                            <div class="flow__icon"><i class="fa-solid fa-table"></i></div>
+                            <h4 class="flow__title">Vista</h4>
+                            <p class="flow__text">El controlador rellena la tabla y la barra de estado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería -->
+                <div class="proyecto__section">
+                    <h2 class="proyecto__section-title">La aplicación</h2>
+                    <div class="shots__grid">
+                        <figure class="shots__item">
+                            <img src="../assets/img/Biblioteca/principal.jpg" alt="Ventana principal con la tabla de libros, filtros y ficha" loading="lazy">
+                            <figcaption>Ventana principal: buscador, filtros y ficha</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Biblioteca/libros.jpg" alt="Administración de libros con tabla y formulario" loading="lazy">
+                            <figcaption>Administración de libros</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Biblioteca/autores.jpg" alt="Administración de autores con fechas y libros del autor" loading="lazy">
+                            <figcaption>Administración de autores</figcaption>
+                        </figure>
+                        <figure class="shots__item">
+                            <img src="../assets/img/Biblioteca/confirmar.jpg" alt="Ventana de confirmación antes de eliminar un libro" loading="lazy">
+                            <figcaption>Confirmación antes de eliminar</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Lenguaje & UI</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-brands fa-java"></i> Java 11</li>
+                                <li><i class="fa-solid fa-window-maximize"></i> JavaFX 13 + FXML</li>
+                                <li><i class="fa-solid fa-object-group"></i> SceneBuilder</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Diseño</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-pencil"></i> Sketches a mano</li>
+                                <li><i class="fa-brands fa-figma"></i> Figma: wireframes y prototipo</li>
+                                <li><i class="fa-solid fa-palette"></i> Verde #2F6B5E y dorado #C8963E</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Herramientas</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-cube"></i> Maven + IntelliJ IDEA</li>
+                                <li><i class="fa-solid fa-file-code"></i> Javadoc</li>
+                                <li><i class="fa-solid fa-file-pdf"></i> Memoria en LaTeX</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figma -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Prototipo navegable</h2>
+                    <div class="proyecto__figma-container">
+                        <iframe
+                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/MBpHA9vkrAKfltr0WOi7qj/Mi-biblioteca-%E2%80%93-Prototipo-navegable%3Fnode-id%3D1-292%26starting-point-node-id%3D1%3A292"
+                            class="proyecto__iframe"
+                            title="Prototipo navegable de Mi biblioteca en Figma"
+                            loading="lazy"
+                            width="100%"
+                            height="600"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <!-- Documentación -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Documentación</h2>
+                    <div class="proyecto__pdf-container">
+                        <iframe
+                            src="../assets/pdf/Biblioteca.pdf"
+                            class="proyecto__iframe"
+                            title="Documentación de Mi biblioteca"
+                            loading="lazy"
+                            width="100%"
+                            height="700"
+                            style="border: none; border-radius: 16px;">
+                        </iframe>
+                    </div>
+                    <a href="../assets/pdf/Biblioteca.pdf" download class="proyecto__canva-link" style="margin-top: 1rem; display: inline-flex;">
+                        <i class="fa-solid fa-download"></i> Descargar PDF
+                    </a>
+                </section>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+                    <div class="links__container">
+                        <a href="https://github.com/evagr11/Biblioteca" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+                        <a href="https://evagr11.github.io/Biblioteca/" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-code"></i>
+                            Javadoc
+                        </a>
+                        <a href="https://www.figma.com/design/OKJrJVBE6Cq7DnDBW9bMlK/Mi-biblioteca-%E2%80%93-Wireframes" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-border-all"></i>
+                            Wireframes en Figma
+                        </a>
+                        <a href="https://www.figma.com/design/MBpHA9vkrAKfltr0WOi7qj/Mi-biblioteca-%E2%80%93-Prototipo-navegable" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-figma"></i>
+                            Prototipo en Figma
+                        </a>
+                        <a href="https://www.figma.com/proto/MBpHA9vkrAKfltr0WOi7qj/Mi-biblioteca-%E2%80%93-Prototipo-navegable?node-id=1-292&starting-point-node-id=1%3A292" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-play"></i>
+                            Probar el prototipo
+                        </a>
+                        <a href="../assets/pdf/Biblioteca.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Documentación PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

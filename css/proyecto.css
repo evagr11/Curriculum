@@ -1082,3 +1082,14 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Galería de tres columnas (proceso de diseño) */
+.shots__grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+    .shots__grid--3 {
+        grid-template-columns: 1fr;
+    }
+}
