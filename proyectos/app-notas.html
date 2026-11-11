@@ -132,7 +132,7 @@
                         <i class="fa-solid fa-note-sticky"></i>
                     </div>
                     <h1 class="proyecto__title">App <span class="title__color">Notas</span></h1>
-                    <p class="proyecto__subtitle">App Android de notas de colores con bienvenida por pasos y guardado en ficheros</p>
+                    <p class="proyecto__subtitle">App Android de notas de colores pastel, con menú lateral, opciones y una tortuga como mascota</p>
                     <div class="status__badge">
                         <i class="fa-solid fa-check-circle"></i>
                         Proyecto finalizado
@@ -143,16 +143,22 @@
                         <span class="proyecto__tag">XML</span>
                         <span class="proyecto__tag">Fragments</span>
                         <span class="proyecto__tag">Material Design</span>
+                        <span class="proyecto__tag">Figma</span>
+                        <span class="proyecto__tag">LaTeX</span>
                         <span class="proyecto__tag">DAM</span>
                     </div>
                 </header>
 
                 <!-- Mockup / Hero -->
                 <div class="proyecto__hero">
-                    <div class="proyecto__mockup">
-                        <i class="fa-solid fa-note-sticky"></i>
-                        <span>App Notas</span>
-                        <span style="font-size: 0.9rem; font-weight: 400;">Java · Fragments · Chips · Almacenamiento interno</span>
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <img src="../assets/img/Notas/MockupNotas.jpg" alt="Mockup de AppNotas: la bienvenida con la tortuga y tres móviles con la lista de notas, una nota aleatoria y las opciones" style="width: 100%; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1rem; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); display: flex; justify-content: center;">
+                        <a href="https://github.com/evagr11/AppNotas/releases/latest" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.05rem; text-decoration: none; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                            <i class="fa-brands fa-android" style="font-size: 1.2rem;"></i>
+                            Descargar APK
+                        </a>
+                    </div>
                     </div>
                 </div>
 
@@ -160,14 +166,35 @@
                 <div class="proyecto__description">
                     <h2 class="proyecto__section-title">Sobre el proyecto</h2>
                     <p class="proyecto__text">
-                        <strong>App Notas</strong> es una aplicación Android nativa para tomar notas rápidas y organizarlas por colores. La primera vez que se abre, una bienvenida por pasos pide el nombre, una contraseña y la fecha de nacimiento; a partir de ahí la app te saluda por tu nombre y te lleva directamente a tus notas.
+                        <strong>App Notas</strong> es una aplicación Android nativa para tomar notas rápidas y organizarlas por colores. La primera vez que se abre, una bienvenida por pasos pide el nombre, una contraseña y el año de nacimiento; a partir de ahí la app te saluda por tu nombre y te lleva directamente a tus notas. Desde el menú lateral se llega a las opciones y a una nota elegida al azar.
                     </p>
                     <p class="proyecto__text">
                         Todo se guarda en el <strong>almacenamiento interno</strong> del móvil, sin internet ni base de datos: cada nota es un pequeño fichero de texto.
                     </p>
                     <p class="proyecto__text">
-                        La desarrollé en las asignaturas de <em>Desarrollo de Interfaces</em> y <em>Programación Multimedia y Dispositivos Móviles</em> de 2º de DAM para practicar Activities, Fragments, adaptadores propios, componentes de Material Design y guardado en ficheros.
+                        La desarrollé en las asignaturas de <em>Desarrollo de Interfaces</em> y <em>Programación Multimedia y Dispositivos Móviles</em> de DAM para practicar Activities, Fragments, adaptadores propios, componentes de Material Design y guardado en ficheros. La primera versión es de noviembre de 2025; en noviembre de 2026 terminé lo que faltaba de mi diseño de Figma: el menú lateral, las opciones, la nota aleatoria, los botones de Material 3, los colores pastel y la tortuga.
                     </p>
+                </div>
+
+                <!-- Documentación destacada -->
+                <div class="doc__highlight">
+                    <div class="doc__highlight-header">
+                        <div class="doc__highlight-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="doc__highlight-title">Documentación técnica en LaTeX</h3>
+                    </div>
+                    <p class="doc__highlight-text">
+                        El proyecto incluye una documentación en <strong>LaTeX</strong> con el diagrama de clases, el diseño de cada pantalla, los requisitos y el código de cada clase explicado función por función.
+                    </p>
+                    <ul class="doc__highlight-list">
+                        <li><i class="fa-solid fa-check"></i> Descripción general</li>
+                        <li><i class="fa-solid fa-check"></i> Diagrama de clases</li>
+                        <li><i class="fa-solid fa-check"></i> Diseño de las pantallas</li>
+                        <li><i class="fa-solid fa-check"></i> 15 requisitos funcionales</li>
+                        <li><i class="fa-solid fa-check"></i> 10 requisitos no funcionales</li>
+                        <li><i class="fa-solid fa-check"></i> Código comentado (15 clases)</li>
+                    </ul>
                 </div>
 
                 <!-- Características -->
@@ -178,7 +205,7 @@
                             <i class="fa-solid fa-hand"></i>
                         </div>
                         <h3 class="feature__title">Bienvenida por pasos</h3>
-                        <p class="feature__text">Tres Fragments (nombre, contraseña y fecha) que comparten los datos y validan que no quede nada vacío.</p>
+                        <p class="feature__text">Tres Fragments (nombre, contraseña y año de nacimiento) que comparten los datos y validan que no quede nada vacío.</p>
                     </div>
                     <div class="feature__card">
                         <div class="feature__icon">
@@ -192,7 +219,7 @@
                             <i class="fa-solid fa-palette"></i>
                         </div>
                         <h3 class="feature__title">7 colores y filtro</h3>
-                        <p class="feature__text">Cada nota tiene su color y la lista se filtra marcando uno o varios Chips a la vez.</p>
+                        <p class="feature__text">Cada nota tiene su color pastel y la lista se filtra marcando uno o varios Chips a la vez.</p>
                     </div>
                     <div class="feature__card">
                         <div class="feature__icon">
@@ -210,10 +237,26 @@
                     </div>
                     <div class="feature__card">
                         <div class="feature__icon">
-                            <i class="fa-solid fa-moon"></i>
+                            <i class="fa-solid fa-bars"></i>
                         </div>
-                        <h3 class="feature__title">Modo oscuro</h3>
-                        <p class="feature__text">Tema propio para el modo noche del sistema.</p>
+                        <h3 class="feature__title">Menú lateral</h3>
+                        <p class="feature__text">Un NavigationView con la tortuga, el saludo y accesos a Escribir nota, Opciones y Nota aleatoria.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h3 class="feature__title">Opciones</h3>
+                        <p class="feature__text">Cambiar el nombre, eliminar todas las notas o reiniciar la app. Lo que no se puede deshacer pide confirmación.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-shuffle"></i>
+                        </div>
+                        <h3 class="feature__title">Nota aleatoria</h3>
+                        <p class="feature__text">Enseña una de tus notas al azar, con su color, y deja ver otra o editarla.</p>
                     </div>
                 </div>
 
@@ -244,20 +287,107 @@
                             <ul class="tech__list">
                                 <li><i class="fa-solid fa-mobile"></i> Android Studio</li>
                                 <li><i class="fa-solid fa-gears"></i> Gradle (Kotlin DSL)</li>
-                                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+                                <li><i class="fa-brands fa-github"></i> GitHub y Releases (APK)</li>
+                                <li><i class="fa-brands fa-figma"></i> Figma</li>
+                                <li><i class="fa-solid fa-file-code"></i> LaTeX</li>
                                 <li><i class="fa-solid fa-palette"></i> Material Design</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                <!-- Galería -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Galería</h2>
+                    <div class="shots__grid shots__grid--4">
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/Notas/01_bienvenida.png" alt="Bienvenida con la tortuga" loading="lazy">
+                            <figcaption>Bienvenida con la tortuga</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/Notas/02_registro_nombre.png" alt="Registro por pasos" loading="lazy">
+                            <figcaption>Registro por pasos</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/Notas/05_lista.png" alt="Lista con notas de colores" loading="lazy">
+                            <figcaption>Lista con notas de colores</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/Notas/09_filtro.png" alt="Filtro por varios colores" loading="lazy">
+                            <figcaption>Filtro por varios colores</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/Notas/06_crear_nota.png" alt="Escribir una nota" loading="lazy">
+                            <figcaption>Escribir una nota</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/Notas/07_opciones.png" alt="Opciones" loading="lazy">
+                            <figcaption>Opciones</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/Notas/08_nota_aleatoria.png" alt="Nota aleatoria" loading="lazy">
+                            <figcaption>Nota aleatoria</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/Notas/04_registro_completado.png" alt="Registro completado" loading="lazy">
+                            <figcaption>Registro completado</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <!-- Figma -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Prototipo en Figma</h2>
+                    <div class="proyecto__figma-container">
+                        <iframe
+                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/bGd0hNjlE58MXFdRMzW3rc/NOTAS"
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="600"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <!-- Documentación PDF Preview -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Documentación técnica</h2>
+                    <div class="proyecto__pdf-container">
+                        <iframe
+                            src="../assets/pdf/Notas.pdf"
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="700"
+                            style="border: none; border-radius: 16px;">
+                        </iframe>
+                    </div>
+                    <a href="../assets/pdf/Notas.pdf" download class="proyecto__canva-link" style="margin-top: 1rem; display: inline-flex;">
+                        <i class="fa-solid fa-download"></i> Descargar PDF
+                    </a>
+                </section>
+
                 <!-- Enlaces -->
                 <div class="proyecto__links">
                     <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
                     <div class="links__container">
-                        <a href="https://github.com/evagr11/AppNotas" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                        <a href="https://github.com/evagr11/AppNotas/releases/latest" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-android"></i>
+                            Descargar APK
+                        </a>
+
+                        <a href="https://github.com/evagr11/AppNotas" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-github"></i>
                             Ver código en GitHub
+                        </a>
+
+                        <a href="https://www.figma.com/design/bGd0hNjlE58MXFdRMzW3rc/NOTAS" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-figma"></i>
+                            Ver diseño en Figma
+                        </a>
+
+                        <a href="../assets/pdf/Notas.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Documentación PDF
                         </a>
                     </div>
                 </div>
