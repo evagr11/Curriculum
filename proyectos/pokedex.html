@@ -145,7 +145,7 @@
 
         .gallery__grid-proyecto {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
         }
 
@@ -393,10 +393,14 @@
 
                 <!-- Mockup / Hero -->
                 <div class="proyecto__hero">
-                    <div class="proyecto__mockup">
-                        <i class="fa-solid fa-dragon"></i>
-                        <span>Pokédex</span>
-                        <span style="font-size: 0.9rem; font-weight: 400;">Java · XML · PokeAPI · Glide</span>
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <img src="../assets/img/Pokedex/MockupPokedex.jpg" alt="Mockup de la Pokédex: un móvil con la pantalla de inicio y tres móviles con el listado, la búsqueda y la ficha de Bulbasaur" style="width: 100%; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1rem; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); display: flex; justify-content: center;">
+                        <a href="https://github.com/evagr11/Pokedex/releases/latest" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.05rem; text-decoration: none; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                            <i class="fa-brands fa-android" style="font-size: 1.2rem;"></i>
+                            Descargar APK
+                        </a>
+                    </div>
                     </div>
                 </div>
 
@@ -406,7 +410,7 @@
                     <p class="proyecto__text">
                         <strong>Pokédex</strong> es una aplicación móvil que funciona como enciclopedia interactiva de Pokémon, 
                         desarrollada durante las asignaturas de <em>Desarrollo de Interfaces</em> y <em>Programación de Dispositivos Multimedia</em> 
-                        del segundo año de DAM.
+                        de DAM.
                     </p>
                     <p class="proyecto__text">
                         La app consume datos en tiempo real desde la <strong>PokeAPI</strong> (más de 1.000 Pokémon) y los presenta 
@@ -647,7 +651,7 @@
                             <ul class="tech__list">
                                 <li><i class="fa-brands fa-figma"></i> Figma (Prototipado)</li>
                                 <li><i class="fa-solid fa-file-pdf"></i> LaTeX (Documentación)</li>
-                                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+                                <li><i class="fa-brands fa-github"></i> GitHub y Releases (APK)</li>
                                 <li><i class="fa-solid fa-palette"></i> Material Design</li>
                             </ul>
                         </div>
@@ -656,31 +660,19 @@
 
                 <!-- Galería / Screenshots -->
                 <div class="proyecto__gallery">
-                    <h2 class="proyecto__section-title">Diseño de pantallas</h2>
-                    <div class="gallery__grid-proyecto">
-                        <div class="gallery__item-proyecto">
-                            <i class="fa-solid fa-image"></i>
-                            <span>Landing / Bienvenida</span>
+                    <h2 class="proyecto__section-title">Galería</h2>
+                    <div class="gallery__grid-proyecto gallery__grid--mobile">
+                        <div class="gallery__item-proyecto gallery__item--mobile">
+                            <img src="../assets/img/Pokedex/Inicio.png" alt="Pantalla de bienvenida con el Centro Pokémon" class="gallery__image-proyecto">
                         </div>
-                        <div class="gallery__item-proyecto">
-                            <i class="fa-solid fa-image"></i>
-                            <span>Grid de Pokémon</span>
+                        <div class="gallery__item-proyecto gallery__item--mobile">
+                            <img src="../assets/img/Pokedex/Listado.png" alt="Cuadrícula con los primeros Pokémon" class="gallery__image-proyecto">
                         </div>
-                        <div class="gallery__item-proyecto">
-                            <i class="fa-solid fa-image"></i>
-                            <span>Búsqueda en tiempo real</span>
+                        <div class="gallery__item-proyecto gallery__item--mobile">
+                            <img src="../assets/img/Pokedex/Busqueda.png" alt="Búsqueda en tiempo real de «bul»" class="gallery__image-proyecto">
                         </div>
-                        <div class="gallery__item-proyecto">
-                            <i class="fa-solid fa-image"></i>
-                            <span>Detalle del Pokémon</span>
-                        </div>
-                        <div class="gallery__item-proyecto">
-                            <i class="fa-solid fa-image"></i>
-                            <span>Colores por tipo</span>
-                        </div>
-                        <div class="gallery__item-proyecto">
-                            <i class="fa-solid fa-image"></i>
-                            <span>Tipos dual</span>
+                        <div class="gallery__item-proyecto gallery__item--mobile">
+                            <img src="../assets/img/Pokedex/Ficha.png" alt="Ficha de Bulbasaur con el color de su tipo" class="gallery__image-proyecto">
                         </div>
                     </div>
                 </div>
@@ -721,7 +713,12 @@
                     <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
 
                     <div class="links__container">
-                        <a href="https://github.com/evagr11/Pokedex" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                        <a href="https://github.com/evagr11/Pokedex/releases/latest" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-android"></i>
+                            Descargar APK
+                        </a>
+
+                        <a href="https://github.com/evagr11/Pokedex" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-github"></i>
                             Ver código en GitHub
                         </a>
@@ -729,6 +726,11 @@
                         <a href="https://www.figma.com/design/og2JV2mn6bbvUCpM8qFwct/Pokedex" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-figma"></i>
                             Ver diseño en Figma
+                        </a>
+
+                        <a href="../assets/pdf/Pokedex.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Documentación PDF
                         </a>
                     </div>
                 </div>
