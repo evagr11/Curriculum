@@ -352,7 +352,15 @@
 
                 <!-- Imagen principal / Mockup -->
                 <div class="proyecto__hero">
-                    <img src="../assets/img/Tickets/MockupTickets.png" alt="TICKETS" class="proyecto__hero-image">
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <img src="../assets/img/Tickets/MockupTickets.png" alt="Mockup de la app Tickets en un móvil" style="width: 100%; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1rem; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); display: flex; justify-content: center;">
+                        <a href="https://github.com/evagr11/AppTickets/releases/latest" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.05rem; text-decoration: none; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                            <i class="fa-brands fa-android" style="font-size: 1.2rem;"></i>
+                            Descargar APK
+                        </a>
+                    </div>
+                    </div>
                 </div>
 
                 <!-- Descripción -->
@@ -361,7 +369,7 @@
                     <p class="proyecto__text">
                         <strong>TICKETS</strong> es una aplicación móvil para la <strong>gestión de incidencias mediante tickets de soporte</strong>. 
                         Desarrollada durante las asignaturas de <em>Desarrollo de Interfaces</em> y <em>Programación de Dispositivos Multimedia</em> 
-                        del segundo año de DAM, como proyecto práctico para consolidar conceptos de desarrollo Android nativo.
+                        de DAM, como proyecto práctico para consolidar conceptos de desarrollo Android nativo.
                     </p>
                     <p class="proyecto__text">
                         La app permite <strong>crear, editar y consultar tickets</strong> con título, descripción, pasos para reproducir el problema 
@@ -466,6 +474,38 @@
                         <h3 class="feature__title">Accesibilidad Visual</h3>
                         <p class="feature__text">Paleta de colores seleccionada según pautas de percepción para daltonismo, asegurando distinguibilidad entre todos los estados.</p>
                     </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                        </div>
+                        <h3 class="feature__title">Sin Conexión</h3>
+                        <p class="feature__text">Los tickets se guardan como archivos en el almacenamiento interno de la app, así que no se pierden al cerrarla y no necesita internet.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <h3 class="feature__title">Bilingüe</h3>
+                        <p class="feature__text">Todos los textos están en strings.xml, con versión en español y en inglés. La app se muestra en el idioma del dispositivo.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-moon"></i>
+                        </div>
+                        <h3 class="feature__title">Modo Oscuro</h3>
+                        <p class="feature__text">Tema propio para el modo noche (values-night), que se aplica automáticamente según la configuración del móvil.</p>
+                    </div>
+
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-vial-circle-check"></i>
+                        </div>
+                        <h3 class="feature__title">Tests Unitarios</h3>
+                        <p class="feature__text">Pruebas con JUnit para la creación de tickets, el cambio de estado y el filtrado del listado.</p>
+                    </div>
                 </div>
 
                 <!-- Tech Stack detallado -->
@@ -498,7 +538,8 @@
                             <ul class="tech__list">
                                 <li><i class="fa-brands fa-figma"></i> Figma (Prototipado)</li>
                                 <li><i class="fa-solid fa-file-pdf"></i> LaTeX (Documentación)</li>
-                                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+                                <li><i class="fa-solid fa-vial"></i> JUnit 4 (Tests)</li>
+                                <li><i class="fa-brands fa-github"></i> GitHub y Releases (APK)</li>
                                 <li><i class="fa-solid fa-palette"></i> Material Design</li>
                             </ul>
                         </div>
@@ -588,7 +629,12 @@
                     <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
 
                     <div class="links__container">
-                        <a href="https://github.com/evagr11/AppTickets" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                        <a href="https://github.com/evagr11/AppTickets/releases/latest" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-android"></i>
+                            Descargar APK
+                        </a>
+
+                        <a href="https://github.com/evagr11/AppTickets" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-github"></i>
                             Ver código en GitHub
                         </a>
