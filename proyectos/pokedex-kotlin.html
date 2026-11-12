@@ -143,16 +143,21 @@
                         <span class="proyecto__tag">Jetpack Compose</span>
                         <span class="proyecto__tag">Material 3</span>
                         <span class="proyecto__tag">API REST</span>
+                        <span class="proyecto__tag">LaTeX</span>
                         <span class="proyecto__tag">DAM</span>
                     </div>
                 </header>
 
                 <!-- Mockup / Hero -->
                 <div class="proyecto__hero">
-                    <div class="proyecto__mockup">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <span>Pokédex Kotlin</span>
-                        <span style="font-size: 0.9rem; font-weight: 400;">Kotlin · Jetpack Compose · Volley · Coil</span>
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <img src="../assets/img/PokedexKotlin/MockupPokedexKotlin.jpg" alt="Mockup de Pokédex Kotlin: un móvil con Bulbasaur y tres móviles con la pantalla inicial, Shiinotic y Pecharunt" style="width: 100%; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1rem; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); display: flex; justify-content: center;">
+                        <a href="https://github.com/evagr11/PokedexKotlin/releases/latest" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.05rem; text-decoration: none; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                            <i class="fa-brands fa-android" style="font-size: 1.2rem;"></i>
+                            Descargar APK
+                        </a>
+                    </div>
                     </div>
                 </div>
 
@@ -165,6 +170,27 @@
                     <p class="proyecto__text">
                         Es la versión en Compose de mi <a href="pokedex.html" style="color: var(--color-primary); text-decoration: underline;">Pokédex en Java</a>, hecha con vistas XML y RecyclerView. Tenerlas juntas permite comparar cómo se resuelve lo mismo con interfaz declarativa y con el sistema clásico de vistas.
                     </p>
+                </div>
+
+                <!-- Documentación destacada -->
+                <div class="doc__highlight">
+                    <div class="doc__highlight-header">
+                        <div class="doc__highlight-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="doc__highlight-title">Documentación técnica en LaTeX</h3>
+                    </div>
+                    <p class="doc__highlight-text">
+                        El proyecto incluye una documentación en <strong>LaTeX</strong> con el diagrama de clases, el diseño de cada estado de la pantalla, los requisitos y el código de cada archivo explicado función por función.
+                    </p>
+                    <ul class="doc__highlight-list">
+                        <li><i class="fa-solid fa-check"></i> Descripción general</li>
+                        <li><i class="fa-solid fa-check"></i> Diagrama de clases</li>
+                        <li><i class="fa-solid fa-check"></i> Diseño de la pantalla (3 estados)</li>
+                        <li><i class="fa-solid fa-check"></i> 8 requisitos funcionales</li>
+                        <li><i class="fa-solid fa-check"></i> 6 requisitos no funcionales</li>
+                        <li><i class="fa-solid fa-check"></i> Código comentado (3 archivos)</li>
+                    </ul>
                 </div>
 
                 <!-- Características -->
@@ -227,19 +253,79 @@
                             <ul class="tech__list">
                                 <li><i class="fa-solid fa-mobile"></i> Android Studio</li>
                                 <li><i class="fa-solid fa-gears"></i> Gradle</li>
-                                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+                                <li><i class="fa-brands fa-github"></i> GitHub y Releases (APK)</li>
+                                <li><i class="fa-solid fa-file-code"></i> LaTeX</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                <!-- Galería -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Galería</h2>
+                    <div class="shots__grid shots__grid--3">
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/PokedexKotlin/01_inicio.png" alt="Pantalla inicial" loading="lazy">
+                            <figcaption>Pantalla inicial</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/PokedexKotlin/02_bulbasaur.png" alt="Bulbasaur (n.º 1)" loading="lazy">
+                            <figcaption>Bulbasaur (n.º 1)</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/PokedexKotlin/03_shiinotic.png" alt="Shiinotic (n.º 756)" loading="lazy">
+                            <figcaption>Shiinotic (n.º 756)</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/PokedexKotlin/04_pecharunt.png" alt="Pecharunt (n.º 1025)" loading="lazy">
+                            <figcaption>Pecharunt (n.º 1025)</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/PokedexKotlin/05_no_encontrado.png" alt="Número no encontrado" loading="lazy">
+                            <figcaption>Número no encontrado</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <!-- Documentación PDF Preview -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Documentación técnica</h2>
+                    <div class="proyecto__pdf-container">
+                        <iframe
+                            src="../assets/pdf/PokedexKotlin.pdf"
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="700"
+                            style="border: none; border-radius: 16px;">
+                        </iframe>
+                    </div>
+                    <a href="../assets/pdf/PokedexKotlin.pdf" download class="proyecto__canva-link" style="margin-top: 1rem; display: inline-flex;">
+                        <i class="fa-solid fa-download"></i> Descargar PDF
+                    </a>
+                </section>
+
                 <!-- Enlaces -->
                 <div class="proyecto__links">
                     <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
                     <div class="links__container">
-                        <a href="https://github.com/evagr11/PokedexKotlin" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                        <a href="https://github.com/evagr11/PokedexKotlin/releases/latest" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-android"></i>
+                            Descargar APK
+                        </a>
+
+                        <a href="https://github.com/evagr11/PokedexKotlin" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-github"></i>
                             Ver código en GitHub
+                        </a>
+
+                        <a href="pokedex.html" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-java"></i>
+                            Versión en Java
+                        </a>
+
+                        <a href="../assets/pdf/PokedexKotlin.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Documentación PDF
                         </a>
                     </div>
                 </div>

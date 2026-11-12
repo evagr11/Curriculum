@@ -143,16 +143,21 @@
                         <span class="proyecto__tag">Jetpack Compose</span>
                         <span class="proyecto__tag">MVVM</span>
                         <span class="proyecto__tag">StateFlow</span>
+                        <span class="proyecto__tag">LaTeX</span>
                         <span class="proyecto__tag">DAM</span>
                     </div>
                 </header>
 
                 <!-- Mockup / Hero -->
                 <div class="proyecto__hero">
-                    <div class="proyecto__mockup">
-                        <i class="fa-solid fa-layer-group"></i>
-                        <span>Repositorio Interactivo</span>
-                        <span style="font-size: 0.9rem; font-weight: 400;">Kotlin · Compose · ViewModel · StateFlow</span>
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <img src="../assets/img/RepositorioInteractivo/MockupRepositorioInteractivo.jpg" alt="Mockup de Repositorio Interactivo: un móvil con la Limonada y tres móviles con la calculadora de propinas, el login y el login con ViewModel" style="width: 100%; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1rem; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); display: flex; justify-content: center;">
+                        <a href="https://github.com/evagr11/RepositorioInteractivo/releases/latest" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.05rem; text-decoration: none; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                            <i class="fa-brands fa-android" style="font-size: 1.2rem;"></i>
+                            Descargar APK
+                        </a>
+                    </div>
                     </div>
                 </div>
 
@@ -165,6 +170,26 @@
                     <p class="proyecto__text">
                         Lo hice como práctica personal para asentar la interfaz declarativa y las recomendaciones de arquitectura de Google: estado, listas, validación de formularios y, al final, un <strong>ViewModel con StateFlow</strong>.
                     </p>
+                </div>
+
+                <!-- Documentación destacada -->
+                <div class="doc__highlight">
+                    <div class="doc__highlight-header">
+                        <div class="doc__highlight-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="doc__highlight-title">Documentación técnica en LaTeX</h3>
+                    </div>
+                    <p class="doc__highlight-text">
+                        El proyecto incluye una documentación en <strong>LaTeX</strong> con el diagrama de clases, el diseño de cada mini-proyecto, los requisitos y el código explicado función por función.
+                    </p>
+                    <ul class="doc__highlight-list">
+                        <li><i class="fa-solid fa-check"></i> Descripción general</li>
+                        <li><i class="fa-solid fa-check"></i> Diagrama de clases</li>
+                        <li><i class="fa-solid fa-check"></i> Diseño por pantalla</li>
+                        <li><i class="fa-solid fa-check"></i> Requisitos funcionales y no funcionales</li>
+                        <li><i class="fa-solid fa-check"></i> Código comentado</li>
+                    </ul>
                 </div>
 
                 <!-- Características -->
@@ -240,19 +265,78 @@
                             <ul class="tech__list">
                                 <li><i class="fa-solid fa-mobile"></i> Android Studio</li>
                                 <li><i class="fa-solid fa-gears"></i> Gradle (Kotlin DSL)</li>
-                                <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
+                                <li><i class="fa-brands fa-github"></i> GitHub y Releases (APK)</li>
+                                <li><i class="fa-solid fa-file-code"></i> LaTeX</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                <!-- Galería -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Galería</h2>
+                    <div class="shots__grid shots__grid--3">
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/RepositorioInteractivo/propinas.png" alt="Calculadora de propinas" loading="lazy">
+                            <figcaption>Calculadora de propinas</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/RepositorioInteractivo/btn_dinamicos.png" alt="Limonada" loading="lazy">
+                            <figcaption>Limonada</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/RepositorioInteractivo/login.png" alt="Login" loading="lazy">
+                            <figcaption>Login</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/RepositorioInteractivo/galeria.png" alt="Galería de tarjetas" loading="lazy">
+                            <figcaption>Galería de tarjetas</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/RepositorioInteractivo/formulario.png" alt="Test de 10 preguntas" loading="lazy">
+                            <figcaption>Test de 10 preguntas</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/RepositorioInteractivo/login_avanzado.png" alt="Login con ViewModel" loading="lazy">
+                            <figcaption>Login con ViewModel</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <!-- Documentación PDF Preview -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Documentación técnica</h2>
+                    <div class="proyecto__pdf-container">
+                        <iframe
+                            src="../assets/pdf/RepositorioInteractivo.pdf"
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="700"
+                            style="border: none; border-radius: 16px;">
+                        </iframe>
+                    </div>
+                    <a href="../assets/pdf/RepositorioInteractivo.pdf" download class="proyecto__canva-link" style="margin-top: 1rem; display: inline-flex;">
+                        <i class="fa-solid fa-download"></i> Descargar PDF
+                    </a>
+                </section>
+
                 <!-- Enlaces -->
                 <div class="proyecto__links">
                     <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
                     <div class="links__container">
-                        <a href="https://github.com/evagr11/RepositorioInteractivo" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                        <a href="https://github.com/evagr11/RepositorioInteractivo/releases/latest" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-android"></i>
+                            Descargar APK
+                        </a>
+
+                        <a href="https://github.com/evagr11/RepositorioInteractivo" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-github"></i>
                             Ver código en GitHub
+                        </a>
+
+                        <a href="../assets/pdf/RepositorioInteractivo.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Documentación PDF
                         </a>
                     </div>
                 </div>
