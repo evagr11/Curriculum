@@ -11,7 +11,7 @@
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=18&duration=3500&pause=800&color=9C4D66&center=true&vCenter=true&width=600&lines=Portfolio+personal+con+HTML%2C+CSS+y+JS%3BCrema%2C+ciruela+y+una+firma+a+mano%3BCaligraf%C3%ADa+%2B+letra+de+c%C3%B3digo%3BM%C3%A1s+de+20+proyectos+con+su+p%C3%A1gina" alt="Typing SVG" /></a>
 </div>
 
-# 🚀 Sobre el Proyecto
+# Sobre el Proyecto
 
 Esta es mi **web de portfolio y currículum**: el sitio donde está todo con detalle, mi trayectoria, mi formación y una página para cada proyecto. La he construido desde cero con HTML semántico, CSS separado por módulos y JavaScript sin librerías.
 
@@ -22,14 +22,14 @@ En noviembre de 2026 le hice un **lavado de cara**: pasé del rosa con Poppins a
   <p><em>Inicio de la web</em></p>
 </div>
 
-✨ **Características principales:**
+**Características principales:**
 
-*   ✍️ **Identidad propia:** Mi nombre en caligrafía (*Herr Von Muellerhoff*), titulares en *Cormorant Garamond*, etiquetas y botones en *JetBrains Mono* y el texto en *DM Sans*.
-*   🎨 **Paleta crema y ciruela:** Todos los colores salen de variables CSS en `reset.css`, así que se cambian en un solo sitio.
-*   📂 **Portfolio con filtros:** Más de 20 proyectos (Android, Unity, web, backend, escritorio y apuntes) con su mockup o, si todavía no lo tiene, un recuadro con su icono, y una página de detalle para cada uno.
-*   🧭 **Menú que se adapta:** En escritorio se lee como texto numerado; en tablet se queda en una barra estrecha de iconos y en el móvil pasa a una barra inferior.
-*   📱 **Responsive:** Las tarjetas pasan de 3 a 2 y a 1 columna y los titulares se ajustan en móvil.
-*   ♿ **Movimiento reducido:** Si el sistema tiene activado «reducir movimiento», se desactivan las animaciones.
+*   **Identidad propia:** Mi nombre en caligrafía (*Herr Von Muellerhoff*), titulares en *Cormorant Garamond*, etiquetas y botones en *JetBrains Mono* y el texto en *DM Sans*.
+*   **Paleta crema y ciruela:** Todos los colores salen de variables CSS en `reset.css`, así que se cambian en un solo sitio.
+*   **Portfolio con filtros:** Más de 20 proyectos (Android, Unity, web, backend, escritorio y apuntes) con su mockup o, si todavía no lo tiene, un recuadro con su icono, y una página de detalle para cada uno.
+*   **Menú que se adapta:** En escritorio se lee como texto numerado; en tablet se queda en una barra estrecha de iconos y en el móvil pasa a una barra inferior.
+*   **Responsive:** Las tarjetas pasan de 3 a 2 y a 1 columna y los titulares se ajustan en móvil.
+*   **Movimiento reducido:** Si el sistema tiene activado «reducir movimiento», se desactivan las animaciones.
 
 ### Galería de Funcionalidades
 
@@ -38,13 +38,13 @@ En noviembre de 2026 le hice un **lavado de cara**: pasé del rosa con Poppins a
 | <img src="https://github.com/user-attachments/assets/2986de1f-0456-4324-adc8-e36e1611edb2" alt="Ventana de portfolio con los proyectos y los filtros por tipo" width="100%"/> | <img src="https://github.com/user-attachments/assets/97b55afd-af32-429a-9f02-18645d0f3e6e" alt="Ventana de detalle de uno de los proyectos" width="100%"/> |
 | *Ventana de portfolio, con los proyectos y los filtros por tipo.* | *Ventana de detalle de uno de los proyectos.* |
 
-# 🧠 Contexto del Proyecto
+# Contexto del Proyecto
 
 Es un **proyecto personal** que me sirve de carta de presentación para conseguir prácticas o mi primer trabajo como desarrolladora. Tengo dos webs con objetivos distintos: [evagr11.github.io](https://evagr11.github.io/), una presentación breve de un minuto, y esta, donde está todo con detalle. Las dos comparten la misma identidad visual desde el rediseño.
 
 Para el rediseño probé varias direcciones (romántica editorial, tinta y código, cuaderno, contraste fuerte) y varios tonos de la misma paleta, y me quedé con la mezcla de las dos primeras en el tono crema y ciruela. El cambio está hecho casi todo en CSS: el HTML de las páginas sigue igual salvo las fuentes y el color del tema.
 
-# 🛠️ Stack Tecnológico
+# Stack Tecnológico
 
 <div align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
@@ -71,7 +71,7 @@ Para el rediseño probé varias direcciones (romántica editorial, tinta y códi
 
 </div>
 
-# 📂 Estructura del Proyecto
+# Estructura del Proyecto
 
 ```bash
 Curriculum/
@@ -102,7 +102,7 @@ Curriculum/
 └── sobremi.html
 ```
 
-# 🚀 Cómo Utilizar el Proyecto
+# Cómo Utilizar el Proyecto
 
 ### 1. Verla online
 
@@ -132,12 +132,6 @@ Es una web estática, así que no necesita instalar nada.
 ### 3. Cambiar los colores o las fuentes
 
 Toda la paleta y las cuatro tipografías están al principio de `css/reset.css`, en `:root`. Si cambias `--frambuesa` o `--ciruela`, cambia toda la web.
-
-# 🎯 Mejoras futuras
-
-*   📸 Mockups para los proyectos que todavía salen con su icono (SIMCRA, Pokédex Kotlin, Marketplace, Imageboard…).
-*   🌙 Un modo oscuro en tono ciruela con un botón para cambiarlo.
-*   🔤 Cargar las fuentes desde el propio repo para no depender de Google Fonts.
 
 <br>
 
