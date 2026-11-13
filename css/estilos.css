@@ -770,6 +770,30 @@
     margin-bottom: 0.7rem;
 }
 
+/* Etiqueta del lenguaje (Java / Kotlin) en las tarjetas */
+.gallery__lang {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
+}
+
+.gallery__lang--java {
+    color: #B35A00;
+    background: #FDEBD8;
+    border: 1px solid #F3C99B;
+}
+
+.gallery__lang--kotlin {
+    color: #6236D9;
+    background: #EEE8FF;
+    border: 1px solid #CDBDFB;
+}
+
 .gallery__description {
     font-size: 0.92rem;
     color: var(--color-gray);
