@@ -144,12 +144,23 @@
                         <span class="proyecto__tag">JavaScript</span>
                         <span class="proyecto__tag">SEO local</span>
                         <span class="proyecto__tag">Cloudflare</span>
+                        <span class="proyecto__tag">LaTeX</span>
                     </div>
                 </header>
 
                 <!-- Mockup / Hero -->
                 <div class="proyecto__hero">
-                    <img src="../assets/img/ElExtremeno/MockupElExtremeno.jpg" alt="Mockup de la web de El Extremeño en portátil y móvil" class="proyecto__hero-image">
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                        <img style="width: 100%; display: block;" src="../assets/img/ElExtremeno/MockupElExtremeno.jpg" alt="Mockup de la web de El Extremeño en portátil y móvil">
+
+                        <!-- Overlay con botón -->
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
+                            <a href="https://el-extremeno.evagallardor.workers.dev/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                                <i class="fa-solid fa-globe" style="font-size: 1.3rem;"></i>
+                                Ver la web
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Descripción -->
@@ -282,6 +293,23 @@
                     </div>
                 </div>
 
+                <!-- Documentación PDF Preview -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Documentación técnica</h2>
+                    <div class="proyecto__pdf-container">
+                        <iframe
+                            src="../assets/pdf/ElExtremeno.pdf"
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="700"
+                            style="border: none; border-radius: 16px;">
+                        </iframe>
+                    </div>
+                    <a href="../assets/pdf/ElExtremeno.pdf" download class="proyecto__canva-link" style="margin-top: 1rem; display: inline-flex;">
+                        <i class="fa-solid fa-download"></i> Descargar PDF
+                    </a>
+                </section>
+
                 <!-- Enlaces -->
                 <div class="proyecto__links">
                     <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
@@ -297,6 +325,16 @@
                         <a href="https://www.instagram.com/mantenimientos_y_jardines_/" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
                             <i class="fa-brands fa-instagram"></i>
                             Instagram del negocio
+                        </a>
+
+                        <a href="../assets/pdf/ElExtremeno.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Documentación PDF
+                        </a>
+
+                        <a href="https://evagr11.github.io/el-extremeno/" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-book"></i>
+                            JSDoc
                         </a>
                     </div>
                 </div>
