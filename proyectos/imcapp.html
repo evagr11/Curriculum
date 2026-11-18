@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;600&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <title>IMCApp - Eva Gallardo</title>
+
+    <link rel="icon" href="../assets/icons/icon-192.png">
+    <meta name="theme-color" content="#2B1F24">
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- CSS específico para páginas de proyecto -->
+    <link rel="stylesheet" href="../css/proyecto.css">
+
+    <meta name="description" content="IMCApp: calculadora del Índice de Masa Corporal con Kotlin, Jetpack Compose y Navigation 3.">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- ============================================
+             BARRA LATERAL IZQUIERDA
+             ============================================ -->
+        <aside class="layout__aside">
+            <section class="aside__user-info">
+
+                <!-- Foto y nombre -->
+                <div class="user-info__general">
+                    <div class="user-info__container-imagen">
+                        <img src="../assets/img/EvaGallardo.jpg" class="user-info__imagen" alt="foto perfil Eva Gallardo">
+                    </div>
+                    <h2 class="user-info__name">Eva Gallardo</h2>
+                    <h2 class="user-info__job">Desarrolladora de Aplicaciones<br>Multiplataforma (DAM)</h2>
+                </div>
+
+                <!-- Menú -->
+                <nav class="layout__menu">
+                    <ul class="menu__list">
+                        <li class="menu__option">
+                            <a href="../index.html" class="menu__link" data-menu="Inicio">
+                                <i class="fas fa-home menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../sobremi.html" class="menu__link" data-menu="Sobre Mí">
+                                <i class="fas fa-user menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../curriculum.html" class="menu__link" data-menu="Curriculum">
+                                <i class="fas fa-graduation-cap menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../portfolio.html" class="menu__link menu__link--active" data-menu="Portafolio">
+                                <i class="fas fa-briefcase menu__icon"></i>
+                            </a>
+                        </li>
+                        <li class="menu__option">
+                            <a href="../contacto.html" class="menu__link" data-menu="Contacto">
+                                <i class="fas fa-envelope menu__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Redes -->
+                <div class="user-info__links">
+                    <ul class="links__social">
+                        <li class="social__option">
+                            <a href="https://github.com/evagr11" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://www.linkedin.com/in/eva-gallardo-romero-830362349/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="social__option">
+                            <a href="https://evagr.itch.io/" target="_blank" class="social__link">
+                                <i class="social__icon fa-brands fa-itch-io"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Botón CV -->
+                <div class="user-info__buttons">
+                    <a href="../assets/cv/CV_EvaGallardoRomero.pdf" download class="user-info__btn">
+                        Descargar CV
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <footer class="user-info__footer">
+                    &copy; 2026 Eva Gallardo
+                </footer>
+
+            </section>
+        </aside>
+
+        <!-- ============================================
+             CONTENIDO PRINCIPAL DERECHO
+             ============================================ -->
+        <main class="layout__content">
+
+            <section class="content__page content__proyecto">
+
+                <!-- Navegación de vuelta -->
+                <div class="proyecto__back">
+                    <a href="../portfolio.html" class="back__link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+                <!-- Header del proyecto -->
+                <header class="proyecto__header">
+                    <div class="proyecto__icon-big">
+                        <i class="fa-solid fa-weight-scale"></i>
+                    </div>
+                    <h1 class="proyecto__title">IMC<span class="title__color">App</span></h1>
+                    <p class="proyecto__subtitle">Calculadora del Índice de Masa Corporal con Jetpack Compose y Navigation 3</p>
+                    <div class="status__badge status__badge--practice">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Práctica de clase
+                    </div>
+                    <div class="proyecto__tags">
+                        <span class="proyecto__tag">Android</span>
+                        <span class="proyecto__tag">Kotlin</span>
+                        <span class="proyecto__tag">Jetpack Compose</span>
+                        <span class="proyecto__tag">Material 3</span>
+                        <span class="proyecto__tag">Navigation 3</span>
+                        <span class="proyecto__tag">LaTeX</span>
+                        <span class="proyecto__tag">DAM</span>
+                    </div>
+                </header>
+
+                <!-- Mockup / Hero -->
+                <div class="proyecto__hero">
+                    <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <img src="../assets/img/IMCApp/MockupIMCApp.jpg" alt="Mockup de IMCApp: un móvil con la calculadora y tres móviles con el menú, la calculadora y el resultado" style="width: 100%; display: block;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1rem; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); display: flex; justify-content: center;">
+                        <a href="https://github.com/evagr11/IMCApp/releases/latest" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border-radius: 30px; font-weight: 600; font-size: 1.05rem; text-decoration: none; box-shadow: 0 5px 15px rgba(212, 165, 181, 0.3);">
+                            <i class="fa-brands fa-android" style="font-size: 1.2rem;"></i>
+                            Descargar APK
+                        </a>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="proyecto__description">
+                    <h2 class="proyecto__section-title">Sobre el proyecto</h2>
+                    <p class="proyecto__text">
+                        <strong>IMCApp</strong> es una calculadora del <strong>Índice de Masa Corporal</strong> para Android hecha con <strong>Kotlin y Jetpack Compose</strong>. Eliges el género, la altura, el peso y la edad, pulsas <em>Calcular</em> y la app muestra tu IMC con su categoría según los rangos de la OMS.
+                    </p>
+                    <p class="proyecto__text">
+                        La hice en clase siguiendo los apuntes de PMDM de la UT3 (basados en el curso de Android y Compose de AristiDev): menú, navegación con Navigation 3, selectores de género y altura, contadores y pantalla de resultado. Para la tarea de mejorar el aspecto de las dos pantallas hice un diseño propio, distinto del de los apuntes: tema azul noche y rosa, color animado en el selector de género, límites en los contadores, datos que se conservan al girar el móvil y una barra de escala de colores en el resultado.
+                    </p>
+                </div>
+
+                <!-- Documentación destacada -->
+                <div class="doc__highlight">
+                    <div class="doc__highlight-header">
+                        <div class="doc__highlight-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="doc__highlight-title">Documentación técnica en LaTeX</h3>
+                    </div>
+                    <p class="doc__highlight-text">
+                        El proyecto incluye una documentación en <strong>LaTeX</strong> que separa lo que sale de los apuntes y lo que cambié yo, con el diagrama de clases, el diseño de cada pantalla, los requisitos y el código de cada archivo explicado función por función.
+                    </p>
+                    <ul class="doc__highlight-list">
+                        <li><i class="fa-solid fa-check"></i> Descripción general y cambios propios</li>
+                        <li><i class="fa-solid fa-check"></i> Diagrama de clases</li>
+                        <li><i class="fa-solid fa-check"></i> Diseño de las 3 pantallas</li>
+                        <li><i class="fa-solid fa-check"></i> 9 requisitos funcionales</li>
+                        <li><i class="fa-solid fa-check"></i> 6 requisitos no funcionales</li>
+                        <li><i class="fa-solid fa-check"></i> Código comentado (10 archivos)</li>
+                    </ul>
+                </div>
+
+                <!-- Características -->
+                <h2 class="proyecto__section-title">Características principales</h2>
+                <div class="proyecto__features">
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-venus-mars"></i>
+                        </div>
+                        <h3 class="feature__title">Selector de género</h3>
+                        <p class="feature__text">Dos tarjetas con color animado, borde y elevación en la seleccionada.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-ruler-vertical"></i>
+                        </div>
+                        <h3 class="feature__title">Altura, peso y edad</h3>
+                        <p class="feature__text">Slider de 120 a 220 cm y contadores con su unidad y límites de valores.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-gauge-high"></i>
+                        </div>
+                        <h3 class="feature__title">Resultado con escala</h3>
+                        <p class="feature__text">IMC con un decimal, categoría de la OMS en su color y barra de 15 a 40 con marcador.</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <h3 class="feature__title">Navigation 3</h3>
+                        <p class="feature__text">Rutas tipadas y el IMC pasado como argumento; los datos se conservan al volver.</p>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="proyecto__tech-stack">
+                    <h2 class="proyecto__section-title">Stack Tecnológico</h2>
+                    <div class="tech__categories">
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Lenguaje & UI</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-code"></i> Kotlin</li>
+                                <li><i class="fa-brands fa-android"></i> Jetpack Compose</li>
+                                <li><i class="fa-solid fa-palette"></i> Material 3</li>
+                                <li><i class="fa-solid fa-wand-magic-sparkles"></i> animateColorAsState</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Navegación & Estado</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-route"></i> Navigation 3</li>
+                                <li><i class="fa-solid fa-box"></i> kotlinx.serialization</li>
+                                <li><i class="fa-solid fa-rotate"></i> rememberSaveable</li>
+                                <li><i class="fa-solid fa-arrow-up-from-bracket"></i> State hoisting</li>
+                            </ul>
+                        </div>
+                        <div class="tech__category">
+                            <h4 class="tech__category-title">Herramientas</h4>
+                            <ul class="tech__list">
+                                <li><i class="fa-solid fa-mobile"></i> Android Studio</li>
+                                <li><i class="fa-solid fa-gears"></i> Gradle</li>
+                                <li><i class="fa-brands fa-github"></i> GitHub y Releases (APK)</li>
+                                <li><i class="fa-solid fa-file-code"></i> LaTeX</li>
+                                <li><i class="fa-solid fa-book"></i> KDoc con Dokka</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Galería</h2>
+                    <div class="shots__grid shots__grid--3">
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/IMCApp/01_menu.png" alt="Menú principal" loading="lazy">
+                            <figcaption>Menú principal</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/IMCApp/02_calculadora.png" alt="Calculadora IMC" loading="lazy">
+                            <figcaption>Calculadora IMC</figcaption>
+                        </figure>
+                        <figure class="shots__item shots__item--mobile">
+                            <img src="../assets/img/IMCApp/03_resultado.png" alt="Resultado: peso normal" loading="lazy">
+                            <figcaption>Resultado</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <!-- Documentación PDF Preview -->
+                <section class="proyecto__section">
+                    <h2 class="proyecto__section-title">Documentación técnica</h2>
+                    <div class="proyecto__pdf-container">
+                        <iframe
+                            src="../assets/pdf/IMCApp.pdf"
+                            class="proyecto__iframe"
+                            width="100%"
+                            height="700"
+                            style="border: none; border-radius: 16px;">
+                        </iframe>
+                    </div>
+                    <a href="../assets/pdf/IMCApp.pdf" download class="proyecto__canva-link" style="margin-top: 1rem; display: inline-flex;">
+                        <i class="fa-solid fa-download"></i> Descargar PDF
+                    </a>
+                </section>
+
+                <!-- Enlaces -->
+                <div class="proyecto__links">
+                    <h2 class="proyecto__section-title">Enlaces del proyecto</h2>
+                    <div class="links__container">
+                        <a href="https://github.com/evagr11/IMCApp/releases/latest" target="_blank" class="proyecto__link-btn proyecto__link-btn--primary">
+                            <i class="fa-brands fa-android"></i>
+                            Descargar APK
+                        </a>
+
+                        <a href="https://github.com/evagr11/IMCApp" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-brands fa-github"></i>
+                            Ver código en GitHub
+                        </a>
+
+                        <a href="../assets/pdf/IMCApp.pdf" download class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Documentación PDF
+                        </a>
+
+                        <a href="https://evagr11.github.io/IMCApp/kdoc/" target="_blank" class="proyecto__link-btn proyecto__link-btn--secondary">
+                            <i class="fa-solid fa-book"></i>
+                            KDoc (Dokka)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navegación entre proyectos -->
+                <div class="proyecto__nav">
+                    <a href="../portfolio.html" class="nav__btn nav__btn--prev">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <div class="nav__info">
+                            <span class="nav__label">Volver</span>
+                            <span class="nav__name">Portafolio</span>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
